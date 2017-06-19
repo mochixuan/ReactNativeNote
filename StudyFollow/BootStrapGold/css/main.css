@@ -1,0 +1,71 @@
+/*公共样式*/
+body {
+    font-family: "Helvetica Neue", Helvetica, Microsoft Yahei, Hiragino Sans GB, WenQuanYi Micro Hei, sans-serif;
+}
+
+/*定义字体*/
+@font-face {
+    font-family: 'itcast';
+    src: url('../font/MiFie-Web-Font.eot') format('embedded-opentype'),
+    url('../font/MiFie-Web-Font.svg') format('svg'),
+    url('../font/MiFie-Web-Font.ttf') format('truetype'),
+    url('../font/MiFie-Web-Font.woff') format('woff');
+}
+
+/*字体选择样式*/
+[class^="icon-"],
+[class*=" icon-"] {
+    font-family: itcast;
+    font-style: normal;
+}
+
+/*头部区域*/
+
+.icon-mobilephone::before {
+    content: "\e908";
+    font-size: 13px;
+}
+/*好像没用，可能兼容用的*/
+.icon-telephone::before {
+    content: "\e909";
+    font-size: 15px;
+}
+
+#header {
+    height: 200px;
+}
+
+#header > .topbar {
+    height: 40px;
+    border-bottom: 1px solid #c0c0c0;
+    line-height: 40px;
+}
+
+#header .mobile-link {
+    font-size: 12px;
+    color: #888;
+}
+
+#header .mobile-link > img{
+    display: none;
+    position: absolute;
+    left: 50%;
+    margin-left:-60px;
+    top: 30px;
+}
+
+#header .mobile-link:hover {
+    text-decoration: none;
+}
+
+#header .mobile-link:hover > img {
+    display: block;
+}
+
+
+
+
+/*头部区域*/
+
+/*脚部区域*/
+/*脚部区域*/
