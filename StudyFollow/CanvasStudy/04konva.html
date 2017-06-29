@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width = device-width,initial-scale=1.0,user-scalable = no">
+    <title>04konva</title>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            background-color: #f0f0f0;
+            overflow: hidden;
+        }
+    </style>
+    <script src="js/konva.js"></script>
+</head>
+<body>
+    <div id="container"></div>
+    <script>
+        var stage = new Konva.Stage({
+            container:'container',
+            width:window.innerWidth,
+            height:window.innerHeight
+        });
+
+        var cenX = stage.width()/2;
+        var cenY = stage.height()/2;
+
+        var bgLayer = new Konva.Layer();
+        stage.add(bgLayer);
+
+        var innerRadius = 126;
+        var outRadius = 220;
+
+        var innerCircle = new Konva.Circle({
+            x:cenX,
+            y:cenY,
+            radius:innerRadius,
+            stroke:'#ccc',
+            strokeWidth:4,
+            dash:[10,4]
+        });
+        bgLayer.add(innerCircle);
+
+        var outerCircle = new Konva.Circle({
+            x:cenX,
+            y:cenY,
+            radius:outRadius,
+            stroke:'#ccc',
+            strokeWidth:4,
+            dash:[10,4]
+        });
+        bgLayer.add(outerCircle);
+
+        var cenCircle = new Konva.Circle({
+            x:cenX,
+            y:cenY,
+            radius:132/2,
+            fill:'#525A82'
+        });
+        bgLayer.add(cenCircle);
+
+        var cenRing = new Konva.Ring({
+            x:cenX,
+            y:cenY,
+            innerRadius:132/2,
+            outerRadius:180/2,
+            fill:'#E1E1E1',
+            opacity:.5
+        });
+        bgLayer.add(cenRing);
+
+        var cenText = new Konva.Text({
+            x:cenX-180/2,
+            y:cenY-17/2,
+            width:180,
+            align:'center',
+            text:'Web全栈',
+            fontSize:17,
+            fontFamily:'微软雅黑',
+            fontStyle:'bold',
+            fill:'#fff'
+        });
+        bgLayer.add(cenText);
+
+        bgLayer.draw();
+
+
+
+    </script>
+</body>
+</html>

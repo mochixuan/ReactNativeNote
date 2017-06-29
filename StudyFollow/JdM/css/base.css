@@ -1,0 +1,51 @@
+*,
+::before,
+::after {
+    margin: 0;
+    padding: 0;
+    /*清除点击默认高亮*/
+    -webkit-tap-highlight-color: transparent;
+    /*以border开始计算宽度*/
+    -webkit-box-sizing: border-box;
+}
+
+body {
+    font-size: 14px;
+    /*第二个以手机默认字体为准*/
+    font-family: "Microsoft YaHei",sans-serif;
+    color: #000000;
+}
+
+a {
+    text-decoration: none;
+    color: #000000;
+}
+
+ul {
+    list-style: none;
+}
+
+input,textarea {
+    border: none;
+    resize: none;
+    /*清除选中效果*/
+    outline: none;
+    /*清除浏览器默认样式*/
+    -webkit-appearance: none;
+}
+
+/*清除浮动*/
+.clearfix::before,
+.clearfix::after {
+    content: '.';
+    display: block;
+    height: 0;
+    line-height: 0;
+    visibility: hidden;
+    clear: both;
+}
+
+[class^="icon_"] {
+    background: url("../img/sprites.png") no-repeat;
+    background-size: 200px 200px;
+}

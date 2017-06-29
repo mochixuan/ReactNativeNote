@@ -1,0 +1,151 @@
+/*定义字体*/
+@font-face {
+    font-family: 'wang';
+    src: url('../font/MiFie-Web-Font.eot') format('embedded-opentype'),
+    url('../font/MiFie-Web-Font.svg') format('svg'),
+    url('../font/MiFie-Web-Font.ttf') format('truetype'),
+    url('../font/MiFie-Web-Font.woff') format('woff');
+}
+
+/*字体选择样式*/
+[class^="icon-"],
+[class*=" icon-"] {
+    font-family: wang;
+    font-style: normal;
+}
+
+.navbar-wang {
+    margin-bottom: 20px;
+}
+
+.navbar-wang .navbar-header {
+    height: 80px;
+}
+
+.navbar-wang .navbar-header .navbar-brand {
+    line-height: 80px;
+    padding: 0 0;
+    font-size: 32px;
+}
+
+.icon-logo::before {
+    content: "\e93e";
+    color: #f00;
+}
+
+.icon-icon::before {
+    content: "\e920";
+    color: #f00;
+}
+
+.navbar-wang .navbar-nav > li > a {
+    color: #666;
+    line-height: 48px;
+    font-size: 14px;
+}
+
+.navbar-wang .navbar-nav > .active > a,
+.navbar-wang .navbar-nav > .active > a:hover,
+.navbar-wang .navbar-nav > .active > a:focus {
+    color: #666;
+    background-color: transparent;
+    border-bottom: 2px solid #f00;
+}
+
+.navbar-wang .navbar-nav > li > a:hover,
+.navbar-wang .navbar-nav > li > a:focus {
+    color: #666;
+    background-color: transparent;
+    border-bottom: 2px solid #f00;
+}
+
+.navbar-wang .navbar-toggle {
+    border-color: #ddd;
+    margin-top: 23px;
+    margin-bottom: 23px;
+}
+
+.navbar-wang .navbar-toggle:hover,
+.navbar-wang .navbar-toggle:focus {
+    background-color: #ddd;
+}
+
+.navbar-wang .navbar-toggle .icon-bar {
+    background-color: #888;
+}
+
+.navbar-wang .navbar-collapse,
+.navbar-wang .navbar-form {
+    border-color: #e7e7e7;
+}
+
+.navbar-wang .navbar-nav > .open > a,
+.navbar-wang .navbar-nav > .open > a:hover,
+.navbar-wang .navbar-nav > .open > a:focus {
+    color: #555;
+    background-color: #e7e7e7;
+}
+
+@media (max-width: 767px) {
+    .navbar-wang .navbar-nav .open .dropdown-menu > li > a {
+        color: #777;
+    }
+    .navbar-wang .navbar-nav .open .dropdown-menu > li > a:hover,
+    .navbar-wang .navbar-nav .open .dropdown-menu > li > a:focus {
+        color: #333;
+        background-color: transparent;
+    }
+    .navbar-wang .navbar-nav .open .dropdown-menu > .active > a,
+    .navbar-wang .navbar-nav .open .dropdown-menu > .active > a:hover,
+    .navbar-wang .navbar-nav .open .dropdown-menu > .active > a:focus {
+        color: #555;
+        background-color: #e7e7e7;
+    }
+    .navbar-wang .navbar-nav .open .dropdown-menu > .disabled > a,
+    .navbar-wang .navbar-nav .open .dropdown-menu > .disabled > a:hover,
+    .navbar-wang .navbar-nav .open .dropdown-menu > .disabled > a:focus {
+        color: #ccc;
+        background-color: transparent;
+    }
+}
+
+.navbar-wang .navbar-link {
+    color: #777;
+}
+
+.navbar-wang .navbar-link:hover {
+    color: #333;
+}
+
+.navbar-wang .btn-link {
+    color: #777;
+}
+
+.navbar-wang .btn-link:hover,
+.navbar-wang .btn-link:focus {
+    color: #333;
+}
+
+.navbar-wang .btn-link[disabled]:hover,
+fieldset[disabled] .navbar-wang .btn-link:hover,
+.navbar-wang .btn-link[disabled]:focus,
+fieldset[disabled] .navbar-wang .btn-link:focus {
+    color: #ccc;
+}
+
+
+#wx_carousel > .carousel-inner > .item {
+    background-repeat:no-repeat;
+    background-position: center center;
+    background-size:cover;
+}
+
+@media (min-width: 768px) {
+    #wx_carousel > .carousel-inner > .item {
+        height: 410px;
+    }
+}
+
+#wx_carousel > .carousel-inner > .item > img {
+    width: 100%;
+}

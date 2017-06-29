@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+    <title>03Progress</title>
+    <script src="js/konva.js"></script>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            background-color: #f0f0f0;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+
+<script>
+    //创建一个舞台
+    var stage = new Konva.Stage({
+        container: 'container',
+        width: window.innerWidth,    //全屏
+        height: window.innerHeight
+    });
+    //创建一个层
+    var layer = new Konva.Layer();
+    //把层添加到舞台上去
+    stage.add(layer);
+    //中心点坐标
+    var cenX = stage.width() / 2;     //konva都是方法获取
+    var cenY = stage.height() / 2;
+
+    var x = 1 / 8 * stage.width();
+    var y = cenY;
+    var height = 1 / 12 * stage.height();
+    var maxxWidth = 2 / 3 * stage.width();
+
+    //绘制矩形
+    var innerRect = new Konva.Rect({
+        x: x,
+        y: y,
+        width: 100,
+        height: height,
+        opacity: .7,
+        fill: 'lightblue',
+        cornerRadius: height / 2
+    });
+    layer.add(innerRect);
+
+    var outRect = new Konva.Rect({
+        x: x,
+        y: y,
+        width: maxxWidth,
+        height: height,
+        stroke: 'blue',
+        strokeWidth: 4,
+        cornerRadius: height / 2
+    });
+    layer.add(outRect);
+    layer.draw();
+
+    var imgSrcArray = ['img/m3.jpg', 'img/m3.jpg', 'img/m3.jpg',
+        'img/m3.jpg', 'img/m3.jpg', 'img/m3.jpg', 'img/m3.jpg',
+        'img/m3.jpg', 'img/m3.jpg', 'img/m3.jpg'];
+    var loadImgIndex = 0;
+    for (var i = 0; i < imgSrcArray.length; i++) {
+        var img = new Image();
+        img.src = imgSrcArray[i];
+        img.onload = function () {
+            loadImgIndex += 1;
+            //konva动画
+            innerRect.to({
+                width: maxxWidth * (loadImgIndex / imgSrcArray.length),
+                duration: 3,
+                easing: Konva.Easings.BackEaseOut(),
+            });
+        }
+    }
+
+
+</script>
+</body>
+</html>

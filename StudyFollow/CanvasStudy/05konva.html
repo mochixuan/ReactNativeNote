@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width = device-width,initial-scale=1.0,user-scalable = no">
+    <title>04konva</title>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            background-color: #f0f0f0;
+            overflow: hidden;
+        }
+    </style>
+    <script src="js/konva.js"></script>
+    <script src="js/circleText.js"></script>
+</head>
+<body>
+    <div id="container"></div>
+    <script>
+        var stage = new Konva.Stage({
+            container:'container',
+            width:window.innerWidth,
+            height:window.innerHeight
+        });
+
+        var cenX = stage.width()/2;
+        var cenY = stage.height()/2;
+
+        var bgLayer = new Konva.Layer();
+        stage.add(bgLayer);
+
+        var innerRadius = 126;
+        var outerRadius = 220;
+
+        var innerCircle = new Konva.Circle({
+            x:cenX,
+            y:cenY,
+            radius:innerRadius,
+            stroke:'#ccc',
+            strokeWidth:4,
+            dash:[10,4]
+        });
+        bgLayer.add(innerCircle);
+
+        var outerCircle = new Konva.Circle({
+            x:cenX,
+            y:cenY,
+            radius:outerRadius,
+            stroke:'#ccc',
+            strokeWidth:4,
+            dash:[10,4]
+        });
+        bgLayer.add(outerCircle);
+
+        var cenCircleText = new CircleText({
+            x:cenX,
+            y:cenY,
+            innerRadius: 132 / 2,
+            outerRadius: 90,
+            innerStyle: '#525A82',
+            outerStyle: '#E1E1E1',
+            text: 'WEB全栈'
+        });
+        cenCircleText.addToGroupOrLayer(bgLayer);
+        bgLayer.draw();
+
+        var animateLayer = new Konva.Layer();
+        stage.add(animateLayer);
+
+        var L2Group = new Konva.Group({
+            x: cenX,  //组内的 x，y坐标。
+            y: cenY
+        });
+
+        var L2_CircleText_CSS3 = new CircleText({
+            x:innerRadius*Math.cos( 160 * Math.PI / 180 ),  //圆的x,y坐标
+            y:innerRadius*Math.sin( 160 * Math.PI / 180 ),
+            innerRadius: 30,  					//内圆半径
+            outerRadius: 40,  					//外圆的半径
+            innerStyle: '#FACED6', 				//内圆填充的颜色呢
+            outerStyle: '#E1E1E1',				//外圆环填充的颜色
+            text: 'CSS3'
+        });
+        L2_CircleText_CSS3.addToGroupOrLayer( L2Group );
+
+        var L2_CircleText_HTML5 = new CircleText({
+            x: innerRadius*Math.cos( -60 * Math.PI / 180 ), //文本圆的x坐标
+            y: innerRadius*Math.sin( -60 * Math.PI / 180 ), //文本圆的y坐标
+            innerRadius: 30, 			// 内圆半径
+            outerRadius: 40, 			// 外圆半径
+            innerStyle: 'orange', 		//内部填充样式
+            outerStyle: '#E1E1E1',		//外圆的样式
+            text: 'HTML5' 				// 内圆的文本
+        });
+        L2_CircleText_HTML5.addToGroupOrLayer( L2Group );
+
+        animateLayer.add(L2Group);
+
+        var L3_group = new Konva.Group({
+            x: cenX,
+            y: cenY
+        });
+
+        var L3_CircleText_JS = new CircleText({
+            x: outerRadius*Math.cos( 60 * Math.PI / 180 ),
+            y: outerRadius*Math.sin( 60 * Math.PI / 180 ),
+            innerRadius: 40,		//内圆半径
+            outerRadius: 50,		//外圆半径
+            innerStyle: '#91BFF8',	//内圆的填充样式
+            outerStyle: '#E1E1E1',	//外圆的填充样式
+            text: 'JS'				//圆形内的文字
+        });
+        L3_CircleText_JS.addToGroupOrLayer( L3_group );
+
+        animateLayer.add(L3_group);
+
+        animateLayer.draw();
+
+        var rotateAnglPerSecond = 60;
+        var animate = new Konva.Animation(function(frame){
+            var rotateAngle =  rotateAnglPerSecond * frame.timeDiff / 1000;
+
+            L2Group.rotate( rotateAngle );
+
+            L2Group.getChildren().each(function(item,index){
+                item.rotate(-rotateAngle);
+            });
+
+            L3_group.rotate( -rotateAngle );
+
+            L3_group.getChildren().each(function(item ,index ){
+                item.rotate( rotateAngle );
+            })
+        }, animateLayer);
+        animate.start();
+
+        animateLayer.on('mouseover', function(){
+            rotateAnglPerSecond = 10;
+        });
+
+        animateLayer.on('mouseout', function(){
+            rotateAnglPerSecond = 60;
+        });
+
+    </script>
+</body>
+</html>

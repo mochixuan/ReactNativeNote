@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>01Canvas入门</title>
+</head>
+<body>
+    <canvas id="demo" width="1200" height="1200"></canvas>
+
+    <script>
+        var canvas = document.getElementById("demo");
+        var ctx = canvas.getContext('2d');
+
+        ctx.moveTo(100,100);
+        ctx.lineTo(200,100);
+        ctx.lineTo(100,200);
+        ctx.closePath();
+        ctx.strokeStyle = 'rgba(88,255,255,0.8)';
+        ctx.lineWidth = 10;
+        ctx.stroke();
+        ctx.fillStyle = 'red'
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.rect(200,200,20,20);
+        ctx.strokeWidth = 2;
+        ctx.strokeStyle = '#999999';
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.moveTo(200,150);    //圆点
+        ctx.strokeStyle = '#ee1111';
+        //起点 true取反角度
+        ctx.arc(200,150,50,0*Math.PI/180,60*Math.PI/180,false);
+        ctx.closePath();
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.moveTo(400,400);
+        ctx.arc(400,400,80,-90*Math.PI/180,-30*Math.PI/180);
+        ctx.fillStyle = 'red';
+        ctx.fill();
+
+        ctx.font = '20px "微软雅黑"';
+        ctx.textBaseline = 'bottom';
+        ctx.textAlign = 'left';
+        ctx.fillText("60%",400+Math.cos(-60*Math.PI/180)*80 , 400+Math.sin(-60*Math.PI/180)*80);
+
+        ctx.beginPath();
+        ctx.moveTo(400,400);
+        ctx.arc(400,400,80,-30*Math.PI/180,90*Math.PI/180);
+        ctx.fillStyle = 'blue';
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.moveTo(400,400);
+        ctx.arc(400,400,80,90*Math.PI/180,240*Math.PI/180);
+        ctx.fillStyle = 'green';
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.moveTo(400,400);
+        ctx.arc(400,400,80,240*Math.PI/180,270*Math.PI/180);
+        ctx.fillStyle = 'gray';
+        ctx.fill();
+
+        ctx.beginPath();
+        var img = new Image();
+        img.src = 'img/m3.jpg';
+        img.onload = function () {
+            ctx.drawImage(img,100,500,200,200);
+        }
+
+        /*截取图片*/
+        ctx.beginPath();
+        var img1 = new Image();
+        img1.src = 'img/m3.jpg';
+        img1.onload = function () {
+            ctx.drawImage(img1,750,100,400,400,100,800,100,100);
+        }
+    </script>
+</body>
+</html>
