@@ -15,6 +15,9 @@ registry = http://registry.cnpmjs.org
 2. node镜像问题
 nvm node_mirror https://npm.taobao.org/mirrors/node/
 nvm npm_mirror https://npm.taobao.org/mirrors/npm/
+
+3.镜像地址
+https://npm.taobao.org/
 ```
 
 ## 2.node
@@ -27,4 +30,9 @@ nvm npm_mirror https://npm.taobao.org/mirrors/npm/
 ## 3.Error
 ```html
 npm install -g n：错误暂时不支持n操作
+```
+
+## 4.Ionic
+```html
+获取模板 ionic start name(项目名自取)
 ```
