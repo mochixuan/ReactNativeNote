@@ -73,4 +73,13 @@
 
 	jspm install semantic-ui
 
+	后期
+	jspm install jquery
+
+	安装路由
+	jspm install react-router@1.0.0-rc1
+
 ```
+
+## 无法识别react
+	将webstorm 里的 setting->Languages & Frameworks->JavaScript 里改为 React JSX
