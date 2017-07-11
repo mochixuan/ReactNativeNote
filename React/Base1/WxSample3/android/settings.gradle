@@ -1,0 +1,3 @@
+rootProject.name = 'WxSample3'
+
+include ':app'
