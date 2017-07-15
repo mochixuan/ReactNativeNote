@@ -10,7 +10,9 @@
 
 
 <h2 id="environment" >环境搭建<h2>
-```
+
+``` html
+
 1.安装Chocolatey 取代npm的
 	powershell -NoProfile -ExecutionPolicy Bypass -Command "iex((new-object net.webclient).DownloadString('https://chocolatey.org/install.ps1'))" && SET PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin
 
@@ -33,4 +35,5 @@
 	npm start
 	cd Hello
 	react-native run-android
+
 ```
