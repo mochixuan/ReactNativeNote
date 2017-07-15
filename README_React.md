@@ -54,31 +54,31 @@
 
 ## 14.安装jspm
 ```
-	npm install jspm -g 在全局范围安装jspm，就可以在任何地方使用jspm命令了
-	jspm // 完成后输入jspm，会返回一些帮组信息
-	cd ~/desktop
-	mkdir reactProject // 创建项目文件夹
-	cd  reactProject
-	npm init // 创建package.json，一路回车即可
-	ls // 查看文件夹，就会一个package.json文件
-	npm install jspm --save-dev // 把 jspm添加到项目开发依赖
-	ls // node_modules package.json两个文件
-	jspm init // 为jspm创建配置文件config.js， 一系列问题，可一路回车
-	ls // 会发现有config.js , jspm_packages（jspm安装的一些包） node_modules package.json
+npm install jspm -g 在全局范围安装jspm，就可以在任何地方使用jspm命令了
+jspm // 完成后输入jspm，会返回一些帮组信息
+cd ~/desktop
+mkdir reactProject // 创建项目文件夹
+cd  reactProject
+npm init // 创建package.json，一路回车即可
+ls // 查看文件夹，就会一个package.json文件
+npm install jspm --save-dev // 把 jspm添加到项目开发依赖
+ls // node_modules package.json两个文件
+jspm init // 为jspm创建配置文件config.js， 一系列问题，可一路回车
+ls // 会发现有config.js , jspm_packages（jspm安装的一些包） node_modules package.json
 
-	jspm install react@0.14.0.0-rc1 //@0.14.0.0-rc1版本号可不加
-	
-	jspm install react-dom@0.14.0-rc1
+jspm install react@0.14.0.0-rc1 //@0.14.0.0-rc1版本号可不加
 
-	jspm install css
+jspm install react-dom@0.14.0-rc1
 
-	jspm install semantic-ui
+jspm install css
 
-	后期
-	jspm install jquery
+jspm install semantic-ui
 
-	安装路由
-	jspm install react-router@1.0.0-rc1
+后期
+jspm install jquery
+
+安装路由
+jspm install react-router@1.0.0-rc1
 
 ```
 
@@ -87,12 +87,12 @@
 
 ## 16在手机上运行React
 ```
-	1.首先确保你的电脑和手机设备在同一个Wi-Fi环境下。
-	2.在设备上运行你的React Native应用。和打开其它App一样操作。
-	3.你应该会看到一个“红屏”错误提示。这是正常的，下面的步骤会解决这个报错。
-	4.摇晃设备，或者运行adb shell input keyevent 82，可以打开开发者菜单。
-	5.点击进入Dev Settings。
-	6.点击Debug server host for device。
-	7.输入你电脑的IP地址和端口号（譬如10.0.1.1:8081）。在Mac上，你可以在系统设置/网络里找查询你的IP地址。在Windows上，打开命令提示符并输入ipconfig来查询你的IP地址。在Linux上你可以在终端中输入ifconfig来查询你的IP地址。
-	8.回到开发者菜单然后选择Reload JS
+1.首先确保你的电脑和手机设备在同一个Wi-Fi环境下。
+2.在设备上运行你的React Native应用。和打开其它App一样操作。
+3.你应该会看到一个“红屏”错误提示。这是正常的，下面的步骤会解决这个报错。
+4.摇晃设备，或者运行adb shell input keyevent 82，可以打开开发者菜单。
+5.点击进入Dev Settings。
+6.点击Debug server host for device。
+7.输入你电脑的IP地址和端口号（譬如10.0.1.1:8081）。在Mac上，你可以在系统设置/网络里找查询你的IP地址。在Windows上，打开命令提示符并输入ipconfig来查询你的IP地址。在Linux上你可以在终端中输入ifconfig来查询你的IP地址。
+8.回到开发者菜单然后选择Reload JS
 ```
