@@ -4,7 +4,7 @@
  * @flow
  */
 
-import React, { Component } from 'react';
+/*import React, { Component } from 'react';
 import {
   AppRegistry,
   StyleSheet,
@@ -50,4 +50,9 @@ const styles = StyleSheet.create({
   },
 });
 
-AppRegistry.registerComponent('SMaster1', () => SMaster1);
+AppRegistry.registerComponent('SMaster1', () => SMaster1);*/
+
+import {AppRegistry} from 'react-native';
+import indexall from "./indexall";
+
+AppRegistry.registerComponent('SMaster1', () => indexall);

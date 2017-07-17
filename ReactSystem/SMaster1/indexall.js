@@ -1,0 +1,72 @@
+/**
+ * Created by wangxuan on 2017/7/15.
+ */
+
+import React, {Component} from 'react';
+import {
+    StyleSheet,
+    Text,
+    View
+} from 'react-native';
+
+import Bananas from './app/base/Bananas'
+import Flex from './app/base/Flex'
+import WTextInput from './app/base/WTextInput'
+import WScrollView from './app/base/WScrollView'
+//import WFlatView from './app/base/WFlatList'
+import WSectionList from './app/base/WSectionList'
+import WFetch from './app/base/WFetch'
+
+export default class indexall extends Component {
+
+    render() {
+        return (
+            <WFetch/>
+        )
+    }
+
+    /*WSectionList
+    render() {
+        return (
+            <WSectionList/>
+        )
+    }*/
+
+    /*WFlatView
+    render() {
+        return (
+            <WFlatView/>
+        )
+    }*/
+
+    /*WScrollView
+    render() {
+        return (
+            <WScrollView/>
+        )
+    }*/
+
+    /*WTextInput
+    render() {
+        return (
+            <WTextInput/>
+        )
+    }*/
+
+    /*Flex
+    render() {
+        return (
+            <Flex/>
+        )
+    }*/
+
+    /*Bananas
+    render() {
+        return (
+            <View>
+                <Bananas message="莫辞旋"/>
+            </View>
+        )
+    }*/
+}
+
