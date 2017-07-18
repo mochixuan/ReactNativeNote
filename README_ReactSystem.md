@@ -47,6 +47,10 @@ react-native run-android
 1.注意，这里用引号括起来的'HelloWorldApp'必须和你init创建的项目名一致 HelloWorldApp为主件名
 AppRegistry.registerComponent('HelloWorldApp', () => HelloWorldApp);
 
+2.修改版本号
+	先改package.json再
+	npm install --save react@16.0.0-alpha.12
+
 ```
 
 
@@ -60,5 +64,11 @@ AppRegistry.registerComponent('HelloWorldApp', () => HelloWorldApp);
 
 2.Can't find variable:View
 	没有引路控件{View}
+
+3.undefined is not an object(evaluating 'tr.ReactCurrentOwner')
+	解决方法：npm start
+
+4. ReactInternals.ReactCurrentOwner
+	版本号的问题修改react版本号
 
 ```

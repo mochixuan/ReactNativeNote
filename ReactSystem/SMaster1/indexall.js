@@ -13,17 +13,33 @@ import Bananas from './app/base/Bananas'
 import Flex from './app/base/Flex'
 import WTextInput from './app/base/WTextInput'
 import WScrollView from './app/base/WScrollView'
-//import WFlatView from './app/base/WFlatList'
+import WFlatView from './app/base/WFlatList'
 import WSectionList from './app/base/WSectionList'
 import WFetch from './app/base/WFetch'
+import WFetch1 from './app/base/WFetch1'
+import WImage from './app/base/WImage'
 
 export default class indexall extends Component {
 
     render() {
         return (
-            <WFetch/>
+            <WImage/>
         )
     }
+
+    /*WFetch1
+    render() {
+        return (
+            <WFetch1/>
+        )
+    }*/
+
+    /*WFetch
+    render() {
+        return (
+            <WFetch/>
+        )
+    }*/
 
     /*WSectionList
     render() {

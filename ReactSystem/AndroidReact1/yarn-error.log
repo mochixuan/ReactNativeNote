@@ -1,0 +1,51 @@
+Arguments: 
+  D:\nvm\nodejs\node.exe D:\nvm\npm\node_modules\yarn\bin\yarn.js add react@16.0.0-alpha.12
+
+PATH: 
+  C:\Users\wangxuan\bin;D:\Git\Git\mingw64\bin;D:\Git\Git\usr\local\bin;D:\Git\Git\usr\bin;D:\Git\Git\usr\bin;D:\Git\Git\mingw64\bin;D:\Git\Git\usr\bin;C:\Users\wangxuan\bin;C:\ProgramData\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;E:\Jdk\bin;E:\Jdk\jre\bin;E:\Eclipse\adt-bundle-windows-x86_64-20140321\sdk\android-ndk-r10b;E:\AndroidStudio\sdk\tools;E:\AndroidStudio\sdk\platform-tools;D:\Git\Git\cmd;C:\Users\wangxuan\AppData\Local\Microsoft\WindowsApps;C:\program files\esafenet\cobra docguard client;D:\nvm;D:\nvm\nodejs;C:\Users\wangxuan\AppData\Roaming\npm;D:\nvm\npm;C:\WINDOWS\system32\config\systemprofile\.dnx\bin;C:\Program Files\Microsoft DNX\Dnvm;C:\Program Files\Microsoft SQL Server\130\Tools\Binn;E:\AndroidStudio\sdk\tools;E:\AndroidStudio\sdk\platform-tools;D:\ndk\android-ndk-r10e;C:\ProgramData\chocolatey\bin;C:\Users\wangxuan\AppData\Local\Microsoft\WindowsApps;C:\program files\esafenet\cobra docguard client;C:\Users\wangxuan\AppData\Roaming\npm;D:\nvm\npm;D:\Git\Git\usr\bin\vendor_perl;D:\Git\Git\usr\bin\core_perl
+
+Yarn version: 
+  0.27.5
+
+Node version: 
+  6.11.0
+
+Platform: 
+  win32 x64
+
+npm manifest: 
+  {
+    "name": "androidreact1",
+    "version": "1.0.0",
+    "description": "",
+    /*"main": "index.js",*/
+    "scripts": {
+      "build": "(cd android/ && ./gradlew assembleDebug)",
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "start": "node node_modules/react-native/local-cli/cli.js start"
+    },
+    "keywords": [
+      "react",
+      "native"
+    ],
+    "author": "wangxuan",
+    "license": "ISC",
+    "dependencies": {
+      "react": "^15.6.1",
+      "react-native": "^0.46.4"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
+
+Trace: 
+  SyntaxError: F:\MySource\HTML\HTML\Project\ReactSystem\AndroidReact1\package.json: Unexpected token / in JSON at position 74
+      at Object.parse (native)
+      at D:\nvm\npm\node_modules\yarn\lib\util\fs.js:554:57
+      at next (native)
+      at step (D:\nvm\npm\node_modules\yarn\node_modules\babel-runtime\helpers\asyncToGenerator.js:17:30)
+      at D:\nvm\npm\node_modules\yarn\node_modules\babel-runtime\helpers\asyncToGenerator.js:28:13
