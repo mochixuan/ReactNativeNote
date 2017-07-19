@@ -18,14 +18,38 @@ import WSectionList from './app/base/WSectionList'
 import WFetch from './app/base/WFetch'
 import WFetch1 from './app/base/WFetch1'
 import WImage from './app/base/WImage'
+import WButton from './app/base/WButton'
+import WAnimated from './app/base/WAnimated'
+import WAnimatedAll from './app/animate/WAnimatedAll'
 
 export default class indexall extends Component {
 
     render() {
         return (
-            <WImage/>
+            <WAnimatedAll/>
         )
     }
+
+    /*WAnimated
+    render() {
+        return (
+            <WAnimated/>
+        )
+    }*/
+
+    /*WButton
+    render() {
+        return (
+            <WButton/>
+        )
+    }*/
+
+    /*WImage
+    render() {
+        return (
+            <WImage/>
+        )
+    }*/
 
     /*WFetch1
     render() {
