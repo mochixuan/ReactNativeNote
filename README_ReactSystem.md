@@ -51,6 +51,44 @@ AppRegistry.registerComponent('HelloWorldApp', () => HelloWorldApp);
 	先改package.json再
 	npm install --save react@16.0.0-alpha.12
 
+3. 有些时候你必须要重新编译应用才能使修改生效
+	增加了新的资源(比如给iOS的Images.xcassets或是Andorid的res/drawable文件夹添加了图片)
+	更改了任何的原生代码（objective-c/swift/java）
+
+4. 移除log
+	有个babel插件可以帮你移除所有的console.*调用。首先需要使用yarn add --dev babel-plugin-transform-remove-console来安装，然后在项目根目录下编辑（或者是新建）一个名为·.babelrc`的文件，在其中加入：
+	{
+	  "env": {
+	    "production": {
+	      "plugins": ["transform-remove-console"]
+	    }
+	  }
+	}
+
+5. react升级
+		npm install -g react-native-git-upgrade
+			react-native-git-upgrade提供了豪华的一条龙自动合并更新流程，主要包含两个服务：
+				*首先它会利用Git工具计算新旧版本文件间的差异并生成补丁
+				*然后在用户的项目文件上应用补丁
+		react-native-git-upgrade
+			这样会直接把react native升级到最新版本
+		react-native-git-upgrade X.Y.Z
+			这样把react native升级到指定的X.Y.Z版本
+
+6 原生运行
+	  第一步：在android/app/src/main 目录下创建一个  assets空文件夹
+      第二步：  react-native bundle --platform android --dev false --entry-file index.android.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res/
+      正确范围：react-native bundle --platform android --dev false --entry-file index.android.js --bundle-output app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res/
+              react-native bundle
+              --platform android  //平台类型
+              --dev false //是否是开发
+              --entry-file index.android.js //输入
+              --bundle-output android/bundle/index.android.bundle //输出
+              --assets-dest android/assets  //资源文件
+     总结：这个index.android.bundle毫无疑问就是用来调用原生控件的js脚本，
+          每次当你改变了 index.android.js，你都需要使用上面的代码片段，
+          来及时的更新index.android.bundle，然后打包才可以把新的index.android.js应用上，
+          所以当没有index.android.bundle文件时，RN是无法运行的
 ```
 
 

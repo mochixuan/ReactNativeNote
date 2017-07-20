@@ -58,8 +58,9 @@ export default class AnimationRotateScene extends Component {
                         height: 128,
                         transform:
                             [
-                            {rotate: spin}
-                            ] }}
+                                {rotate: spin}
+                            ]
+                    }}
                     source={require('../img/react.png')}
                 />
                 <TouchableOpacity onPress={() => this.spin()} style={styles.button}>

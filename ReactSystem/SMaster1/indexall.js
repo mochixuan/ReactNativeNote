@@ -21,14 +21,36 @@ import WImage from './app/base/WImage'
 import WButton from './app/base/WButton'
 import WAnimated from './app/base/WAnimated'
 import WAnimatedAll from './app/animate/WAnimatedAll'
+import WAccessible from './app/base/WAccessible'
+import WTimer from './app/base/WTimer'
+import WNativeProps from './app/base/WNativeProps'
 
 export default class indexall extends Component {
 
     render() {
         return (
-            <WAnimatedAll/>
+            <WNativeProps/>
         )
     }
+
+    /*render() {
+        return (
+            <WTimer/>
+        )
+    }*/
+
+    /*render() {
+        return (
+            <WAccessible/>
+        )
+    }*/
+
+    /*WAnimatedAll
+    render() {
+        return (
+            <WAnimatedAll/>
+        )
+    }*/
 
     /*WAnimated
     render() {
