@@ -89,6 +89,9 @@ AppRegistry.registerComponent('HelloWorldApp', () => HelloWorldApp);
           每次当你改变了 index.android.js，你都需要使用上面的代码片段，
           来及时的更新index.android.bundle，然后打包才可以把新的index.android.js应用上，
           所以当没有index.android.bundle文件时，RN是无法运行的
+
+6. 函数体内的this对象，就是定义时所在的对象，而不是使用时所在的对象
+		this对象的指向是可变的，但是在箭头函数中，它是固定的。
 ```
 
 
