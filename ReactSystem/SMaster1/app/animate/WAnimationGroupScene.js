@@ -84,7 +84,9 @@ export default class WAnimationGroupScene extends Component {
                 <Animated.View
                     style={{top: introButton, position: 'absolute'}}>
                     <TouchableHighlight
-                        onPress={this.animate.bind(this)}
+                        onPress={
+                            this.animate.bind(this)
+                        }
                         style={styles.button}>
                         <Text style={styles.text}>启动组动画</Text>
                     </TouchableHighlight>

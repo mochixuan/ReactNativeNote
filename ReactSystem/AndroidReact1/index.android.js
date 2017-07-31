@@ -6,11 +6,16 @@ import {
     StyleSheet,
     Text,
     View,
-    TouchableOpacity
+    TouchableOpacity,
+    NativeModules,
 } from 'react-native'
-import WToastAndroid from './WToastAndroid';
 
 class AndroidReact1 extends React.Component {
+
+    showToast(data) {
+        const WToastAndroid = NativeModules.WToastAndroid;
+        WToastAndroid.show(data,WToastAndroid.SHORT)
+    }
 
     render() {
         return (
@@ -20,8 +25,25 @@ class AndroidReact1 extends React.Component {
                 </Text>
                 <TouchableOpacity
                     style={styles.button}
-                    onPress = {() => WToastAndroid.show("Hello Native",WToastAndroid.SHORT) }>
+                    onPress = {() => {
+                        this.showToast('Hello Native')
+                    } }>
                     <Text style={styles.text}>Show Native Toast</Text>
+                </TouchableOpacity>
+                <TouchableOpacity
+                    style={styles.button}
+                    onPress = {() => {
+                        const WToastAndroid = NativeModules.WToastAndroid;
+                        const WUIManagerModule = NativeModules.WUIManagerModule;
+                        WUIManagerModule.measureLayout(4,5,
+                            (value1,value2) => {
+                                this.showToast('w=4,h=5 '+'面积'+value1+'周长'+value2)
+                            },
+                            (error) => {
+                                this.showToast(error)
+                            })
+                    } }>
+                    <Text style={styles.text}>Gain Native CallBack</Text>
                 </TouchableOpacity>
             </View>
         )

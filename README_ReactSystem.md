@@ -112,4 +112,7 @@ AppRegistry.registerComponent('HelloWorldApp', () => HelloWorldApp);
 4. ReactInternals.ReactCurrentOwner
 	版本号的问题修改react版本号
 
+5. npm WARN react-test-renderer@16.0.0-alpha.12 requires a peer of react@^16.0.0-alpha.12 but none was installed.
+	npm install react@16.0.0-alpha.12
+
 ```

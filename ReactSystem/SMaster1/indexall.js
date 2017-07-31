@@ -24,14 +24,50 @@ import WAnimatedAll from './app/animate/WAnimatedAll'
 import WAccessible from './app/base/WAccessible'
 import WTimer from './app/base/WTimer'
 import WNativeProps from './app/base/WNativeProps'
+import WActivityIndicator from './app/assembly/WActivityIndicator'
+import Banner from './app/assembly/Banner'
+import RefreshControlExample from './app/assembly/RefreshControlExample'
+import Swiper1 from './app/assembly/Swiper1'
+import TabBarView from './app/assembly/TabBarView'
+
 
 export default class indexall extends Component {
 
     render() {
         return (
-            <WNativeProps/>
+            <TabBarView/>
         )
     }
+
+    /*render() {
+        return (
+            <Swiper1/>
+        )
+    }*/
+
+    /*render() {
+        return (
+            <RefreshControlExample/>
+        )
+    }*/
+
+    /*render() {
+        return (
+            <Banner/>
+        )
+    }*/
+
+    /*render() {
+        return (
+            <WActivityIndicator/>
+        )
+    }*/
+
+    /*render() {
+        return (
+            <WNativeProps/>
+        )
+    }*/
 
     /*render() {
         return (
