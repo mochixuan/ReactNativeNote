@@ -1,38 +1,51 @@
 # StudyFollow
 
-## 1.¾µÏñÎÊÌâ
+## 1.é•œåƒé—®é¢˜
 ``` html
 1. npm install xxx
-(1)Í¨¹ıconfigÃüÁî
+(1)é€šè¿‡configå‘½ä»¤
 npm config set registry http://registry.cnpmjs.org
-npm info underscore £¨Èç¹ûÉÏÃæÅäÖÃÕıÈ·Õâ¸öÃüÁî»áÓĞ×Ö·û´®response£©
-(2)ÃüÁîĞĞÖ¸¶¨
+npm info underscore ï¼ˆå¦‚æœä¸Šé¢é…ç½®æ­£ç¡®è¿™ä¸ªå‘½ä»¤ä¼šæœ‰å­—ç¬¦ä¸²responseï¼‰
+(2)å‘½ä»¤è¡ŒæŒ‡å®š
 npm --registry http://registry.cnpmjs.org info underscore
-(3)±à¼­ ~/.npmrc ¼ÓÈëÏÂÃæÄÚÈİ(½«ÅäÖÃĞ´ËÀ£¬ÏÂ´ÎÓÃµÄÊ±ºòÅäÖÃ»¹ÔÚ)
+(3)ç¼–è¾‘ ~/.npmrc åŠ å…¥ä¸‹é¢å†…å®¹(å°†é…ç½®å†™æ­»ï¼Œä¸‹æ¬¡ç”¨çš„æ—¶å€™é…ç½®è¿˜åœ¨)
 registry = http://registry.cnpmjs.org
-°¢Àï¾µÏñµØÖ·£ºhttp://npm.taobao.org/
+é˜¿é‡Œé•œåƒåœ°å€ï¼šhttp://npm.taobao.org/
 
-2. node¾µÏñÎÊÌâ
+2. nodeé•œåƒé—®é¢˜
 nvm node_mirror https://npm.taobao.org/mirrors/node/
 nvm npm_mirror https://npm.taobao.org/mirrors/npm/
 
-3.¾µÏñµØÖ·
+3.é•œåƒåœ°å€
 https://npm.taobao.org/
 ```
 
 ## 2.node
 ``` html
-ÇĞ»»node°æ±¾ºÅ:		nvm use x.x.x
-°²×°Ö¸¶¨°æ±¾µÄnode:		nvm install vx.x.0
+åˆ‡æ¢nodeç‰ˆæœ¬å·:		nvm use x.x.x
+å®‰è£…æŒ‡å®šç‰ˆæœ¬çš„node:		nvm install vx.x.0
+```
+
+## 2.1æ–°ç‰ˆæœ¬
+```
+	ç›´æ¥å®‰è£…node
+	æ–°å»º node_globalï¼Œnode_cache
+	æ— éœ€é…ç½®ç¯å¢ƒå˜é‡ï¼Œç›´æ¥
+	1.npm config set prefix "D:\node\node_global"
+	2.npm config set cache "D:\node\node_cache"
+	3.è¿›å…¥ç¯å¢ƒå˜é‡å¯¹è¯æ¡†ï¼Œåœ¨ç³»ç»Ÿå˜é‡ä¸‹æ–°å»º"NODE_PATH"ï¼Œè¾“å…¥â€C:\Program Files\nodejs\node_global\node_modulesâ€œã€‚ï¼ˆpsï¼šè¿™ä¸€æ­¥ç›¸å½“å…³é”®ã€‚ï¼‰
+	4.2014.4.19æ–°å¢ï¼šç”±äºæ”¹å˜äº†moduleçš„é»˜è®¤åœ°å€ï¼Œæ‰€ä»¥ä¸Šé¢çš„ç”¨æˆ·å˜é‡éƒ½è¦è·Ÿç€æ”¹å˜ä¸€ä¸‹ï¼ˆç”¨æˆ·å˜é‡"PATH"ä¿®æ”¹ä¸ºâ€œC:\Program Files\nodejs\node_global\â€ï¼‰ï¼Œ
+	è¦ä¸ä½¿ç”¨moduleçš„æ—¶å€™ä¼šå¯¼è‡´è¾“å…¥å‘½ä»¤å‡ºç°â€œxxxä¸æ˜¯å†…éƒ¨æˆ–å¤–éƒ¨å‘½ä»¤ï¼Œä¹Ÿä¸æ˜¯å¯è¿è¡Œçš„ç¨‹åºæˆ–æ‰¹å¤„ç†æ–‡ä»¶â€è¿™ä¸ªé”™è¯¯ã€‚
+	5.å®‰è£…vs
 ```
 
 
 ## 3.Error
 ```html
-npm install -g n£º´íÎóÔİÊ±²»Ö§³Ön²Ù×÷
+npm install -g nï¼šé”™è¯¯æš‚æ—¶ä¸æ”¯æŒnæ“ä½œ
 ```
 
 ## 4.Ionic
 ```html
-»ñÈ¡Ä£°å ionic start name(ÏîÄ¿Ãû×ÔÈ¡)
+è·å–æ¨¡æ¿ ionic start name(é¡¹ç›®åè‡ªå–)
 ```

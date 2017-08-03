@@ -93,7 +93,7 @@ export default class TabBarView extends Component {
     _defineTabBarView() {
         return (
             <ScrollableTabView
-                renderTabBar={(props) => <TabBar1 tabNames={tabNames} tabIconNames={tabIcons1}/>}
+                renderTabBar={(props) => <TabBar tabNames={tabNames} tabIconNames={tabIcons}/>}
                 tabBarPosition='bottom'>
                 <View
                     tabLabel = "Home"
