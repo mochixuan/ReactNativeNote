@@ -9,39 +9,49 @@ import {
     Text,
     TouchableOpacity
 } from 'react-native'
+import {TabNavigator} from 'react-navigation'
 
-export default class WNavigatorTest2 extends Component {
-
-    static navigationOptions = ({ navigation }) => ({
-        title:  `页面二: ${navigation.state.params==null?"无参":navigation.state.params.user}`,
-
-    });
-
+class Home extends Component {
     render() {
-        const {params} = this.props.navigation.state;
-        const {navigate} = this.props.navigation;
         return (
             <View style={styles.container}>
-                <Text style={styles.textTitle}>
-                    {params==null?"无参数":params.user}
-                </Text>
-                <TouchableOpacity
-                    style={styles.touchable}
-                    onPress={()=>{
-                        navigate('Page1')
-                    }}>
-                    <Text style={styles.text}>跳转页面一</Text>
-                </TouchableOpacity>
+                <Text>Home</Text>
             </View>
         )
     }
-
 }
+
+class Video extends Component {
+    render() {
+        return (
+            <View style={styles.container}>
+                <Text>Video</Text>
+            </View>
+        )
+    }
+}
+
+class User extends Component {
+    render() {
+        return (
+            <View style={styles.container}>
+                <Text>User</Text>
+            </View>
+        )
+    }
+}
+
+const WNavigatorTab = TabNavigator({
+    Home:{screen:Home},
+    Video:{screen:Video},
+    User:{screen:User}
+})
 
 const styles = StyleSheet.create({
     container: {
         flex:1,
         alignItems: 'center',
+        justifyContent: 'center'
     },
     touchable: {
         width: 140,
@@ -62,3 +72,5 @@ const styles = StyleSheet.create({
         fontSize: 20,
     }
 })
+
+export default WNavigatorTab

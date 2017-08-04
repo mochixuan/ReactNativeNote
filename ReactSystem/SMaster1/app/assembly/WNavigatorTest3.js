@@ -10,27 +10,21 @@ import {
     TouchableOpacity
 } from 'react-native'
 
-export default class WNavigatorTest2 extends Component {
+export default class WNavigatorTest1 extends Component {
 
-    static navigationOptions = ({ navigation }) => ({
-        title:  `页面二: ${navigation.state.params==null?"无参":navigation.state.params.user}`,
-
-    });
+    static navigationOptions = {
+        title: '页面三',
+    }
 
     render() {
-        const {params} = this.props.navigation.state;
-        const {navigate} = this.props.navigation;
         return (
             <View style={styles.container}>
-                <Text style={styles.textTitle}>
-                    {params==null?"无参数":params.user}
-                </Text>
                 <TouchableOpacity
                     style={styles.touchable}
                     onPress={()=>{
-                        navigate('Page1')
+
                     }}>
-                    <Text style={styles.text}>跳转页面一</Text>
+                    <Text style={styles.text}>单机跳转</Text>
                 </TouchableOpacity>
             </View>
         )
