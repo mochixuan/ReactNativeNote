@@ -58,6 +58,13 @@ export default class WNavigatorTest1 extends Component {
                     }}>
                     <Text style={styles.text}>StackNavigatorAllOption</Text>
                 </TouchableOpacity>
+                <TouchableOpacity
+                    style={styles.touchable}
+                    onPress={()=>{
+                        navigate('Page5')
+                    }}>
+                    <Text style={styles.text}>NavigatorDrawer</Text>
+                </TouchableOpacity>
             </View>
         )
     }

@@ -7,9 +7,9 @@ import {
     Image,
     View,
     Text,
-    TouchableOpacity
+    TouchableOpacity,
 } from 'react-native'
-import {TabNavigator} from 'react-navigation'
+import {DrawerNavigator} from 'react-navigation'
 
 class Home extends Component {
     static navigationOptions = {
@@ -29,6 +29,20 @@ class Home extends Component {
         return (
             <View style={styles.container}>
                 <Text>Home</Text>
+                <TouchableOpacity
+                    style={styles.touchable}
+                    onPress={()=>{
+                        this.props.navigation.navigate('DrawerOpen')
+                    }}>
+                    <Text style={styles.text}>打开</Text>
+                </TouchableOpacity>
+                <TouchableOpacity
+                    style={styles.touchable}
+                    onPress={()=>{
+                        this.props.navigation.navigate('DrawerClose')
+                    }}>
+                    <Text style={styles.text}>关闭</Text>
+                </TouchableOpacity>
             </View>
         )
     }
@@ -80,40 +94,34 @@ class User extends Component {
     }
 }
 
-const WNavigatorTab = TabNavigator({
+const WNavigatorDrawer = DrawerNavigator({
     Home:{screen:Home},
     Video:{screen:Video},
-    User:{screen:User}
+    User:{screen:User},
 },{
-    animationEnabled: true, // 切换页面时是否有动画效果
-    tabBarPosition: 'bottom', // 显示在底端，android 默认是显示在页面顶端的
-    swipeEnabled: false, // 是否可以左右滑动切换tab
-    backBehavior: 'none', // 按 back 键是否跳转到第一个Tab(首页)， none 为不跳转
-    tabBarOptions: {
-        activeTintColor: '#20ad62', // 文字和图片选中颜色
-        inactiveTintColor: '#999', // 文字和图片未选中颜色
-        showIcon: true, // android 默认不显示 icon, 需要设置为 true 才会显示
-        indicatorStyle: {
-            height: 0  // 如TabBar下面显示有一条线，可以设高度为0后隐藏
-        },
-        style: {
-            backgroundColor: '#ffffff', // TabBar 背景色
-            // height: 44
-        },
-        labelStyle: {
-            fontSize: 10, // 文字大小
-        },
-    },
+    drawerWidth: 200, // 抽屉宽
+    drawerPosition: 'left', // 抽屉在左边还是右边
+    // contentComponent: CustomDrawerContentComponent,  // 自定义抽屉组件
+    contentOptions: {
+        initialRouteName: Home, // 默认页面组件
+        activeTintColor: 'white',  // 选中文字颜色
+        activeBackgroundColor: '#ff8500', // 选中背景颜色
+        inactiveTintColor: '#666',  // 未选中文字颜色
+        inactiveBackgroundColor: '#fff', // 未选中背景颜色
+        style: {  // 样式
+
+        }
+    }
 })
 
 const styles = StyleSheet.create({
     container: {
         flex:1,
         alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent:'center',
     },
     touchable: {
-        width: 140,
+        width: 240,
         height:60,
         margin:10,
         justifyContent:'center',
@@ -132,4 +140,4 @@ const styles = StyleSheet.create({
     }
 })
 
-export default WNavigatorTab
+export default WNavigatorDrawer

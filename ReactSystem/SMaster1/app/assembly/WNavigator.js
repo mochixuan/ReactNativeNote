@@ -16,6 +16,7 @@ import WNavigatorTest1 from "./WNavigatorTest1";
 import WNavigatorTest2 from "./WNavigatorTest2";
 import WNavigatorTest3 from "./WNavigatorTest3";
 import WNavigatorTab from './WNavigatorTab'
+import WNavigatorDrawer from "./WNavigatorDawer";
 
 // SMaster1 是你的react native 项目名  注意： 这块代码要放置到WNavigatorTest1，WNavigatorTest2下
 const WNavigator = StackNavigator({
@@ -23,6 +24,7 @@ const WNavigator = StackNavigator({
     Page2: {screen:WNavigatorTest2},
     Page3: {screen: WNavigatorTest3},
     Page4: {screen: WNavigatorTab},
+    Page5: {screen: WNavigatorDrawer},
 },{
     initialRouteName: 'Page1',
     initialRouteParams:{
@@ -48,12 +50,14 @@ const WNavigator = StackNavigator({
         gesturesEnabled: true,
     },
     mode:'modal',
-    onTransitionStart:()=>{
+    /* 导航栏的显示模式, screen: 有渐变透明效果, float: 无透明效果, none: 隐藏导航栏
+    headerMode: 'none',*/
+    /*onTransitionStart:()=>{
         ToastAndroid.show('Start',ToastAndroid.SHORT);
     },
     onTransitionEnd:()=>{
         ToastAndroid.show('End',ToastAndroid.SHORT);
-    },
+    },*/
 });
 
 let showToast=function(data) {
