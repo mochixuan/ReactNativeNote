@@ -12,6 +12,9 @@ import {
 import {
     StackNavigator
 } from 'react-navigation'
+//让安卓实现类似iOS的push动画，后来翻看官方issues的时候，真的发现了实现push动画的代码
+import CardStackStyleInterpolator from 'react-navigation/src/views/CardStackStyleInterpolator';
+
 import WNavigatorTest1 from "./WNavigatorTest1";
 import WNavigatorTest2 from "./WNavigatorTest2";
 import WNavigatorTest3 from "./WNavigatorTest3";
@@ -58,6 +61,11 @@ const WNavigator = StackNavigator({
     onTransitionEnd:()=>{
         ToastAndroid.show('End',ToastAndroid.SHORT);
     },*/
+    /*动画左右进出动画*/
+    headerMode: 'screen',
+    transitionConfig:()=>({
+        screenInterpolator:CardStackStyleInterpolator.forHorizontal,
+    })
 });
 
 let showToast=function(data) {

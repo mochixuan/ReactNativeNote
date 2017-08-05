@@ -9,3 +9,14 @@ import {
     Image,
     ActivityIndicator,
 } from "react-native";
+
+export default class Detail extends Component {
+
+    render() {
+        const {params} = this.props.navigation.state;
+        return (
+            <Text>{params.movieId}</Text>
+        )
+    }
+
+}

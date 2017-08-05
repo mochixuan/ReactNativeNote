@@ -7,68 +7,57 @@ import {
     Image,
     View,
     Text,
-    TouchableOpacity,
+    ToastAndroid,
+    TouchableOpacity
 } from 'react-native'
 
 export default class WNavigatorTest1 extends Component {
 
-    /*static navigationOptions = {
-        title: '页面一',
-    }*/
+    static navigationOptions = {
+        title: '页面三',
+    }
 
     render() {
-        const {navigate} = this.props.navigation
+        const {navigate,state,goBack} = this.props.navigation;
         return (
             <View style={styles.container}>
-                <Text>{this.props.navigation.state.params==null?'无':this.props.navigation.state.params.name}</Text>
                 <TouchableOpacity
                     style={styles.touchable}
                     onPress={()=>{
-                        navigate('Page2')
+                        navigate('Page4');
                     }}>
-                    <Text style={styles.text}>跳转到页面二</Text>
+                    <Text style={styles.text}>navigate</Text>
                 </TouchableOpacity>
                 <TouchableOpacity
                     style={styles.touchable}
                     onPress={()=>{
-                        navigate('Page2',{
-                            user: '莫辞旋'
-                        })
+                        goBack()
                     }}>
-                    <Text style={styles.text}>带参数的</Text>
+                    <Text style={styles.text}>goBack</Text>
                 </TouchableOpacity>
                 <TouchableOpacity
                     style={styles.touchable}
                     onPress={()=>{
-                        navigate('Page2')
+                        show(state.params.user)
                     }}>
-                    <Text style={styles.text}>单机跳转</Text>
+                    <Text style={styles.text}>state</Text>
                 </TouchableOpacity>
                 <TouchableOpacity
                     style={styles.touchable}
                     onPress={()=>{
-                        navigate('Page4')
+                        state.params.callback("来自Page3返回的数据 旋")
+                        goBack()
                     }}>
-                    <Text style={styles.text}>跳转TabNavigator</Text>
-                </TouchableOpacity>
-                <TouchableOpacity
-                    style={styles.touchable}
-                    onPress={()=>{
-                        navigate('Page3')
-                    }}>
-                    <Text style={styles.text}>StackNavigatorAllOption</Text>
-                </TouchableOpacity>
-                <TouchableOpacity
-                    style={styles.touchable}
-                    onPress={()=>{
-                        navigate('Page5')
-                    }}>
-                    <Text style={styles.text}>NavigatorDrawer</Text>
+                    <Text style={styles.text}>goBack并回数据</Text>
                 </TouchableOpacity>
             </View>
         )
     }
 
+}
+
+let show= function(data){
+    ToastAndroid.show(data,ToastAndroid.SHORT)
 }
 
 const styles = StyleSheet.create({
@@ -77,7 +66,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     touchable: {
-        width: 240,
+        width: 200,
         height:60,
         margin:10,
         justifyContent:'center',

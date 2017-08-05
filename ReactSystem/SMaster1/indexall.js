@@ -29,7 +29,7 @@ import Banner from './app/assembly/Banner'
 import RefreshControlExample from './app/assembly/RefreshControlExample'
 import Swiper1 from './app/assembly/Swiper1'
 import TabBarView from './app/assembly/TabBarView'
-import Navigator from './app/assembly/WNavigator'
+import Navigator from './app/navigation/WNavigator'
 
 export default class indexall extends Component {
 

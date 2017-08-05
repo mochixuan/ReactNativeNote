@@ -56,16 +56,12 @@ export default class Recommend extends Component {
         });
     }
 
-    enterDetail() {
-
-    }
-
     _renderItemView(movies) {
         return (
             <TouchableHighlight
                 style={styles.item}
                 underlayColor='rgba(100,50,200,0.1)'
-                onPress= {() => this.enterDetail()}>
+                onPress= {() => this.enterDetail(movies)}>
                 <View style={styles.item}>
                     <Image
                         style={styles.item_image}
@@ -159,7 +155,7 @@ export default class Recommend extends Component {
             })
             this.requestDatas()
         } else {
-            ToastAndroid.show("没有更多消息", ToastAndroid.SHORT)
+            this.show("没有更多消息")
         }
 
     }
@@ -200,6 +196,14 @@ export default class Recommend extends Component {
                 </View>
             )
         }
+    }
+
+    show(data) {
+        ToastAndroid.show(data, ToastAndroid.SHORT)
+    }
+
+    enterDetail(movies) {
+        this.props.navigate('Detail',{movieId:movies.id})
     }
 
 }
