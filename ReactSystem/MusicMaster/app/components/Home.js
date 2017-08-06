@@ -12,6 +12,7 @@ import {
     ToastAndroid,
     Dimensions,
     TouchableHighlight,
+    StatusBar,
 } from "react-native";
 import Swiper from 'react-native-swiper'
 
@@ -110,16 +111,17 @@ export default class Recommend extends Component {
     _footerItemView() {
         return (
             <View style={{
-                height: 100,
+                padding:16,
                 justifyContent: 'center',
                 alignItems: 'center',
-                backgroundColor: '#00FA9A'
+                backgroundColor: '#f5f5f5',
+                borderTopWidth:4,
+                borderTopColor: '#f0f0f0',
             }}>
                 <Text style={{
-                    fontWeight: '700',
-                    fontSize: 24,
-                    color: '#f5f5f5',
-                }}>我是底部</Text>
+                    fontSize: 18,
+                    color: '#666',
+                }}>已没有更多了*_*</Text>
             </View>
         )
     }
@@ -181,6 +183,10 @@ export default class Recommend extends Component {
         } else {
             return (
                 <View style={styles.container}>
+                    <StatusBar
+                        translucent={true}
+                        backgroundColor="rgba(100,100,100,0.3)"
+                    />
                     <FlatList
                         data={this.state.movies}
                         keyExtractor={(item, index) => this._keyExtractor(item, index)}

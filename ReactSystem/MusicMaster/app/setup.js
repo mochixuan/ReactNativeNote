@@ -5,11 +5,15 @@
 import {StackNavigator} from 'react-navigation'
 import Detail from './components/Detail'
 import Main from './components/Main'
+import Home from './components/Home'
+import Recommend from './components/Recommend'
 import CardStackStyleInterpolator from 'react-navigation/src/views/CardStackStyleInterpolator'
 
 const setup = StackNavigator({
     Main: {screen:Main},
-    Detail: {screen:Detail}
+    Home: {screen:Home},
+    Detail: {screen:Detail},
+    Recommend: {screen:Recommend}
 },{
     navigationOptions:{
         gesturesEnabled: true,

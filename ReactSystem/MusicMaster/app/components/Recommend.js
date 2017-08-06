@@ -12,6 +12,7 @@ import {
     ToastAndroid,
     Dimensions,
     TouchableHighlight,
+    StatusBar,
 } from "react-native";
 
 let dataOffset = 0;
@@ -19,7 +20,7 @@ const limit = 15;
 const width = Dimensions.get('window').width;
 const itemHight = 170
 
-export default class Home extends Component {
+export default class Recommend extends Component {
 
     constructor(props) {
         super(props)
@@ -59,7 +60,7 @@ export default class Home extends Component {
             <TouchableHighlight
                 style={styles.item}
                 underlayColor='rgba(100,50,200,0.1)'
-                onPress= {() => this.enterDetail()}>
+                onPress= {() => this.enterDetail(movies)}>
                 <View style={styles.item_ivew}>
                     <Image
                         style={styles.item_image}
@@ -79,8 +80,8 @@ export default class Home extends Component {
         )
     }
 
-    enterDetail() {
-
+    enterDetail(movies) {
+        this.props.navigate('Detail',{movieId:movies.id})
     }
 
     _refreshControlView() {
@@ -131,6 +132,10 @@ export default class Home extends Component {
         } else {
             return (
                 <View style={styles.container}>
+                    <StatusBar
+                        translucent={false}
+                        backgroundColor="rgba(100,100,100,0.3)"
+                    />
                     <FlatList
                         data={this.state.movies}
                         keyExtractor={(item, index) => this._keyExtractor(item, index)}
@@ -140,7 +145,6 @@ export default class Home extends Component {
                         refreshControl={ this._refreshControlView() }
                         getItemLayout={(data, index) => this._getItemLayout(data, index)}
                         numColumns={2}
-
                     />
                 </View>
             )
