@@ -14,14 +14,22 @@ import todoApp from './component/redux/reduces'
 import App from './component/redux/component/App'
 let store = createStore(todoApp)
 
+//3. router
+import RouterDm1 from './component/router/RouterDm1'
+
 ReactDom.render(
     /*<h1>大家好</h1>,*/
     //1.flux
     //<MyButtonController/>,
 
     //2.redux
-    <Provider store={store}>
+    /*<Provider store={store}>
         <App/>
-    </Provider>,
+    </Provider>*/
+
+    //3. router
+    <RouterDm1/>
+
+    ,
     document.getElementById("app")
 )
