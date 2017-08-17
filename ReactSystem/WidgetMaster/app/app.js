@@ -7,6 +7,8 @@ import './components/db/async/WStorage'
 import RNStorage from './components/db/async/RNStorage'
 //import RealmTest from './components/db/realm/RealmTest'
 import RealmTest1 from './components/db/realm/RealmTest1'
+import WVideo from './components/video/WVideo'
+import TestLayout from './components/layout/TestLayout'
 
 export default class app extends Component {
 
@@ -15,7 +17,9 @@ export default class app extends Component {
             //<WAsyncStorage/>
             //<RNStorage/>
             //<RealmTest/>
-            <RealmTest1/>
+            //<RealmTest1/>
+            //<WVideo/>
+            <TestLayout/>
         )
     }
 

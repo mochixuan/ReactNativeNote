@@ -11,6 +11,7 @@
 		"react-native": "0.46",
 		"react-native-cli": "^2.0.1",
 		"react-native-storage": "^0.2.2",
+		"react-native-video": "^2.0.0",
 		"realm": "1.10.0"
 	},
 	"devDependencies": {
