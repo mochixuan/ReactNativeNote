@@ -9,6 +9,7 @@ import RNStorage from './components/db/async/RNStorage'
 import RealmTest1 from './components/db/realm/RealmTest1'
 import WVideo from './components/video/WVideo'
 import TestLayout from './components/layout/TestLayout'
+import ToastTest from './components/test/ToastTest'
 
 export default class app extends Component {
 
@@ -19,7 +20,8 @@ export default class app extends Component {
             //<RealmTest/>
             //<RealmTest1/>
             //<WVideo/>
-            <TestLayout/>
+            //<TestLayout/>
+            <ToastTest/>
         )
     }
 
