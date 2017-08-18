@@ -10,6 +10,7 @@
 >* [ES](https://github.com/mochixuan/React-Study/blob/master/README_ES.md)
 >* [React](https://github.com/mochixuan/React-Study/blob/master/README_React.md)
 >* [ReactSystem](https://github.com/mochixuan/React-Study/blob/master/README_ReactSystem.md)
+>* [HotUpdate](https://github.com/mochixuan/React-Study/blob/master/README_HotUpgrade.md)
 
 ## 3.练习
 ##### (1).熟悉组件
