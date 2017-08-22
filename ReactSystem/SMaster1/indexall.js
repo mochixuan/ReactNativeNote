@@ -31,14 +31,21 @@ import Swiper1 from './app/assembly/Swiper1'
 import TabBarView from './app/assembly/TabBarView'
 import Navigator from './app/navigation/WNavigator'
 import RNHtml from './app/assembly/RNHtml'
+import WView11 from './app/assembly/WView11'
 
 export default class indexall extends Component {
 
     render() {
         return (
-            <RNHtml/>
+            <WView11/>
         )
     }
+
+    /*render() {
+        return (
+            <RNHtml/>
+        )
+    }*/
 
     /*render() {
         return (
