@@ -30,14 +30,21 @@ import RefreshControlExample from './app/assembly/RefreshControlExample'
 import Swiper1 from './app/assembly/Swiper1'
 import TabBarView from './app/assembly/TabBarView'
 import Navigator from './app/navigation/WNavigator'
+import RNHtml from './app/assembly/RNHtml'
 
 export default class indexall extends Component {
 
     render() {
         return (
-            <Navigator/>
+            <RNHtml/>
         )
     }
+
+    /*render() {
+        return (
+            <Navigator/>
+        )
+    }*/
 
     /*render() {
         return (
