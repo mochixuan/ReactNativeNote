@@ -3,13 +3,21 @@ import {
     StyleSheet,
     ScrollView,
     View,
+    Text,
+    TouchableHighlight,
 } from 'react-native'
 import {show} from '../../utils/ToastUtil'
 import {
-    Avatar
+    Avatar,
+    Badge,
 } from 'react-native-elements'
 
 export default class Element1 extends Component {
+
+    constructor(props) {
+        super(props);
+
+    }
 
     render() {
         return (
@@ -75,11 +83,32 @@ export default class Element1 extends Component {
                         activeOpacity={0.7}
                     />*/}
                 </View>
+                <View style={styles.base_view_h}>
+                    <Badge
+                        value={3}
+                        textStyle={{color: '#fff'}}
+                        containerStyle={{
+                            margin:6,
+                            backgroundColor: '#15b3ff'
+                        }}
+                    />
+                    <Badge containerStyle={{
+                        backgroundColor: '#dd5e4d',
+                        padding:6}}>
+                        <Text style={{padding:6}}>User Wang</Text>
+                    </Badge>
+                    <Badge
+                        component={TouchableHighlight}
+                        value={10}
+                        containerStyle={{padding:6}}
+                    />
+                </View>
+                <View style={styles.base_view_h}>
+
+                </View>
             </ScrollView>
         )
     }
-
-    sho
 
 }
 
