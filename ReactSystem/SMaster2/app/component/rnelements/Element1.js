@@ -14,7 +14,6 @@ import {
     ButtonGroup,
     Button,
     Card,
-    ListItem,
     CheckBox,
     Divider,
     FormLabel,
@@ -22,6 +21,11 @@ import {
     FormValidationMessage,
     Header,
     Icon,
+    List,
+    ListItem,
+    PricingCard,
+    Rating,
+    SearchBar,
 } from 'react-native-elements'
 
 export default class Element1 extends Component {
@@ -33,6 +37,7 @@ export default class Element1 extends Component {
             selectedIndex2:0,
             checked1:false,
             checked2:false,
+            ratingCompleted:0,
         }
     }
 
@@ -60,6 +65,33 @@ export default class Element1 extends Component {
                 name: 'brynn',
                 avatar: 'https://s3.amazonaws.com/uifaces/faces/twitter/brynn/128.jpg'
             }
+        ]
+        const list = [
+            {
+                name: 'Amy Farha',
+                avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg',
+                subtitle: 'Vice President'
+            },
+            {
+                name: 'Chris Jackson',
+                avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg',
+                subtitle: 'Vice Chairman'
+            },
+            {
+                name: 'Jake',
+                avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg',
+                subtitle: 'Tian ya'
+            },
+            {
+                name: 'Bob',
+                avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg',
+                subtitle: 'Mo Chi'
+            },
+            {
+                name: 'Body',
+                avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg',
+                subtitle: 'Xuan Mo'
+            },
         ]
 
         return (
@@ -343,6 +375,90 @@ export default class Element1 extends Component {
                         }}
                         rightComponent={{ icon: 'home', color: '#fff' }}
                     />
+                </View>
+                <View style={styles.base_view_h}>
+                    <Icon
+                        name="rowing"
+                    />
+                    <Icon
+                        name='g-translate'
+                        color='#00aced' />
+
+                    <Icon
+                        name='sc-telegram'
+                        type='evilicon'
+                        color='#517fa4'
+                    />
+
+                    <Icon
+                        reverse
+                        name='ios-american-football'
+                        type='ionicon'
+                        color='#517fa4'
+                    />
+
+                    <Icon
+                        raised
+                        name='heartbeat'
+                        type='font-awesome'
+                        reverse={true}
+                        color='#ffffff'
+                        reverseColor="#456789"
+                        onPress={() => {show("单机")}} />
+                </View>
+                <View style={styles.base_view_vb}>
+                    <List containerStyle={{marginBottom:20}}>
+                        {
+                            list.map((l,i)=>(
+                                <ListItem
+                                    roundAvatar
+                                    key={i}
+                                    avatar={{uri:l.avatar_url}}
+                                    title={l.name}
+                                />
+                            ))
+                        }
+                    </List>
+                </View>
+                <View style={styles.base_view_h}>
+                    <PricingCard
+                        color='#4f9deb'
+                        title='Free'
+                        price='$0'
+                        info={['1 User', 'Basic Support', 'All Core Features']}
+                        button={{ title: 'GET STARTED', icon: 'flight-takeoff' }}
+                    />
+                </View>
+                <View style={styles.base_view_vb}>
+                    <Rating
+                        showRating
+                        onFinishRating={(rating)=>{
+                            show(rating+"")
+                        }}
+                        style={{ paddingVertical: 2 }}
+                    />
+                    <Rating
+                        showRating
+                        type="star"
+                        fractions={1}
+                        startingValue={3.6}
+                        readonly
+                        imageSize={40}
+                        style={{ paddingVertical: 2 }}
+                    />
+                    <Rating
+                        type='custom'
+                        ratingImage={require('../../img/e1.png')}
+                        ratingColor='#3498db'
+                        ratingBackgroundColor='#c8c7c8'
+                        ratingCount={10}
+                        imageSize={30}
+                        onFinishRating={this.ratingCompleted}
+                        style={{ paddingVertical: 10 }}
+                    />
+                </View>
+                <View style={styles.base_view_vb}>
+
                 </View>
             </ScrollView>
         )
