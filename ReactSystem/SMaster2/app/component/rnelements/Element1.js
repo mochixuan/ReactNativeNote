@@ -26,6 +26,7 @@ import {
     PricingCard,
     Rating,
     SearchBar,
+    Slider,
 } from 'react-native-elements'
 
 export default class Element1 extends Component {
@@ -38,6 +39,8 @@ export default class Element1 extends Component {
             checked1:false,
             checked2:false,
             ratingCompleted:0,
+            searchBar: '',
+            slider1: 0,
         }
     }
 
@@ -458,7 +461,49 @@ export default class Element1 extends Component {
                     />
                 </View>
                 <View style={styles.base_view_vb}>
-
+                    <SearchBar
+                        placeholder="请输入"
+                        onChangeText={(data)=>{
+                            show(data)
+                        }}
+                    />
+                    <SearchBar
+                        noIcon
+                        placeholder="请输入"
+                        onChangeText={(data)=> this.search1 = data }
+                    />
+                    <Button
+                        backgroundColor="#475869"
+                        buttonStyle={{
+                            borderRadius: 10,
+                        }}
+                        onPress={()=>{
+                            show(this.search1)
+                        }}
+                        title="查询"
+                    />
+                    <SearchBar
+                        round
+                        ref={(search)=> this.search =search}
+                        placeholder="请输入"
+                        onChangeText={(data)=>{
+                            show(data)
+                        }}
+                    />
+                </View>
+                <View style={styles.base_view_vb}>
+                    <Slider
+                        minimumValue={0}
+                        maximumValue={100}
+                        step={1}
+                        value={this.state.slider1}
+                        onValueChange={(value)=>{
+                            /*this.setState({
+                                slider1:value
+                            })*/
+                        }}
+                    />
+                    <Text>Value:{this.state.slider1}</Text>
                 </View>
             </ScrollView>
         )
