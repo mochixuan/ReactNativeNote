@@ -26,11 +26,20 @@ export default class Main extends Component {
     }
 
     render() {
+
+        const itemView = [
+            this.getButton("Main1",()=>{this.show("单机")}),
+            this.getButton("WParallaxScrollView",()=>{this.props.navigation.navigate("WParallaxScrollView")}),
+            this.getButton("WParallaxScrollView1",()=>{this.props.navigation.navigate("WParallaxScrollView1")}),
+            this.getButton("WParallaxScrollView2",()=>{this.props.navigation.navigate("WParallaxScrollView2")}),
+            this.getButton("WHeaderScrollView",()=>{this.props.navigation.navigate("WHeaderScrollView")}),
+        ]
+
         return (
             <View style={styles.container}>
                 {
-                    this.getButton("Main1",()=>{
-                        this.show("单机")
+                    itemView.map((item,i)=>{
+                        return <View key={i}>{item}</View>
                     })
                 }
             </View>

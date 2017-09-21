@@ -39,8 +39,8 @@ const WNavigator = StackNavigator({
             color: 'green',
             alignSelf: 'center'
         },
-        /*单独头部其他就不用了
-        header:<View style={{
+        /*单独头部其他就不用了*/
+        /*header:<View style={{
             height: 60,
             backgroundColor: '#f51fc8',
         }}/>*/
@@ -53,8 +53,8 @@ const WNavigator = StackNavigator({
         gesturesEnabled: true,
     },
     mode:'modal',
-    /* 导航栏的显示模式, screen: 有渐变透明效果, float: 无透明效果, none: 隐藏导航栏
-    headerMode: 'none',*/
+     //导航栏的显示模式, screen: 有渐变透明效果, float: 无透明效果, none: 隐藏导航栏
+    headerMode: 'float',
     /*onTransitionStart:()=>{
         ToastAndroid.show('Start',ToastAndroid.SHORT);
     },
@@ -62,7 +62,7 @@ const WNavigator = StackNavigator({
         ToastAndroid.show('End',ToastAndroid.SHORT);
     },*/
     /*动画左右进出动画*/
-    headerMode: 'screen',
+    //headerMode: 'screen',
     transitionConfig:()=>({
         screenInterpolator:CardStackStyleInterpolator.forHorizontal,
     })

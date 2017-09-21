@@ -9,37 +9,44 @@ import {
     View
 } from 'react-native';
 
-import Bananas from './app/base/Bananas'
-import Flex from './app/base/Flex'
-import WTextInput from './app/base/WTextInput'
-import WScrollView from './app/base/WScrollView'
-import WFlatView from './app/base/WFlatList'
-import WSectionList from './app/base/WSectionList'
-import WFetch from './app/base/WFetch'
-import WFetch1 from './app/base/WFetch1'
-import WImage from './app/base/WImage'
-import WButton from './app/base/WButton'
-import WAnimated from './app/base/WAnimated'
-import WAnimatedAll from './app/animate/WAnimatedAll'
-import WAccessible from './app/base/WAccessible'
-import WTimer from './app/base/WTimer'
-import WNativeProps from './app/base/WNativeProps'
-import WActivityIndicator from './app/assembly/WActivityIndicator'
-import Banner from './app/assembly/Banner'
-import RefreshControlExample from './app/assembly/RefreshControlExample'
-import Swiper1 from './app/assembly/Swiper1'
-import TabBarView from './app/assembly/TabBarView'
-import Navigator from './app/navigation/WNavigator'
-import RNHtml from './app/assembly/RNHtml'
-import WView11 from './app/assembly/WView11'
+//import Bananas from './app/base/Bananas'
+//import Flex from './app/base/Flex'
+//import WTextInput from './app/base/WTextInput'
+//import WScrollView from './app/base/WScrollView'
+//import WFlatView from './app/base/WFlatList'
+//import WSectionList from './app/base/WSectionList'
+//import WFetch from './app/base/WFetch'
+//import WFetch1 from './app/base/WFetch1'
+//import WImage from './app/base/WImage'
+//import WButton from './app/base/WButton'
+//import WAnimated from './app/base/WAnimated'
+//import WAnimatedAll from './app/animate/WAnimatedAll'
+//import WAccessible from './app/base/WAccessible'
+//import WTimer from './app/base/WTimer'
+//import WNativeProps from './app/base/WNativeProps'
+//import WActivityIndicator from './app/assembly/WActivityIndicator'
+//import Banner from './app/assembly/Banner'
+//import RefreshControlExample from './app/assembly/RefreshControlExample'
+//import Swiper1 from './app/assembly/Swiper1'
+//import TabBarView from './app/assembly/TabBarView'
+//import Navigator from './app/navigation/WNavigator'
+//import RNHtml from './app/assembly/RNHtml'
+//import WView11 from './app/assembly/WView11'
+import WParallaxScrollView from './app/assembly/WParallaxScrollView'
 
 export default class indexall extends Component {
 
     render() {
         return (
-            <WView11/>
+            <WParallaxScrollView/>
         )
     }
+
+    /*render() {
+        return (
+            <WView11/>
+        )
+    }*/
 
     /*render() {
         return (
