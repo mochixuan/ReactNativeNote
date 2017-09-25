@@ -33,6 +33,8 @@ export default class Main extends Component {
             this.getButton("WParallaxScrollView1",()=>{this.props.navigation.navigate("WParallaxScrollView1")}),
             this.getButton("WParallaxScrollView2",()=>{this.props.navigation.navigate("WParallaxScrollView2")}),
             this.getButton("WHeaderScrollView",()=>{this.props.navigation.navigate("WHeaderScrollView")}),
+            this.getButton("BrowerImage",()=>{this.props.navigation.navigate("BrowerImage")}),
+            this.getButton("AnimateSample1",()=>{this.props.navigation.navigate("AnimateSample1")}),
         ]
 
         return (

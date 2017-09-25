@@ -20,7 +20,7 @@ import {
 //import WImage from './app/base/WImage'
 //import WButton from './app/base/WButton'
 //import WAnimated from './app/base/WAnimated'
-//import WAnimatedAll from './app/animate/WAnimatedAll'
+import WAnimatedAll from './app/animate/WAnimatedAll'
 //import WAccessible from './app/base/WAccessible'
 //import WTimer from './app/base/WTimer'
 //import WNativeProps from './app/base/WNativeProps'
@@ -32,15 +32,15 @@ import {
 //import Navigator from './app/navigation/WNavigator'
 //import RNHtml from './app/assembly/RNHtml'
 //import WView11 from './app/assembly/WView11'
-import WParallaxScrollView from './app/assembly/WParallaxScrollView'
+//import WParallaxScrollView from './app/assembly/WParallaxScrollView'
 
 export default class indexall extends Component {
 
-    render() {
+    /*render() {
         return (
             <WParallaxScrollView/>
         )
-    }
+    }*/
 
     /*render() {
         return (
@@ -108,12 +108,11 @@ export default class indexall extends Component {
         )
     }*/
 
-    /*WAnimatedAll
     render() {
         return (
             <WAnimatedAll/>
         )
-    }*/
+    }
 
     /*WAnimated
     render() {

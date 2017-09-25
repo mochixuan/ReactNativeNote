@@ -2,6 +2,15 @@
 # yarn lockfile v1
 
 
+"@ldn0x7dc/react-native-view-pager@0.0.9":
+  version "0.0.9"
+  resolved "http://registry.npm.taobao.org/@ldn0x7dc/react-native-view-pager/download/@ldn0x7dc/react-native-view-pager-0.0.9.tgz#0ca8d88c9b6da77b581222617e0b04459bcbd3b0"
+  dependencies:
+    react-mixin "^3.0.5"
+    react-native-gesture-responder "0.1.1"
+    react-native-scroller "0.0.6"
+    react-timer-mixin "^0.13.3"
+
 abab@^1.0.3:
   version "1.0.3"
   resolved "http://registry.npm.taobao.org/abab/download/abab-1.0.3.tgz#b81de5f7274ec4e756d797cd834f303642724e5d"
@@ -3025,6 +3034,10 @@ npmlog@^4.0.2:
     gauge "~2.7.3"
     set-blocking "~2.0.0"
 
+nt-transmit-transparently@^1.0.7:
+  version "1.0.7"
+  resolved "http://registry.npm.taobao.org/nt-transmit-transparently/download/nt-transmit-transparently-1.0.7.tgz#345cf3ffda06ba1bd629935bafac9e7820385076"
+
 number-is-nan@^1.0.0:
   version "1.0.1"
   resolved "http://registry.npm.taobao.org/number-is-nan/download/number-is-nan-1.0.1.tgz#097b602b53422a522c1afb8790318336941a011d"
@@ -3386,6 +3399,13 @@ react-devtools-core@2.3.1:
     shell-quote "^1.6.1"
     ws "^2.0.3"
 
+react-mixin@^3.0.5:
+  version "3.1.1"
+  resolved "http://registry.npm.taobao.org/react-mixin/download/react-mixin-3.1.1.tgz#68749756bfe32699e561372a4aeecb926db72b7f"
+  dependencies:
+    object-assign "^4.0.1"
+    smart-mixin "^2.0.0"
+
 react-native-dismiss-keyboard@1.0.0:
   version "1.0.0"
   resolved "http://registry.npm.taobao.org/react-native-dismiss-keyboard/download/react-native-dismiss-keyboard-1.0.0.tgz#32886242b3f2317e121f3aeb9b0a585e2b879b49"
@@ -3413,11 +3433,36 @@ react-native-elements@^0.17.0:
     react-native-side-menu "^1.0.2"
     react-native-tab-navigator "^0.3.4"
 
+react-native-gallery@^0.0.17:
+  version "0.0.17"
+  resolved "http://registry.npm.taobao.org/react-native-gallery/download/react-native-gallery-0.0.17.tgz#4fb137746264a96ebe2c1a58cafd2eec88ea9693"
+  dependencies:
+    "@ldn0x7dc/react-native-view-pager" "0.0.9"
+    react-native-gesture-responder "0.1.1"
+    react-native-transformable-image "0.0.18"
+
+react-native-gesture-responder@0.1.1:
+  version "0.1.1"
+  resolved "http://registry.npm.taobao.org/react-native-gesture-responder/download/react-native-gesture-responder-0.1.1.tgz#802552d8eb7153c0d81a396e98f4b80b404b6798"
+  dependencies:
+    react-timer-mixin "^0.13.3"
+
 react-native-image-header-scroll-view@^0.6.1:
   version "0.6.1"
   resolved "http://registry.npm.taobao.org/react-native-image-header-scroll-view/download/react-native-image-header-scroll-view-0.6.1.tgz#84beba8acbef69761a4e8c15bb0c18a011598d11"
   dependencies:
     lodash "^4.17.4"
+
+react-native-image-pan-zoom@^2.0.5, react-native-image-pan-zoom@^2.0.7:
+  version "2.0.7"
+  resolved "http://registry.npm.taobao.org/react-native-image-pan-zoom/download/react-native-image-pan-zoom-2.0.7.tgz#76605310626c965895e9fe285d353feb47da6ec1"
+
+react-native-image-zoom-viewer@^2.0.10:
+  version "2.0.10"
+  resolved "http://registry.npm.taobao.org/react-native-image-zoom-viewer/download/react-native-image-zoom-viewer-2.0.10.tgz#792c4cb7ff0145c36390e4c6703bfe45aa492bd3"
+  dependencies:
+    nt-transmit-transparently "^1.0.7"
+    react-native-image-pan-zoom "^2.0.5"
 
 react-native-parallax-scroll-view@^0.19.0:
   version "0.19.0"
@@ -3426,6 +3471,22 @@ react-native-parallax-scroll-view@^0.19.0:
 react-native-parallax-scrollview@^2.0.0:
   version "2.0.0"
   resolved "http://registry.npm.taobao.org/react-native-parallax-scrollview/download/react-native-parallax-scrollview-2.0.0.tgz#e31d9665a100e8b4f3e7988c49ff054b2c418f55"
+
+react-native-photo-browser@^0.3.1:
+  version "0.3.1"
+  resolved "http://registry.npm.taobao.org/react-native-photo-browser/download/react-native-photo-browser-0.3.1.tgz#4adfebf3ec090d10ca36ae497b1633f6d437bb35"
+  dependencies:
+    react-native-progress "^3.2.0"
+
+react-native-progress@^3.2.0:
+  version "3.4.0"
+  resolved "http://registry.npm.taobao.org/react-native-progress/download/react-native-progress-3.4.0.tgz#c002e6efb2f0b82dd6889510e669c492da2718ac"
+  dependencies:
+    prop-types "^15.5.8"
+
+react-native-scroller@0.0.6:
+  version "0.0.6"
+  resolved "http://registry.npm.taobao.org/react-native-scroller/download/react-native-scroller-0.0.6.tgz#dea8c89bd1ca2d2445fbb6b3a90960df6c1767ff"
 
 react-native-side-menu@^1.0.2:
   version "1.1.3"
@@ -3446,6 +3507,12 @@ react-native-tab-view@^0.0.65:
   dependencies:
     prop-types "^15.5.8"
 
+react-native-transformable-image@0.0.18:
+  version "0.0.18"
+  resolved "http://registry.npm.taobao.org/react-native-transformable-image/download/react-native-transformable-image-0.0.18.tgz#00229f2410c443a3a6b5fa53714121ecd882396f"
+  dependencies:
+    react-native-view-transformer "0.0.28"
+
 react-native-vector-icons@^4.4.0:
   version "4.4.0"
   resolved "http://registry.npm.taobao.org/react-native-vector-icons/download/react-native-vector-icons-4.4.0.tgz#cdfc1cd86ab495b2a4926bcec8f08c155475cbf1"
@@ -3453,6 +3520,13 @@ react-native-vector-icons@^4.4.0:
     lodash "^4.0.0"
     prop-types "^15.5.10"
     yargs "^8.0.2"
+
+react-native-view-transformer@0.0.28:
+  version "0.0.28"
+  resolved "http://registry.npm.taobao.org/react-native-view-transformer/download/react-native-view-transformer-0.0.28.tgz#01bb8c9e6cfff70a8d400e061c0cd27602662acb"
+  dependencies:
+    react-native-gesture-responder "0.1.1"
+    react-native-scroller "0.0.6"
 
 react-native@0.47.2:
   version "0.47.2"
@@ -3567,7 +3641,7 @@ react-test-renderer@16.0.0-alpha.12:
     fbjs "^0.8.9"
     object-assign "^4.1.0"
 
-react-timer-mixin@^0.13.2:
+react-timer-mixin@^0.13.2, react-timer-mixin@^0.13.3:
   version "0.13.3"
   resolved "http://registry.npm.taobao.org/react-timer-mixin/download/react-timer-mixin-0.13.3.tgz#0da8b9f807ec07dc3e854d082c737c65605b3d22"
 
@@ -3966,6 +4040,10 @@ slash@^1.0.0:
 slide@^1.1.5:
   version "1.1.6"
   resolved "http://registry.npm.taobao.org/slide/download/slide-1.1.6.tgz#56eb027d65b4d2dce6cb2e2d32c4d4afc9e1d707"
+
+smart-mixin@^2.0.0:
+  version "2.0.0"
+  resolved "http://registry.npm.taobao.org/smart-mixin/download/smart-mixin-2.0.0.tgz#a34a1055e32a75b30d2b4e3ca323dc99cb53f437"
 
 sntp@1.x.x:
   version "1.0.9"
