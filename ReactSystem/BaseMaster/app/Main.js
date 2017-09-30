@@ -35,6 +35,7 @@ export default class Main extends Component {
             this.getButton("WHeaderScrollView",()=>{this.props.navigation.navigate("WHeaderScrollView")}),
             this.getButton("BrowerImage",()=>{this.props.navigation.navigate("BrowerImage")}),
             this.getButton("AnimateSample1",()=>{this.props.navigation.navigate("AnimateSample1")}),
+            this.getButton("WNavigatorDawer",()=>{this.props.navigation.navigate("WNavigatorDawer")}),
         ]
 
         return (

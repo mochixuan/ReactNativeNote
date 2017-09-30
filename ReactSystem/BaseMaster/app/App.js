@@ -7,6 +7,7 @@ import WParallaxScrollView from './components/WParallaxScrollView'
 import WParallaxScrollView1 from './components/WParallaxScrollView1'
 import WParallaxScrollView2 from './components/WParallaxScrollView2'
 import WHeaderScrollView from './components/WHeaderScrollView'
+import WNavigatorDawer from './components/WNavigatorDawer'
 import BrowerImage from './components/BrowerImage'
 import AnimateSample1 from './components/AnimateSample1'
 
@@ -20,6 +21,7 @@ const App = StackNavigator({
     BrowerImage:{screen:BrowerImage},
     WHeaderScrollView:{screen:WHeaderScrollView},
     AnimateSample1:{screen:AnimateSample1},
+    WNavigatorDawer:{screen:WNavigatorDawer},
 },{
     navigationOptions: {
         gesturesEnabled: true,

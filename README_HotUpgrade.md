@@ -2,52 +2,53 @@
 
 ## 1. CodePush (2017.8.17)
 
->* 0.网上资料和官网最新的不一样
+- 0.网上资料和官网最新的不一样
 
->* 1.安装CodePush: npm install -g code-push-cli
->* 2.创建CodePush账号: code-push register (会打开网页进行注册,有点卡)
->* 3.复制 token到控制台 
->* 4.在CodePush服务器上注册app: 
-	1. code-push app add MyApp-iOS ios react-native
-	2. code-push app add MyApp-Android android react-native
-	3. 复制部署秘钥staging或（code-push deployment ls appName）
->* 5.项目安装SDK: 
-	1. npm install --save react-native-code-push
-	2. react-native link react-native-code-push
-	3. 复制staging 到 MainApplication.java 里deployment-key-here
-	4. 调用sync函数
-	5. code-push release-react MyApp-Android android
+- 1.安装CodePush: npm install -g code-push-cli
+- 2.创建CodePush账号: code-push register (会打开网页进行注册,有点卡)
+- 3.复制 token到控制台 
+- 4.在CodePush服务器上注册app: 
+   - 1. code-push app add MyApp-iOS ios react-native
+  - 2. code-push app add MyApp-Android android react-native
+  - 3. 复制部署秘钥staging或（code-push deployment ls appName）
+- 5.项目安装SDK: 
+  - 1. npm install --save react-native-code-push
+  - 2. react-native link react-native-code-push
+  - 3. 复制staging 到 MainApplication.java 里deployment-key-here
+  - 4. 调用sync函数
+  - 5. code-push release-react MyApp-Android android
 
 
->* 相关命令3 
-	1. code-push login 登陆
-	2. code-push loout 注销
-	3. code-push access-key ls 列出登陆的token
-	4. code-push access-key rm <accessKye> 删除某个 access-key
+- 相关命令3 
+  - 1. code-push login 登陆
+  - 2. code-push loout 注销
+  - 3. code-push access-key ls 列出登陆的token
+  - 4. code-push access-key rm <accessKye> 删除某个 access-key
 
->* 相关命令4
-	1. code-push app add 在账号里面添加一个新的app
-	2. code-push app remove 或者 rm 在账号里移除一个app
-	3. code-push app rename 重命名一个存在app
-	4. code-push app list 或则 ls 列出账号下面的所有app
-	5. code-push app transfer 把app的所有权转移到另外一个账号
-	6. 发布更新
-		1. 第一种方式：通过code-push release-react发布更新
-			1. code-push release-react MyApp-iOS ios
-			2. code-push release-react MyApp-Android android
-			3. code-push release-react MyApp-iOS ios  --t 1.0.0 --dev false --d Production --des "1.优化操作流程" --m true
-				1. 其中参数–t为二进制(.ipa与apk)安装包的的版本；–dev为是否启用开发者模式(默认为false)；–d是要发布更新的环境分Production与Staging(默认为Staging)；–des为更新说明；–m 是强制更新
-		2. 通过code-push release发布更新（收藏）
-	7. 应用创建时有两个环境，一个是Staging，一个是Production,开发阶段用Staging，开发完成可以用code-push promote 将应用迁移到Production中
-	8. code-push patch 应用名 Production -r 100%
+- 相关命令4
+  - 1. code-push app add 在账号里面添加一个新的app
+  - 2. code-push app remove 或者 rm 在账号里移除一个app
+  - 3. code-push app rename 重命名一个存在app
+  - 4. code-push app list 或则 ls 列出账号下面的所有app
+  - 5. code-push app transfer 把app的所有权转移到另外一个账号
+  - 6. 发布更新
+    - 1. 第一种方式：通过code-push release-react发布更新
+      - 1. code-push release-react MyApp-iOS ios
+      - 2. code-push release-react MyApp-Android android
+      - 3. code-push release-react MyApp-iOS ios  --t 1.0.0 --dev false --d Production --des "
+      - 4. 优化操作流程" --m true
+      - 5. 其中参数–t为二进制(.ipa与apk)安装包的的版本；–dev为是否启用开发者模式(默认为false)；–d是要发布更新的环境分Production与Staging(默认为Staging)；–des为更新说明；–m 是强制更新
+      - 6. 通过code-push release发布更新（收藏）
+      - 7. 应用创建时有两个环境，一个是Staging，一个是Production,开发阶段用Staging，开发完成可以用code-push promote 将应用迁移到Production中
+      - 8. code-push patch 应用名 Production -r 100%
 
->* 相关命定5
-	1. code-push deployment add 部署
-	2. code-push deployment rename 重命名
-	3. code-push deployment rm 删除部署
-	4. code-push deployment ls 列出应用的部署情况
-	5. code-push deployment ls -k 查看部署的key
-	6. code-push deployment history 查看历史版本(Production 或者 Staging)
+- 相关命定5
+	- 1. code-push deployment add 部署
+	- 2. code-push deployment rename 重命名
+	- 3. code-push deployment rm 删除部署
+	- 4. code-push deployment ls 列出应用的部署情况
+	- 5. code-push deployment ls -k 查看部署的key
+	- 6. code-push deployment history 查看历史版本(Production 或者 Staging)
 
 ### 相关代码5.4
 ``` text

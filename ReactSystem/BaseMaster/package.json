@@ -9,6 +9,7 @@
 	"dependencies": {
 		"react": "16.0.0-alpha.12",
 		"react-native": "0.47.2",
+		"react-native-drawer": "^2.5.0",
 		"react-native-elements": "^0.17.0",
 		"react-native-gallery": "^0.0.17",
 		"react-native-image-header-scroll-view": "^0.6.1",
