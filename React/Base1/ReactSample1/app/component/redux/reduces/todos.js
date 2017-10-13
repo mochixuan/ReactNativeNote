@@ -7,7 +7,7 @@ const todo = (state,action) => {
                 text: action.text,
                 completed: false,
             }
-        case "TOGGLE_TODO":
+        case "TOGGLE_TODO":     //单机某个item是否主要是完成和未完成
             if (state.id !== action.id) {
                 return state
             }

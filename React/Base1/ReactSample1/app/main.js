@@ -23,12 +23,12 @@ ReactDom.render(
     //<MyButtonController/>,
 
     //2.redux
-    /*<Provider store={store}>
+    <Provider store={store}>
         <App/>
-    </Provider>*/
+    </Provider>
 
     //3. router
-    <RouterDm1/>
+    /*<RouterDm1/>*/
 
     ,
     document.getElementById("app")

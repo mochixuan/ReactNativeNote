@@ -21,6 +21,7 @@ const mapStateToProps = (state) => {
     }
 }
 
+/*动作集合*/
 const mapDispatchToProps = (dispatch) => {
     return {
         onTodoClick: (id) => {
