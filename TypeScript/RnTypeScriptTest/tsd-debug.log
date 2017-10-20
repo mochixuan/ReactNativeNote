@@ -1,0 +1,31 @@
+[ERR!] cwd  : C:\Sofe\workplace\React\Study\TypeScript\RnTypeScriptTest
+[ERR!] os   : Windows_NT 10.0.15063
+[ERR!] argv : "C:\\Sofe\\node\\node.exe" "C:\\Sofe\\node\\node_global\\node_modules\\tsd\\build\\cli.js" "init"
+[ERR!] node : v8.5.0
+[ERR!] tsd  : 0.6.5
+[ERR!] Error: cannot overwrite file C:\Sofe\workplace\React\Study\TypeScript\RnTypeScriptTest\tsd.json
+[ERR!] CODE : undefined
+[ERR!] cannot overwrite file C:\Sofe\workplace\React\Study\TypeScript\RnTypeScriptTest\tsd.json
+[ERR!] If you need help, you may report this error at:
+    https://github.com/DefinitelyTyped/tsd/issues
+
+[ERR!] 
+VError: cannot overwrite file C:\Sofe\workplace\React\Study\TypeScript\RnTypeScriptTest\tsd.json
+    at C:\Sofe\node\node_global\node_modules\tsd\build\tsd\logic\ConfigIO.js:22:27
+    at tryCatch1 (C:\Sofe\node\node_global\node_modules\tsd\node_modules\bluebird\js\main\util.js:63:19)
+    at Promise$_callHandler [as _callHandler] (C:\Sofe\node\node_global\node_modules\tsd\node_modules\bluebird\js\main\promise.js:695:13)
+    at Promise$_settlePromiseFromHandler [as _settlePromiseFromHandler] (C:\Sofe\node\node_global\node_modules\tsd\node_modules\bluebird\js\main\promise.js:711:18)
+    at Promise$_settlePromiseAt [as _settlePromiseAt] (C:\Sofe\node\node_global\node_modules\tsd\node_modules\bluebird\js\main\promise.js:868:14)
+    at Promise$_settlePromises [as _settlePromises] (C:\Sofe\node\node_global\node_modules\tsd\node_modules\bluebird\js\main\promise.js:1006:14)
+    at Async$_consumeFunctionBuffer [as _consumeFunctionBuffer] (C:\Sofe\node\node_global\node_modules\tsd\node_modules\bluebird\js\main\async.js:74:12)
+    at Async$consumeFunctionBuffer (C:\Sofe\node\node_global\node_modules\tsd\node_modules\bluebird\js\main\async.js:37:14)
+    at _combinedTickCallback (internal/process/next_tick.js:131:7)
+    at process._tickCallback (internal/process/next_tick.js:180:9)
+
+[ERR!] tsd.json: {"version":"v4","repo":"borisyankov/DefinitelyTyped","ref":"master","path":"typings","bundle":"typings/tsd.d.ts","installed":{}}
+
+[ERR!] .tsdrc could not be retrieved
+
+[ERR!] Please include the following file with any support request:
+    C:\Sofe\workplace\React\Study\TypeScript\RnTypeScriptTest\tsd-debug.log
+
