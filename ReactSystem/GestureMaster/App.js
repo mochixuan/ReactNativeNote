@@ -20,6 +20,10 @@ import ViewControl from './app/widget/ViewControl'
 
 export default class App extends Component<{}> {
 
+    constructor(props) {
+        super(props);
+    }
+
     renderSwiperItemView() {
         const imgs = [
             'http://img1.ph.126.net/u1dVCkMgF8qSqqQLXlBFQg==/6631395420169075600.jpg',
@@ -33,13 +37,14 @@ export default class App extends Component<{}> {
                 <ViewControl
                     key={i}
                     cropWidth={width}
-                    cropHeight={height-200}
-                    imageWidth={200}
-                    imageHeight={200}>
+                    cropHeight={height}
+                    imageWidth={width}
+                    imageHeight={height}>
                     <Image
                         style={{
-                            width:200,
-                            height:200
+                            width:width,
+                            height:height,
+                            resizeMode: 'contain'
                         }}
                         source={{
                             uri:item
@@ -49,17 +54,19 @@ export default class App extends Component<{}> {
         })
     }
 
-    render0() {
+    render() {
         return (
-            <Swiper
-                loop={false}
-                showsPagination={true}>
-                {this.renderSwiperItemView()}
-            </Swiper>
+
+                <Swiper
+                    loop={false}
+                    showsPagination={false}>
+                    {this.renderSwiperItemView()}
+                </Swiper>
+
         );
     }
 
-    render() {
+    render0() {
         const images = [{
             url: 'http://img1.ph.126.net/u1dVCkMgF8qSqqQLXlBFQg==/6631395420169075600.jpg'
         }, {
@@ -68,27 +75,25 @@ export default class App extends Component<{}> {
             url: 'http://img2.ph.126.net/bkaOfRyDoyddXri0GjpWjA==/6630608169839463386.jpg',
         }]
         return (
-            <Modal visible={true} transparent={true}>
-                <ImageViewer imageUrls={images}/>
-            </Modal>
+            <ImageViewer imageUrls={images}/>
         );
     }
 
-    render1() {
+    render0() {
         return (
-            <ImageZoom cropWidth={width}
-                       cropHeight={height}
-                       imageWidth={200}
-                       imageHeight={200}>
+            <ViewControl cropWidth={width}
+                       cropHeight={400}
+                       imageWidth={width}
+                       imageHeight={400}>
                 <Image
                     style={{
-                        width:200,
-                        height:200
+                        width:width,
+                        height:400
                     }}
                     source={{
                         uri:'http://v1.qzone.cc/avatar/201407/07/00/24/53b9782c444ca987.jpg!200x200.jpg'
                     }}/>
-            </ImageZoom>
+            </ViewControl>
         )
     }
 

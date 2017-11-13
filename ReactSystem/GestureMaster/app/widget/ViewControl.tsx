@@ -7,10 +7,11 @@ import {
     PanResponder,
     PanResponderInstance,
     LayoutChangeEvent,
+    Dimensions
 } from "react-native";
 /* *符合应该是ts语法赋值，不写* as就没用*/
 import * as typings from './ViewControl.type'
-
+const {width,height} = Dimensions.get('window')
 
 /*Component两个参数一个为props属性值，一个state状态值*/
 export default class ViewControl extends Component<typings.PropsDefine,typings.StateDefine> {
@@ -77,12 +78,15 @@ export default class ViewControl extends Component<typings.PropsDefine,typings.S
 
     //改变触摸监听状态
     changeTouchState(isBeWillingTouch:boolean) {
+        console.log(isBeWillingTouch)
         this.setState({
             isBeWillingTouch: isBeWillingTouch
         })
+
     }
 
     componentWillMount() {
+
         this.imagePanResponder = PanResponder.create({
 
             // 要求成为响应者 这里无法监控是否为两个手指
@@ -147,8 +151,7 @@ export default class ViewControl extends Component<typings.PropsDefine,typings.S
                                 this.scale = 1
                                 this.positionX = 0
                                 this.positionY = 0
-                            }
-                            else {
+                            } else {
                                 // 开始在位移地点缩放
                                 // 记录之前缩放比例
                                 // 此时 this.scale 一定为 1
@@ -190,8 +193,14 @@ export default class ViewControl extends Component<typings.PropsDefine,typings.S
             onMoveShouldSetPanResponder: (_evt, _gestureState) => {
                 if (_evt.nativeEvent.changedTouches.length > 1) {
                     this.changeTouchState(true)
+                } else if (this.props.imageWidth * this.scale > this.props.cropWidth) {
+                    this.changeTouchState(true)
                 }
                 return this.state.isBeWillingTouch;
+            },
+
+            onMoveShouldSetPanResponderCapture: (evt, gestureState) => {
+                return this.state.isBeWillingTouch
             },
 
             //有其他组件请求接替响应者，当前的View是否“放权”？返回true的话则释放响应者权力
@@ -390,6 +399,7 @@ export default class ViewControl extends Component<typings.PropsDefine,typings.S
 
             //触摸操作结束时触发，比如"touchUp"（手指抬起离开屏幕）
             onPanResponderRelease: (_evt, _gestureState) => {
+
                 // 双击缩放了，结束手势就不需要操作了
                 if (this.isDoubleClickScale) {
                     return
@@ -479,6 +489,15 @@ export default class ViewControl extends Component<typings.PropsDefine,typings.S
         })
     }
 
+    reset() {
+        this.scale = 1;
+        this.animatedScale.setValue(this.scale);
+        this.positionX = 0;
+        this.animatedPositionX.setValue(this.positionX);
+        this.positionY = 0;
+        this.animatedPositionY.setValue(this.positionY);
+    }
+
     render() {
         const animateConf = {
             transform:[{
@@ -495,11 +514,10 @@ export default class ViewControl extends Component<typings.PropsDefine,typings.S
                 height:this.props.cropHeight,
             }]} {...this.imagePanResponder.panHandlers}>
                 <Animated.View style={animateConf}>
-                    <View onLayout={this.handleLayout.bind(this)}
-                          style={{
-                              width: this.props.imageWidth,
-                              height: this.props.imageHeight,
-                          }}>
+                    <View onLayout={this.handleLayout.bind(this)} style={{
+                        width: this.props.imageWidth,
+                        height: this.props.imageHeight
+                    }}>
                         {this.props.children}
                     </View>
                 </Animated.View>

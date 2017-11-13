@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { StyleSheet, View, Animated, PanResponder, } from "react-native";
+import { StyleSheet, View, Animated, PanResponder, Dimensions } from "react-native";
 /* *符合应该是ts语法赋值，不写* as就没用*/
 import * as typings from './ViewControl.type';
+const { width, height } = Dimensions.get('window');
 /*Component两个参数一个为props属性值，一个state状态值*/
 export default class ViewControl extends Component {
     constructor() {
@@ -46,6 +47,7 @@ export default class ViewControl extends Component {
     }
     //改变触摸监听状态
     changeTouchState(isBeWillingTouch) {
+        console.log(isBeWillingTouch);
         this.setState({
             isBeWillingTouch: isBeWillingTouch
         });
@@ -148,6 +150,12 @@ export default class ViewControl extends Component {
                 if (_evt.nativeEvent.changedTouches.length > 1) {
                     this.changeTouchState(true);
                 }
+                else if (this.props.imageWidth * this.scale > this.props.cropWidth) {
+                    this.changeTouchState(true);
+                }
+                return this.state.isBeWillingTouch;
+            },
+            onMoveShouldSetPanResponderCapture: (evt, gestureState) => {
                 return this.state.isBeWillingTouch;
             },
             //有其他组件请求接替响应者，当前的View是否“放权”？返回true的话则释放响应者权力
@@ -417,6 +425,14 @@ export default class ViewControl extends Component {
             }
         });
     }
+    reset() {
+        this.scale = 1;
+        this.animatedScale.setValue(this.scale);
+        this.positionX = 0;
+        this.animatedPositionX.setValue(this.positionX);
+        this.positionY = 0;
+        this.animatedPositionY.setValue(this.positionY);
+    }
     render() {
         const animateConf = {
             transform: [{
@@ -434,7 +450,7 @@ export default class ViewControl extends Component {
                 <Animated.View style={animateConf}>
                     <View onLayout={this.handleLayout.bind(this)} style={{
             width: this.props.imageWidth,
-            height: this.props.imageHeight,
+            height: this.props.imageHeight
         }}>
                         {this.props.children}
                     </View>

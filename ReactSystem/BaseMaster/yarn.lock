@@ -3460,16 +3460,20 @@ react-native-image-header-scroll-view@^0.6.1:
   dependencies:
     lodash "^4.17.4"
 
-react-native-image-pan-zoom@^2.0.5, react-native-image-pan-zoom@^2.0.7:
+react-native-image-pan-zoom@^2.0.7:
   version "2.0.7"
   resolved "http://registry.npm.taobao.org/react-native-image-pan-zoom/download/react-native-image-pan-zoom-2.0.7.tgz#76605310626c965895e9fe285d353feb47da6ec1"
 
+react-native-image-pan-zoom@^2.0.8:
+  version "2.0.8"
+  resolved "https://registry.npmjs.org/react-native-image-pan-zoom/-/react-native-image-pan-zoom-2.0.8.tgz#2832dd7836ffa831493c0d330fb1699da9502e0a"
+
 react-native-image-zoom-viewer@^2.0.10:
-  version "2.0.10"
-  resolved "http://registry.npm.taobao.org/react-native-image-zoom-viewer/download/react-native-image-zoom-viewer-2.0.10.tgz#792c4cb7ff0145c36390e4c6703bfe45aa492bd3"
+  version "2.0.12"
+  resolved "https://registry.npmjs.org/react-native-image-zoom-viewer/-/react-native-image-zoom-viewer-2.0.12.tgz#9d4410751a08c200382e7a2167a1bdbab1e17016"
   dependencies:
     nt-transmit-transparently "^1.0.7"
-    react-native-image-pan-zoom "^2.0.5"
+    react-native-image-pan-zoom "^2.0.8"
 
 react-native-parallax-scroll-view@^0.19.0:
   version "0.19.0"
