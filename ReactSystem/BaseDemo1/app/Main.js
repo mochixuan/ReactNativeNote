@@ -16,6 +16,7 @@ export default class Main extends Component {
             this._renderButtonView("Main",()=>{this.show("单机")}),
             this._renderButtonView("PermissionAndroidView",()=>{this.props.navigation.navigate("PermissionAndroidView")}),
             this._renderButtonView("NotificationView",()=>{this.props.navigation.navigate("NotificationView")}),
+            this._renderButtonView("JNotificationView",()=>{this.props.navigation.navigate("JNotificationView")}),
         ]
 
         return (

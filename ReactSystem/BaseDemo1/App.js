@@ -10,11 +10,13 @@ import CardStackStyleInterpolator from 'react-navigation/src/views/CardStack/Car
 import Main from "./app/Main";
 import PermissionAndroidView from "./app/components/PermissionAndroidView";
 import NotificationView from "./app/components/NotificationView";
+import JNotificationView from "./app/components/JNotificationView";
 
 const App = StackNavigator({
     Main: {screen: Main},
     PermissionAndroidView: {screen: PermissionAndroidView},
-    NotificationView: {screen: NotificationView}
+    NotificationView: {screen: NotificationView},
+    JNotificationView: {screen: JNotificationView}
 },{
   navigationOptions: {
     gesturesEnabled: true,
