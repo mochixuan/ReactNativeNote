@@ -8,6 +8,8 @@ import {
 } from 'react-native'
 import PushNotification from 'react-native-push-notification'
 
+let id = 0
+
 export default class NotificationView extends Component {
 
     render() {
@@ -17,6 +19,7 @@ export default class NotificationView extends Component {
                     style={styles.button_view}
                     onPress={()=>{
                         this.generateLocalNotification()
+                        id++;
                     }}>
                     <Text style={styles.button_text}>本地Notification</Text>
                 </TouchableOpacity>
@@ -31,18 +34,18 @@ export default class NotificationView extends Component {
     generateLocalNotification() {
         PushNotification.localNotification(
             {
-                id: '0',
+                id: id+"",
                 autoCancel: true,
                 ticker: '我是ticker',
 
                 bigText: '变大时显示的',
                 subText: '这是通知的次要内容',
 
-                title: '我是title',
+                title: '我是title'+id,
                 message: '我是message',
 
-                largeIcon: 'e2.png',
-                smallIcon: 'a2.png',
+                largeIcon: '../img/e2.png',
+                smallIcon: '../img/e2.png',
 
                 //设置他为一个正在进行的通知。他们通常是用来表示一个后台任务,用户积极参与(如播放音乐)或以某种方式正在等待,因此占用设备(如一个文件下载,同步操作,主动网络连接)
                 ongoing: false,

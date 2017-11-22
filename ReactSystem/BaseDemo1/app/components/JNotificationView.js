@@ -5,20 +5,46 @@ import {
     Text,
     TouchableOpacity,
     ToastAndroid,
+    TextInput,
 } from 'react-native'
-import PushNotification from 'react-native-push-notification'
+import JPushModule from 'jpush-react-native'
+
+let curTag = ''
+let tags = []
 
 export default class JNotificationView extends Component {
+
+    constructor(){
+        super()
+
+    }
 
     render() {
         return (
             <View style={styles.container}>
+                <TextInput
+                    style={styles.text_input}
+                    placeholder="设置标签"
+                    onChangeText={(text)=>{
+                        curTag = text
+                    }}
+                />
                 <TouchableOpacity
                     style={styles.button_view}
                     onPress={()=>{
-                        this.generateLocalNotification()
+                        if (curTag.length > 0) {
+                            tags.push(curTag)
+                            JPushModule.setTags(tags,()=>{
+                                this.show("添加标签"+tags+"成功")
+                                curTag = ""
+                            },()=>{
+                                this.show("添加标签"+tags+"失败")
+                            })
+                        } else {
+                            this.show("请先输入标签")
+                        }
                     }}>
-                    <Text style={styles.button_text}>本地Notification</Text>
+                    <Text style={styles.button_text}>极光推送</Text>
                 </TouchableOpacity>
             </View>
         )
@@ -28,8 +54,21 @@ export default class JNotificationView extends Component {
         ToastAndroid.show(data,ToastAndroid.SHORT)
     }
 
-    generateLocalNotification() {
+    componentDidMount() {
+        JPushModule.notifyJSDidLoad((resultCode)=>{
+            console.log("didLoad",resultCode)
+        })
+        JPushModule.addReceiveCustomMsgListener((message)=>{
+            console.log("custom",message)
+        })
+        JPushModule.addReceiveNotificationListener((message)=>{
+            console.log("notification",message)
+        })
+    }
 
+    componentWillUnmount() {
+        JPushModule.removeReceiveCustomMsgListener()
+        JPushModule.removeReceiveNotificationListener()
     }
 
 }
@@ -49,5 +88,8 @@ const styles = StyleSheet.create({
         padding: 6,
         fontSize: 16,
         fontWeight: '600'
-    }
+    },
+    text_input: {
+
+    },
 })
