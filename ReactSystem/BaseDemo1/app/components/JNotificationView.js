@@ -10,6 +10,7 @@ import {
 import JPushModule from 'jpush-react-native'
 
 let curTag = ''
+let curAlias = ''
 let tags = []
 
 export default class JNotificationView extends Component {
@@ -44,7 +45,29 @@ export default class JNotificationView extends Component {
                             this.show("请先输入标签")
                         }
                     }}>
-                    <Text style={styles.button_text}>极光推送</Text>
+                    <Text style={styles.button_text}>添加标签</Text>
+                </TouchableOpacity>
+                <TextInput
+                    style={styles.text_input}
+                    placeholder="设置别名"
+                    onChangeText={(text)=>{
+                        curAlias = text
+                    }}
+                />
+                <TouchableOpacity
+                    style={styles.button_view}
+                    onPress={()=>{
+                        if (curAlias.length > 0) {
+                            JPushModule.setAlias(curAlias,()=>{
+                                this.show("添加别名"+curAlias+"成功")
+                            },()=>{
+                                this.show("添加别名"+curAlias+"失败")
+                            })
+                        } else {
+                            this.show("请先输入别名")
+                        }
+                    }}>
+                    <Text style={styles.button_text}>添加别名</Text>
                 </TouchableOpacity>
             </View>
         )
@@ -58,17 +81,22 @@ export default class JNotificationView extends Component {
         JPushModule.notifyJSDidLoad((resultCode)=>{
             console.log("didLoad",resultCode)
         })
-        JPushModule.addReceiveCustomMsgListener((message)=>{
-            console.log("custom",message)
-        })
+        //收到通知栏消息
         JPushModule.addReceiveNotificationListener((message)=>{
             console.log("notification",message)
+        })
+        //用户点击了消息
+        JPushModule.addReceiveOpenNotificationListener((message)=>{
+            console.log("openNotification",message)
         })
     }
 
     componentWillUnmount() {
-        JPushModule.removeReceiveCustomMsgListener()
         JPushModule.removeReceiveNotificationListener()
+        JPushModule.removeReceiveOpenNotificationListener()
+        //JPushModule.clearAllNotifications()
+        //结束推送不再推送
+        //JPushModule.stopPush()
     }
 
 }
