@@ -11,12 +11,14 @@ import Main from "./app/Main";
 import PermissionAndroidView from "./app/components/PermissionAndroidView";
 import NotificationView from "./app/components/NotificationView";
 import JNotificationView from "./app/components/JNotificationView";
+import FileDownView from "./app/components/FileDownView";
 
 const App = StackNavigator({
     Main: {screen: Main},
     PermissionAndroidView: {screen: PermissionAndroidView},
     NotificationView: {screen: NotificationView},
-    JNotificationView: {screen: JNotificationView}
+    JNotificationView: {screen: JNotificationView},
+    FileDownView: {screen: FileDownView}
 },{
   navigationOptions: {
     gesturesEnabled: true,
