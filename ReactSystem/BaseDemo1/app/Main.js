@@ -7,6 +7,7 @@ import {
     Platform,
     ToastAndroid,
 } from 'react-native'
+import NaviBarView from './components/NaviBarView'
 
 export default class Main extends Component {
 
@@ -22,6 +23,7 @@ export default class Main extends Component {
 
         return (
             <View style={styles.container}>
+                <NaviBarView/>
                 {
                     itemView.map((item,i)=>{
                         return <View key={i}>{item}</View>

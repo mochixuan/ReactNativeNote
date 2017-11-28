@@ -7,12 +7,16 @@ import {
     TouchableOpacity,
     ToastAndroid,
     Dimensions,
-    Platform
+    Platform,
+    CameraRoll
 } from 'react-native'
 import RNDownLoad from 'react-native-fs'
 import RNFetchBlob from 'react-native-fetch-blob'
+import NaviBarView from './NaviBarView'
 
 const {width,height} = Dimensions.get('window')
+
+const imageUrl = 'http://n.sinaimg.cn/news/transform/20171127/zPtG-fypathz6248591.jpg'
 
 export default class FileDownView extends Component {
 
@@ -30,10 +34,10 @@ export default class FileDownView extends Component {
             image = (
                 <Image
                     source ={{
-                        uri: Platform.OS === 'android'? 'file://'+this.state.localImageUrl:this.state.localImageUrl
+                        uri: Platform.OS === 'android'? ('file://'+this.state.localImageUrl) : this.state.localImageUrl
                     }}
                     style={{
-                        width:width,
+                        width: width-20,
                         height:300,
                         backgroundColor: '#66666666'
                     }}
@@ -41,11 +45,12 @@ export default class FileDownView extends Component {
             )
         } else {
             image = (
-                <Text style={{alignItems:'center'}}>{this.state.progress}%</Text>
+                <Text style={{alignItems:'center', width:width-20}}>{this.state.progress}%</Text>
             )
         }
         return (
             <View style={styles.container}>
+                <NaviBarView/>
                 <TouchableOpacity
                     style={styles.button_view}
                     onPress={()=>{
@@ -60,6 +65,13 @@ export default class FileDownView extends Component {
                     }}>
                     <Text style={styles.button_text}>下载文件1</Text>
                 </TouchableOpacity>
+                <TouchableOpacity
+                    style={styles.button_view}
+                    onPress={()=>{
+                        this.downloadImgToCamera()
+                    }}>
+                    <Text style={styles.button_text}>下载图片到相册</Text>
+                </TouchableOpacity>
                 <View style={{width:width,height:300,justifyContent: 'center',alignItems: 'center'}}>
                     {image}
                 </View>
@@ -72,12 +84,16 @@ export default class FileDownView extends Component {
     }
 
     downLoadFile() {
-        const localImageUrl = RNDownLoad.ExternalDirectoryPath+'/'+'hong.jpg'
+
+        const localImageUrl =
+            Platform.OS === 'ios' ?
+                RNDownLoad.MainBundlePath +'/hong.jpg' :
+            RNDownLoad.ExternalDirectoryPath+'/'+'hong.jpg'
         this.setState({
             localImageUrl: localImageUrl
         })
         RNDownLoad.downloadFile({
-            fromUrl: 'http://n.sinaimg.cn/news/transform/20171127/zPtG-fypathz6248591.jpg',
+            fromUrl: imageUrl,
             toFile: localImageUrl,
             begin: (res) => {
                 console.log('begin: ', res.contentLength / 1024 / 1024, 'M');
@@ -95,24 +111,28 @@ export default class FileDownView extends Component {
             connectionTimeout: 10000,
             readTimeout: 10000
         }).promise.then((statResult)=>{
-            console.log('finish',statResult,this.state.localImageUrl)
             this.setState({
                 progress: 100
             })
         }).catch((error)=>{
-            console.log('error',error)
             this.setState({
-                progress: '下载失败了',
+                progress: error.toString(),
             })
         })
     }
 
     downLoadFile1() {
-        const localImageUrl = RNFetchBlob.fs.dirs.PictureDir+'/hong.jpg'
+        const localImageUrl =
+            Platform.OS === 'ios' ?
+                RNFetchBlob.fs.dirs.MainBundleDir +'/hong.jpg' :
+            RNFetchBlob.fs.dirs.PictureDir +'/hong.jpg'
+        this.setState({
+            localImageUrl: localImageUrl
+        })
         RNFetchBlob.config({
             path: localImageUrl
         }).fetch(
-            'GET','http://n.sinaimg.cn/news/transform/20171127/zPtG-fypathz6248591.jpg',{
+            'GET',imageUrl,{
 
             }
         ).progress((received,total)=>{
@@ -123,13 +143,26 @@ export default class FileDownView extends Component {
                 })
             }
         }).then((res)=>{
-            console.log('success',res)
             this.setState({
-                progress: 100,
-                localImageUrl: localImageUrl
+                progress: 100
             })
         }).catch((error)=>{
-            console.log('error',error)
+            this.setState({
+                progress: error.toString(),
+            })
+        })
+    }
+
+    downloadImgToCamera() {
+        CameraRoll.saveToCameraRoll(imageUrl,'photo')
+            .then((res)=>{
+                this.setState({
+                    progress: res.toString(),
+                })
+            }).catch((error)=>{
+            this.setState({
+                progress: error.toString(),
+            })
         })
     }
 
