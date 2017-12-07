@@ -8,7 +8,7 @@ const todo = (state,action) => {
                 completed: false,
             }
         case "TOGGLE_TODO":     //单机某个item是否主要是完成和未完成
-            if (state.id !== action.id) {
+            if (state.id !== action.id) {     //查找id制定的那个，只有一个id相同
                 return state
             }
             return Object.assign({},state,{
