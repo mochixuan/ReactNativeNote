@@ -1,11 +1,10 @@
-import {combineReducers} from 'redux'
 import login from './login'
 import navReducer from './navReducer'
 
-const reducers = combineReducers({
+const reducers = {
     login,
     navReducer
-})
+}
 
 
 export default reducers

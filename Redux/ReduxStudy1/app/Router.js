@@ -1,7 +1,7 @@
 import React,{Component} from 'react'
 import {StackNavigator} from 'react-navigation'
-import LoginPage from "./app/component/LoginPage";
-import MainPage from "./app/component/MainPage";
+import LoginPage from "./component/LoginPage";
+import MainPage from "./component/MainPage";
 
 const Router = StackNavigator({
     LoginPage: {screen: LoginPage},

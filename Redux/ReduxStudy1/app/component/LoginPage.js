@@ -23,6 +23,12 @@ class LoginPage extends Component {
         return true;
     }
 
+    componentWillMount() {
+        if (this.props.isSuccess) {
+            this.props.navigation.navigate('MainPage', {user: this.props.user})
+        }
+    }
+
     render() {
         let tips = '数据异常';
         if (this.props.status === ActionTypes.LOGIN_INIT) {
