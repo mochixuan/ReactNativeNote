@@ -30,7 +30,6 @@ const crashReporter = store => next => action => {
 let middlewares = [
     logger,
     crashReporter,
-    sagaMiddleware,
     thunk
 ]
 

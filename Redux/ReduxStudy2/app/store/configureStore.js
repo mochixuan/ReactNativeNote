@@ -1,7 +1,8 @@
 import {applyMiddleware,createStore,compose} from 'redux'
 import rootReducers from '../reducers/index'
 import thunk from 'redux-thunk'
-import storage from 'redux-persist/es/storage'; // default: localStorage if web, AsyncStorage if react-native
+import {AsyncStorage} from 'react-native'
+import storage from 'redux-persist/es/storage';  // default: localStorage if web, AsyncStorage if react-native
 import {persistStore,persistCombineReducers} from 'redux-persist'
 
 const logger = store => next => action => {
@@ -30,23 +31,32 @@ const crashReporter = store => next => action => {
 let middlewares = [
     logger,
     crashReporter,
-    sagaMiddleware,
     thunk
 ]
 
 const config = {
     key: 'root',
     storage,
-    debug: true //to get useful logging
+    debug: false //to get useful logging
 }
 
 const reducers = persistCombineReducers(config,rootReducers)
 const enhances = [applyMiddleware(...middlewares)]
-const initialState = {}
-//const persistConfig = {enhances}
-const store = createStore(reducers,initialState,compose(...enhances))
-const persistor = persistStore(store,null,null)
 
-export default configureStore = (initialState) => {
-    return {persistor,store}
+const testAsgn = async() => {
+    await storage.getItem("persist:root")
+        .then((data)=>{
+            console.log("======root1",data)
+        }).catch((error)=>{
+        console.log("======root2",error)
+    })
+}
+
+
+
+export default configureStore = (initialState)=> {
+    testAsgn()
+    const store = createStore(reducers,initialState,compose(...enhances))
+    persistStore(store,null,null)
+    return store
 }
