@@ -15,6 +15,7 @@ export default class LifecycleConponent extends Component {
         this.state = {
             count:0,
         }
+        this.props.count = 0
         console.log("----------constructor==在组件挂载之前调用一次,返回值将会作为 this.state 的初始值");
     }
 
@@ -27,7 +28,7 @@ export default class LifecycleConponent extends Component {
     }
 
     componentWillReceiveProps(nextProps) {
-        console.log("----------componentWillReceiveProps==在组件接收到新的 props 的时候调用。在初始化渲染的时候，该方法不会调用");
+        console.log("----------componentWillReceiveProps==在组件接收到新的 props 的时候调用。在初始化渲染的时候，该方法不会调用"+nextProps);
     }
 
     shouldComponentUpdate(nextProps,nextState) {
@@ -52,12 +53,26 @@ export default class LifecycleConponent extends Component {
         return <View>
             <Text style={{
                 fontSize:20,
+                height:60,
+                lineHeight:40,
                 backgroundColor:'red'}}
                 onPress={()=>{
                     this.setState({
                         count:this.state.count+1,
                     })
                 }}
+            >单机我</Text>
+            <Text style={{
+                fontSize:20,
+                height:60,
+                lineHeight:40,
+                marginTop:10,
+                marginBottom:10,
+                backgroundColor:'red'}}
+                  onPress={()=>{
+                      this.props.count = this.props.count+1
+                      console.log("this.props.count",this.props.count)
+                  }}
             >单机我</Text>
             <Text style={{
                 fontSize:20,

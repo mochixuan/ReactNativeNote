@@ -12,7 +12,7 @@ import {
     View
 } from 'react-native';
 
-//import LifecycleConponent from './LifecycleConponent';
+import LifecycleConponent from './LifecycleConponent';
 //import MConponent,{WConponent,a,b,sum} from './EIConponent'
 //import PropsTest from './PropsTest';
 //import StateTest from './StateTest'
@@ -24,11 +24,17 @@ import TouchTest from './TouchTest'
 
 export default class setup extends Component {
 
-    render() {
+   /* render() {
         return <View style={styles.container}>
             <TouchTest/>
         </View>
-    }
+    }*/
+
+   render() {
+       return (
+           <LifecycleConponent/>
+       )
+   }
 
     /*render() {
         return <View style={styles.container}>

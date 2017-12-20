@@ -41,3 +41,18 @@ console.log(datas1)
 
 console.log(datas2)
 
+let multi = store => next => action => {
+    console.log(store,next,action)
+}
+
+multi("mo")("chi")("xuan")
+
+console.log({
+    "wang": "wang"
+})
+
+console.log({
+    wang: "wang"
+})
+
+

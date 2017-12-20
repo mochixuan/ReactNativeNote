@@ -8,15 +8,21 @@ const user = {
 /**
  * dispatch是上一个函数redux-thunk传来的参数
  *
+ * let multi = store => next => action => {
+        console.log(store,next,action)
+    }
+
+ multi("mo")("chi")("xuan")
+ *
  * export default function thunkMiddleware({ dispatch, getState }) {
-       return next => action => {
-          if (typeof action === 'function') {
-              return action(dispatch, getState);
-          }
-        return next(action);
-      };
- }
- // redux-thunk的源码
+ *      return next => action => {
+ *         if (typeof action === 'function') {
+ *             return action(dispatch, getState);
+ *         }
+ *       return next(action);
+ *     };
+ * }
+ * // redux-thunk的源码
  *
  * 管道机制（pipeline）的例子
  * @returns {function(*)}
