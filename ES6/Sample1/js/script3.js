@@ -55,4 +55,22 @@ console.log({
     wang: "wang"
 })
 
+console.log('=====================================')
+
+function testPromise() {
+    return new Promise((resolve, reject)=>{
+        resolve("mo chi xuan")
+    })
+}
+
+function* testGenerate() {
+    yield testPromise().then()
+}
+
+var testG = testGenerate()
+
+console.log("====generate1>>",testG.next())
+console.log("====generate2>>",testG.next())
+console.log("====generate3>>",testG.next())
+
 
