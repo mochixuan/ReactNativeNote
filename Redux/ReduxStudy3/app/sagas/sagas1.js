@@ -2,8 +2,8 @@ import * as ActionTypes from '../constants/ActionTypes'
 import {put,call,takeEvery} from 'redux-saga/effects'
 
 const user = {
-    'name': 'mochixuan',
-    'age': 24,
+    'name': 'mochixuan1',
+    'age': 25,
 }
 
 function fetchApi() {
@@ -27,11 +27,11 @@ function* doLogin() {
         yield put(loginSuccess(false,data))
 }
 
-function* watchDoLogin() {
-    yield takeEvery('SAGA_LOGIN',doLogin)
+function* watchDoLogin1() {
+    yield takeEvery('SAGA_LOGIN1',doLogin)
 }
 
-export default watchDoLogin
+export default watchDoLogin1
 
 const isLogining = ()=> {
     return {

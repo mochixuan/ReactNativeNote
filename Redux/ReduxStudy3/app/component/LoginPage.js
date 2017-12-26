@@ -74,6 +74,17 @@ class LoginPage extends Component {
                         <Text style={{color: '#ffffff',fontSize: 20}}>Sagas</Text>
                     </View>
                 </TouchableOpacity>
+                <TouchableOpacity
+                    style={{backgroundColor: '#ff0000',borderRadius: 10 ,marginTop: 10}}
+                    onPress={ ()=> {
+                        this.props.dispatch({
+                            type: 'SAGA_LOGIN1'
+                        })
+                    }}>
+                    <View style={{alignItems: 'center',justifyContent: 'center',width:120,height: 60 }}>
+                        <Text style={{color: '#ffffff',fontSize: 20}}>Sagas</Text>
+                    </View>
+                </TouchableOpacity>
             </View>
         )
 

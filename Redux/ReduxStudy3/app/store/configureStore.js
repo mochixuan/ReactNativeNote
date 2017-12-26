@@ -4,7 +4,7 @@ import thunk from 'redux-thunk'
 import storage from 'redux-persist/es/storage';  // default: localStorage if web, AsyncStorage if react-native
 import {persistStore,persistCombineReducers} from 'redux-persist'
 import createSagaMiddleware from 'redux-saga'
-import watchDoLogin from '../sagas/sagas'
+import sagas from '../sagas/index'
 
 const logger = store => next => action => {
     if (typeof action === 'function') console.log('dispatching a function');
@@ -50,6 +50,6 @@ const enhances = [applyMiddleware(...middlewares)]
 export default configureStore = (initialState)=> {
     const store = createStore(reducers,initialState,compose(...enhances))
     //persistStore(store,null,null)
-    sagaMiddleware.run(watchDoLogin)
+    sagaMiddleware.run(sagas)
     return store
 }
