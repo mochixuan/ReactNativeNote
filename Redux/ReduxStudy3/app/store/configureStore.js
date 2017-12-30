@@ -49,7 +49,7 @@ const enhances = [applyMiddleware(...middlewares)]
 
 export default configureStore = (initialState)=> {
     const store = createStore(reducers,initialState,compose(...enhances))
-    //persistStore(store,null,null)
+    persistStore(store,null,null)
     sagaMiddleware.run(sagas)
     return store
 }

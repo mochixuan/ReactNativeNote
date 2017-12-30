@@ -16,7 +16,8 @@ class LoginPage extends Component {
 
     shouldComponentUpdate(nextProps,nextState) {
         //console.log("shouldComponentUpdate",nextProps,nextState)
-        if (nextProps.status === ActionTypes.LOGIN_DONE && nextProps.isSuccess) {
+        if (nextProps.status === ActionTypes.LOGIN_DONE && nextProps.isSuccess && nextProps.user != null) {
+            console.log('success',nextProps.user)
             this.props.navigation.navigate('MainPage', {user: nextProps.user})
             this.show("登入成功")
             return false;
