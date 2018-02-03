@@ -20,6 +20,9 @@ export default class Main extends Component {
             this._renderButtonView("JNotificationView",()=>{this.props.navigation.navigate("JNotificationView")}),
             this._renderButtonView("FileDownView",()=>{this.props.navigation.navigate("FileDownView")}),
             this._renderButtonView("NativeMethodView",()=>{this.props.navigation.navigate("NativeMethodView")}),
+            this._renderButtonView("ShareView",()=>{this.props.navigation.navigate("ShareView")}),
+            this._renderButtonView("ScreenShotView",()=>{this.props.navigation.navigate("ScreenShotView")}),
+            this._renderButtonView("AlertView",()=>{this.props.navigation.navigate("AlertView")}),
         ]
 
         return (

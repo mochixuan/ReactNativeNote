@@ -3,6 +3,8 @@ import rootReducers from '../reducers/index'
 import thunk from 'redux-thunk'
 import storage from 'redux-persist/es/storage';  // default: localStorage if web, AsyncStorage if react-native
 import {persistStore,persistCombineReducers} from 'redux-persist'
+import persist from '../index'
+import reconciler from 'redux-persist/lib/stateReconciler/autoMergeLevel2'
 import createSagaMiddleware from 'redux-saga'
 import sagas from '../sagas/index'
 
@@ -41,15 +43,18 @@ let middlewares = [
 const config = {
     key: 'root',
     storage,
+    stateReconciler: reconciler,
+    //blacklist: ['login'],
     debug: false //to get useful logging
 }
 
-const reducers = persistCombineReducers(config,rootReducers)
+const reducers = persistCombineReducers(config,persist)
 const enhances = [applyMiddleware(...middlewares)]
 
 export default configureStore = (initialState)=> {
+
     const store = createStore(reducers,initialState,compose(...enhances))
-    persistStore(store,null,null)
+    persistStore(store)
     sagaMiddleware.run(sagas)
     return store
 }

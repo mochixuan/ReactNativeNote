@@ -73,4 +73,14 @@ console.log("====generate1>>",testG.next())
 console.log("====generate2>>",testG.next())
 console.log("====generate3>>",testG.next())
 
+console.log('=====================================')
 
+const a1 = [1,2,3,4,5,6]
+
+console.error(a1.join('&'))
+
+console.log('=====================================')
+
+let datasw = ["a","b","c"]
+datasw.push("e","f")
+console.log(datasw.splice(0,10),datasw)

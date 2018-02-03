@@ -68,9 +68,28 @@ export default class FileDownView extends Component {
                 <TouchableOpacity
                     style={styles.button_view}
                     onPress={()=>{
-                        this.downloadImgToCamera()
+                        //this.downloadImgToCamera(imageUrl)
+                        const destPath = Platform.OS === 'ios' ?
+                            RNDownLoad.MainBundlePath +'/hong.jpg' :
+                            RNDownLoad.ExternalDirectoryPath+'/'+'hong.jpg';
+                        const destPath1 = "/data/user/0/com.basedemo/cache/ReactNative-snapshot-image544839369.png"
+                        console.log('======>>destPath',destPath)
+                        console.log('======>>destPath',destPath1)
+                        this.downloadImgToCamera(destPath1)
                     }}>
                     <Text style={styles.button_text}>下载图片到相册</Text>
+                </TouchableOpacity>
+                <TouchableOpacity
+                    style={styles.button_view}
+                    onPress={()=>{
+                        const filePath = "file:///data/user/0/com.basedemo/cache/ReactNative-snapshot-image299153054.png"
+                        const filePath1 = "file:///data/user/0/com.basedemo/cache/ReactNative-snapshot-image544839369.png"
+                        const destPath = Platform.OS === 'ios' ?
+                                RNDownLoad.MainBundlePath +'/hong.jpg' :
+                                RNDownLoad.ExternalDirectoryPath+'/'+'hong.jpg';
+                        this.moveFile(filePath1,destPath)
+                    }}>
+                    <Text style={styles.button_text}>文件移动</Text>
                 </TouchableOpacity>
                 <View style={{width:width,height:300,justifyContent: 'center',alignItems: 'center'}}>
                     {image}
@@ -153,8 +172,9 @@ export default class FileDownView extends Component {
         })
     }
 
-    downloadImgToCamera() {
-        CameraRoll.saveToCameraRoll(imageUrl,'photo')
+    //On Android, the tag must be a local image or video URI,
+    downloadImgToCamera(path) {
+        CameraRoll.saveToCameraRoll(path,'photo')
             .then((res)=>{
                 this.setState({
                     progress: res.toString(),
@@ -164,6 +184,20 @@ export default class FileDownView extends Component {
                 progress: error.toString(),
             })
         })
+    }
+
+    moveFile(filePath,destPath) {
+        RNDownLoad.moveFile(filePath,destPath)
+            .then((data)=>{
+                this.setState({
+                    progress: data
+                })
+            })
+            .catch((error)=>{
+                this.setState({
+                    progress: error,
+                })
+            })
     }
 
 }

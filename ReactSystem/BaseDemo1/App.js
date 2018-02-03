@@ -13,6 +13,9 @@ import NotificationView from "./app/components/NotificationView";
 import JNotificationView from "./app/components/JNotificationView";
 import FileDownView from "./app/components/FileDownView";
 import NativeMethodView from "./app/components/NativeMethodView";
+import ShareView from "./app/components/ShareView";
+import ScreenShotView from "./app/components/ScreenShotView";
+import AlertView from "./app/components/AlertView";
 
 const App = StackNavigator({
     Main: {screen: Main},
@@ -20,7 +23,10 @@ const App = StackNavigator({
     NotificationView: {screen: NotificationView},
     JNotificationView: {screen: JNotificationView},
     FileDownView: {screen: FileDownView},
-    NativeMethodView: {screen:NativeMethodView}
+    NativeMethodView: {screen:NativeMethodView},
+    ShareView: {screen: ShareView},
+    ScreenShotView: {screen: ScreenShotView},
+    AlertView: {screen: AlertView},
 },{
   navigationOptions: {
     gesturesEnabled: true,
