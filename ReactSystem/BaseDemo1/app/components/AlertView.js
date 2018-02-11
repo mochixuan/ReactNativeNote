@@ -8,12 +8,18 @@ import {
     AlertIOS,
 } from 'react-native'
 import Button from "../widget/Button";
+import {show} from '../utils/ToastUtils'
 
 const {width,height} = Dimensions.get('window')
 
 export default class AlertView extends Component {
 
+    shouldComponentUpdate(nextProps,nextState) {
+        console.log('-------',nextProps,nextState)
+    }
+
     render() {
+        this.props.name = "mochixuan"
         return (
             <View style={styles.container}>
                 <Button
