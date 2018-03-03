@@ -20,7 +20,7 @@ import {
 //import WImage from './app/base/WImage'
 //import WButton from './app/base/WButton'
 //import WAnimated from './app/base/WAnimated'
-import WAnimatedAll from './app/animate/WAnimatedAll'
+//import WAnimatedAll from './app/animate/WAnimatedAll'
 //import WAccessible from './app/base/WAccessible'
 //import WTimer from './app/base/WTimer'
 //import WNativeProps from './app/base/WNativeProps'
@@ -29,7 +29,7 @@ import WAnimatedAll from './app/animate/WAnimatedAll'
 //import RefreshControlExample from './app/assembly/RefreshControlExample'
 //import Swiper1 from './app/assembly/Swiper1'
 //import TabBarView from './app/assembly/TabBarView'
-//import Navigator from './app/navigation/WNavigator'
+import Navigator from './app/navigation/WNavigator'
 //import RNHtml from './app/assembly/RNHtml'
 //import WView11 from './app/assembly/WView11'
 //import WParallaxScrollView from './app/assembly/WParallaxScrollView'
@@ -54,11 +54,11 @@ export default class indexall extends Component {
         )
     }*/
 
-    /*render() {
+    render() {
         return (
             <Navigator/>
         )
-    }*/
+    }
 
     /*render() {
         return (
@@ -108,11 +108,11 @@ export default class indexall extends Component {
         )
     }*/
 
-    render() {
+    /*render() {
         return (
             <WAnimatedAll/>
         )
-    }
+    }*/
 
     /*WAnimated
     render() {

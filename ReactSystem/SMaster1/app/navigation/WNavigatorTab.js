@@ -10,6 +10,7 @@ import {
     TouchableOpacity
 } from 'react-native'
 import {TabNavigator} from 'react-navigation'
+import TabBarView from '../assembly/TabBarView'
 
 class Home extends Component {
     static navigationOptions = {
@@ -81,6 +82,7 @@ class User extends Component {
 }
 
 const WNavigatorTab = TabNavigator({
+    TabBarView: {screen: TabBarView},
     Home:{screen:Home},
     Video:{screen:Video},
     User:{screen:User}

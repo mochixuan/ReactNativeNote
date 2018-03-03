@@ -1,0 +1,3 @@
+rootProject.name = 'VirtualMaster'
+
+include ':app'

@@ -20,7 +20,7 @@ const tabIcons = [require("../img/e1.png"),require("../img/e2.png"),require("../
 
 export default class TabBarView extends Component {
 
-    _defaultTabBar() {
+    _defaultTabBar1() {
         return (
             <ScrollableTabView
                 renderTabBar={(props) => <DefaultTabBar/>}
@@ -50,7 +50,7 @@ export default class TabBarView extends Component {
         )
     }
 
-    _defaultTabBar1() {
+    _defaultTabBar2() {
         return (
             <ScrollableTabView
                 renderTabBar={(props) => <ScrollableTabBar/>}
@@ -90,7 +90,7 @@ export default class TabBarView extends Component {
         )
     }
 
-    _defineTabBarView() {
+    _defaultTabBar3() {
         return (
             <ScrollableTabView
                 renderTabBar={(props) => <TabBar tabNames={tabNames} tabIconNames={tabIcons}/>}
@@ -117,7 +117,7 @@ export default class TabBarView extends Component {
 
     render() {
         return (
-            this._defineTabBarView()
+            this._defaultTabBar2()
         )
     }
 
