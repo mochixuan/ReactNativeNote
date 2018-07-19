@@ -106,7 +106,9 @@ class App extends Component {
     * */
     sync() {
         CodePush.sync(
-            {},
+            {
+
+            },
             this.codePushStatusDidChange.bind(this),
             this.codePushDownloadDidProgress.bind(this)
         );
@@ -157,7 +159,6 @@ class App extends Component {
                 </TouchableOpacity>
                 {progressView}
                 {/*<Image style={styles.image} resizeMode={Image.resizeMode.contain} source={require("./image/laptop_phone_howitworks.png")}/>*/}
-                <Test1/>
                 <TouchableOpacity onPress={this.toggleAllowRestart.bind(this)}>
                     <Text style={styles.restartToggleButton}>Restart { this.state.restartAllowed ? "allowed" : "forbidden"}</Text>
                 </TouchableOpacity>
