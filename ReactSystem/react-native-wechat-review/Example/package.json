@@ -1,0 +1,19 @@
+{
+  "name": "react-native-wechat-review",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node_modules/react-native/packager/packager.sh",
+    "postinstall": "ln -sf ../index.js ./react-native-wechat.js"
+  },
+  "dependencies": {
+    "es6-promisify": "^3.0.0",
+    "react-native": "^0.14.2",
+    "events": "1.0.2"
+  },
+  "description": "Install the react-native at first:",
+  "main": "react-native library for wechat app",
+  "devDependencies": {},
+  "author": "",
+  "license": "ISC"
+}

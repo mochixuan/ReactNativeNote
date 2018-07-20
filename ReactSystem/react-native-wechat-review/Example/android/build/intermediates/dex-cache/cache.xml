@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/Users/wangxuan/work/ReactNative/GitHub/react-native-wechat-review/Example/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="d86429b0f0b3f3cafbeb78dda1b9d89119ccb05d">
+        <dex dex="/Users/wangxuan/work/ReactNative/GitHub/react-native-wechat-review/Example/android/app/build/intermediates/pre-dexed/debug/classes-d8731e4fc67e2e7bddae30e820082ed8e102319f.jar" />
+    </item>
+    <item
+        jar="/Users/wangxuan/work/ReactNative/GitHub/react-native-wechat-review/Example/android/app/build/intermediates/exploded-aar/com.facebook.fresco/fresco/0.6.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="dd4c42401d36342901ac4280fb92a831f8007f3d">
+        <dex dex="/Users/wangxuan/work/ReactNative/GitHub/react-native-wechat-review/Example/android/app/build/intermediates/pre-dexed/debug/classes-fe87cd34f3303f21f48a88d2e41eec67348aa641.jar" />
+    </item>
+    <item
+        jar="/Users/wangxuan/work/ReactNative/GitHub/react-native-wechat-review/Example/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.14.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="524baea148a06c6cabf75bd83932f00bf734907f">
+        <dex dex="/Users/wangxuan/work/ReactNative/GitHub/react-native-wechat-review/Example/android/app/build/intermediates/pre-dexed/debug/classes-903212cedd364db9c1f8aabcb1924f8e1856ebed.jar" />
+    </item>
+    <item
+        jar="/Users/wangxuan/work/ReactNative/GitHub/react-native-wechat-review/Example/android/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="c31e21b53ff2f74664e498248d01453a32e32d48">
+        <dex dex="/Users/wangxuan/work/ReactNative/GitHub/react-native-wechat-review/Example/android/app/build/intermediates/pre-dexed/debug/classes-26352528fd61c5e590b2135271132761aae59c3f.jar" />
+    </item>
+    <item
+        jar="/Users/wangxuan/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp/okhttp/2.4.0/40340c0748190fe897baf7bffbc1b282734294e5/okhttp-2.4.0.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="40340c0748190fe897baf7bffbc1b282734294e5">
+        <dex dex="/Users/wangxuan/work/ReactNative/GitHub/react-native-wechat-review/Example/android/app/build/intermediates/pre-dexed/debug/okhttp-2.4.0-2fe4532f365c93617e954a480644b7156fcd411a.jar" />
+    </item>
+    <item
+        jar="/Users/wangxuan/work/ReactNative/GitHub/react-native-wechat-review/Example/android/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.0.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="4356e230a981d1bbf047d848b91bc0d9b7c5bacc">
+        <dex dex="/Users/wangxuan/work/ReactNative/GitHub/react-native-wechat-review/Example/android/app/build/intermediates/pre-dexed/debug/classes-bf424d634369b581b52302afb0870d207c4bf5a2.jar" />
+    </item>
+    <item
+        jar="/Users/wangxuan/work/ReactNative/GitHub/react-native-wechat-review/Example/android/app/build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline/0.6.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="eb9817e26186e1a267cdd14211742ecc793de32e">
+        <dex dex="/Users/wangxuan/work/ReactNative/GitHub/react-native-wechat-review/Example/android/app/build/intermediates/pre-dexed/debug/classes-b6ad84ba19904aea1f0fede3bd4d35e469622c5d.jar" />
+    </item>
+    <item
+        jar="/Users/wangxuan/.gradle/caches/modules-2/files-2.1/com.squareup.okio/okio/1.5.0/bb7d4d96e780e8ef4f275c7d8dd3ef2883ddf99a/okio-1.5.0.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="bb7d4d96e780e8ef4f275c7d8dd3ef2883ddf99a">
+        <dex dex="/Users/wangxuan/work/ReactNative/GitHub/react-native-wechat-review/Example/android/app/build/intermediates/pre-dexed/debug/okio-1.5.0-c561133c9a7c13a8c8f196284995245aa9f5ba75.jar" />
+    </item>
+    <item
+        jar="/Users/wangxuan/work/ReactNative/GitHub/react-native-wechat-review/Example/android/app/build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline-okhttp/0.6.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="1d5fddbfc516e39dd74d776e5cca8b761721990b">
+        <dex dex="/Users/wangxuan/work/ReactNative/GitHub/react-native-wechat-review/Example/android/app/build/intermediates/pre-dexed/debug/classes-7cc053e625aa31d641421873439308cbf1603395.jar" />
+    </item>
+    <item
+        jar="/Users/wangxuan/work/ReactNative/GitHub/react-native-wechat-review/Example/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.14.0/jars/libs/infer-annotations-1.5.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="0b5e946b76cdb1f00b18f2981e7d997141a66c9f">
+        <dex dex="/Users/wangxuan/work/ReactNative/GitHub/react-native-wechat-review/Example/android/app/build/intermediates/pre-dexed/debug/infer-annotations-1.5-429416b50a2f31cd36c48db4e0384913e5ffbd65.jar" />
+    </item>
+    <item
+        jar="/Users/wangxuan/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp/okhttp-ws/2.4.0/69206d28966656052a982ceded583abdeb41cf63/okhttp-ws-2.4.0.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="69206d28966656052a982ceded583abdeb41cf63">
+        <dex dex="/Users/wangxuan/work/ReactNative/GitHub/react-native-wechat-review/Example/android/app/build/intermediates/pre-dexed/debug/okhttp-ws-2.4.0-b09f6f3126a80e644d07098287856e77a173000c.jar" />
+    </item>
+    <item
+        jar="/Users/wangxuan/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/23.0.1/support-annotations-23.0.1.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="1fce89a6428c51467090d7f424e4c9c3dbd55f7e">
+        <dex dex="/Users/wangxuan/work/ReactNative/GitHub/react-native-wechat-review/Example/android/app/build/intermediates/pre-dexed/debug/support-annotations-23.0.1-a15b0a9bdaed1ef0ee8051930d5d503ff8dca575.jar" />
+    </item>
+    <item
+        jar="/Users/wangxuan/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-core/2.2.3/1a0113da2cab5f4c216b4e5e7c1dbfaa67087e14/jackson-core-2.2.3.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="1a0113da2cab5f4c216b4e5e7c1dbfaa67087e14">
+        <dex dex="/Users/wangxuan/work/ReactNative/GitHub/react-native-wechat-review/Example/android/app/build/intermediates/pre-dexed/debug/jackson-core-2.2.3-25bad37f8ba474fe2eb9b23498aae4fb7a88413d.jar" />
+    </item>
+    <item
+        jar="/Users/wangxuan/.gradle/caches/modules-2/files-2.1/com.nineoldandroids/library/2.4.0/e9b63380f3a242dbdbf103a2355ad7e43bad17cb/library-2.4.0.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="e9b63380f3a242dbdbf103a2355ad7e43bad17cb">
+        <dex dex="/Users/wangxuan/work/ReactNative/GitHub/react-native-wechat-review/Example/android/app/build/intermediates/pre-dexed/debug/library-2.4.0-ccb33a20d01a0b418aaf87a31920d978c117bbf1.jar" />
+    </item>
+    <item
+        jar="/Users/wangxuan/.gradle/caches/modules-2/files-2.1/com.google.code.findbugs/jsr305/3.0.0/5871fb60dc68d67da54a663c3fd636a10a532948/jsr305-3.0.0.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="5871fb60dc68d67da54a663c3fd636a10a532948">
+        <dex dex="/Users/wangxuan/work/ReactNative/GitHub/react-native-wechat-review/Example/android/app/build/intermediates/pre-dexed/debug/jsr305-3.0.0-91e920fc35d837c275ebdf2cbfc4b1c6971fd86a.jar" />
+    </item>
+    <item
+        jar="/Users/wangxuan/work/ReactNative/GitHub/react-native-wechat-review/Example/android/app/build/intermediates/exploded-aar/com.facebook.fresco/drawee/0.6.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="af0fe468c884e2d153cf564326b23b54ff0040ce">
+        <dex dex="/Users/wangxuan/work/ReactNative/GitHub/react-native-wechat-review/Example/android/app/build/intermediates/pre-dexed/debug/classes-526f30cf781ca653efa96403a3b1915a8e416d90.jar" />
+    </item>
+    <item
+        jar="/Users/wangxuan/work/ReactNative/GitHub/react-native-wechat-review/Example/android/app/build/intermediates/exploded-aar/com.facebook.fresco/fbcore/0.6.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="c10091a128e47ed4ef804bd753c0f45745699756">
+        <dex dex="/Users/wangxuan/work/ReactNative/GitHub/react-native-wechat-review/Example/android/app/build/intermediates/pre-dexed/debug/classes-66fe067c826a68db2db9c1238746894ba3a93e03.jar" />
+    </item>
+    <item
+        jar="/Users/wangxuan/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-android/1.1.4/129874135e6081269ace2312092031558865de12/bolts-android-1.1.4.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="129874135e6081269ace2312092031558865de12">
+        <dex dex="/Users/wangxuan/work/ReactNative/GitHub/react-native-wechat-review/Example/android/app/build/intermediates/pre-dexed/debug/bolts-android-1.1.4-38046435a02a3ee378f2542019216c2adbddc583.jar" />
+    </item>
+    <item
+        jar="/Users/wangxuan/work/ReactNative/GitHub/react-native-wechat-review/Example/android/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.1/jars/libs/internal_impl-23.0.1.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="aa92916125166649d8ad4ba3940c3dd7515596d3">
+        <dex dex="/Users/wangxuan/work/ReactNative/GitHub/react-native-wechat-review/Example/android/app/build/intermediates/pre-dexed/debug/internal_impl-23.0.1-80eda236a2f1d3c7adee04849c5f39346d1803b5.jar" />
+    </item>
+
+</items>
