@@ -1,0 +1,42 @@
+Arguments: 
+  /usr/local/Cellar/node/9.11.1/bin/node /usr/local/bin/yarn upgrade dev webpack
+
+PATH: 
+  /Library/Java/JavaVirtualMachines/jdk1.8.0_162.jdk/Contents/Home/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/wangxuan/Library/Android/sdk/platform-tools:/Users/wangxuan/Library/Android/sdk/tools
+
+Yarn version: 
+  1.5.1
+
+Node version: 
+  9.11.1
+
+Platform: 
+  darwin x64
+
+npm manifest: 
+  {
+    "name": "webpacksample",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+      "webpack": "^3.3.0"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
+
+Trace: 
+  Error: No lockfile in this directory. Run `yarn install` to generate one.
+      at new MessageError (/usr/local/lib/node_modules/yarn/lib/cli.js:186:110)
+      at /usr/local/lib/node_modules/yarn/lib/cli.js:89389:13
+      at <anonymous>
