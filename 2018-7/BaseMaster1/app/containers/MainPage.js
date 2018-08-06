@@ -24,6 +24,11 @@ export default class MainPage extends Component{
                         this.props.navigation.navigate('AnimatablePage')
                     })
                 }
+                {
+                    getButtonStyle('SortPage',()=>{
+                        this.props.navigation.navigate('SortPage')
+                    })
+                }
             </View>
         )
     }
