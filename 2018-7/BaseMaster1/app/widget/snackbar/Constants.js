@@ -1,0 +1,13 @@
+
+const SnackBar = {
+    LENGTH_LONG: 3500,
+    LENGTH_SHORT: 2000
+}
+
+const TOOLBAR_HEIGHT = 64
+const IOS_PADDING_TOP = 20
+const IN_OUT_DURATION = 300
+
+export {
+    SnackBar,TOOLBAR_HEIGHT,IOS_PADDING_TOP,IN_OUT_DURATION
+}

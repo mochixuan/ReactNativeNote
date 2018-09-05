@@ -52,7 +52,6 @@ export default class SortPage extends Component{
                 <Text style={styles.txt}>{TEXT}</Text>
                 <View style={{marginLeft: 18}}>
                     <SelectImageView
-                        compatibleScrollView={this.scrollView}
                         dataSource={this.state.imageItems}
                         parentWidth={width-18}
 

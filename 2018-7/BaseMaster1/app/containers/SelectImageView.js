@@ -450,7 +450,6 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
     },
     item: {
-        backgroundColor: block_separation_color,
         position: 'absolute',
         zIndex: defaultZIndex,
     },

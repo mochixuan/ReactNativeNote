@@ -29,6 +29,11 @@ export default class MainPage extends Component{
                         this.props.navigation.navigate('SortPage')
                     })
                 }
+                {
+                    getButtonStyle('PopupPage',()=>{
+                        this.props.navigation.navigate('PopupPage')
+                    })
+                }
             </View>
         )
     }
