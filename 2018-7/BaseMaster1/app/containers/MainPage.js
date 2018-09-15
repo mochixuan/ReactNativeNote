@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import {Dimensions, StyleSheet, View} from 'react-native'
 import {getButtonStyle} from "../base/BaseStyle";
+import LayoutAnimatePage from "./LayoutAnimatePage";
 
 const {width,height} = Dimensions.get('window')
 
@@ -32,6 +33,11 @@ export default class MainPage extends Component{
                 {
                     getButtonStyle('PopupPage',()=>{
                         this.props.navigation.navigate('PopupPage')
+                    })
+                }
+                {
+                    getButtonStyle('LayoutAnimatePage',()=>{
+                        this.props.navigation.navigate('LayoutAnimatePage')
                     })
                 }
             </View>

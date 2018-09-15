@@ -9,11 +9,17 @@ import {getButtonStyle} from "../base/BaseStyle";
 import RootSiblings from 'react-native-root-siblings';
 import SnackBar from '../widget/snackbar/SnackBar'
 const {width,height} = Dimensions.get('window')
+import WPureView from '../components/WPureView'
 
 export default class PopupPage extends Component{
 
     constructor(props) {
         super()
+
+        this.state = {
+            data: [1,2,3],
+            refresh: false,
+        }
     }
 
     render() {
@@ -24,6 +30,24 @@ export default class PopupPage extends Component{
                         SnackBar.show("床前明月光，疑是地上霜！",SnackBar.LENGTH_LONG,1)
                     })
                 }
+                <Text style={{fontSize: 18,color: '#f00',alignSelf: 'center'}}>state: {[...this.state.data]}</Text>
+                {
+                    getButtonStyle('修改Pure',()=>{
+                        const data = this.state.data
+                        data.push(data.length+1)
+                        this.setState({
+                            data: data
+                        })
+                    })
+                }
+                {
+                    getButtonStyle('修改Pure',()=>{
+                        this.setState({
+                            refresh: !this.state.refresh
+                        })
+                    })
+                }
+                <WPureView data = {this.state.data} />
             </View>
         )
     }

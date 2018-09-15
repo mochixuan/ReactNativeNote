@@ -6,6 +6,7 @@ import LifeCyclePage from "./app/containers/LifeCyclePage";
 import AnimatablePage from "./app/containers/AnimatablePage";
 import SortPage from "./app/containers/SortPage";
 import PopupPage from "./app/containers/PopupPage";
+import LayoutAnimatePage from "./app/containers/LayoutAnimatePage";
 
 const App  = createStackNavigator({
     MainPage: {screen: MainPage},
@@ -14,6 +15,7 @@ const App  = createStackNavigator({
     AnimatablePage: {screen: AnimatablePage},
     SortPage: {screen: SortPage},
     PopupPage: {screen: PopupPage},
+    LayoutAnimatePage: {screen: LayoutAnimatePage}
 },{
     navigationOptions: {
         gesturesEnabled: true
