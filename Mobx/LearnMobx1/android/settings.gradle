@@ -1,0 +1,3 @@
+rootProject.name = 'LearnMobx1'
+
+include ':app'
