@@ -1,0 +1,99 @@
+{
+  "defaultSeverity": "error",
+  "cliOptions": {
+    "exclude": [
+      "./ios",
+      "./android",
+      "node_modules",
+      "./app/js/api"
+    ]
+  },
+  "include": [
+    "./app/**/*"
+  ],
+  "extends": ["tslint:recommended", "tslint-config-standard", "tslint-config-prettier", "tslint-react"],
+  "jsRules": {
+
+  },
+  "rules": {
+    "no-default-export": true, //禁止es默认导出
+    "import-name": [false], //
+    "variable-name": [true, "allow-pascal-case", "ban-keywords"],
+    "missing-jsdoc": [false],
+    "no-relative-imports": [false], //相对路径引用
+    "member-ordering": [false],
+    "no-implicit-dependencies": [false], //允许导入package中不存在的依赖
+    "object-literal-sort-keys": [false],
+    "no-submodule-imports": [false],
+    "max-classes-per-file": false,
+
+    // ts检查
+    "adjacent-overload-signatures": true, //定义函数时如果用到了覆写，则必须将覆写的函数写到一起
+    "no-empty-interface": true, //禁止空接口 {}
+    "typedef-whitespace": true, //类型声明的冒号之前是否需要空格
+    "prefer-for-of": true, //建议使用for of
+    // "no-parameter-reassignment": true, //不允许重新分配参数
+    "no-internal-module": true, //禁止使用 module 来定义命名空间
+    "no-unnecessary-type-assertion": true, //如果类型断言没有改变表达式的类型就发出警告,禁止无用类型断言
+    "unified-signatures": true, //重载可以被统一联合成一个function 专用
+    "no-debugger": true, //禁用debugger
+    "no-trailing-whitespace": false, //禁止行尾空格
+    "no-unused-expression": true, //禁止无用表达式
+    "no-unused-variable": true, //定义的变量必须使用
+    "no-use-before-declare": true, //变量必须先定义后使用
+    "no-var-keyword": true, //禁止使用var声明变量
+    "no-namespace": true, // 使用 es6 引入外部模块
+    "no-this-assignment": [
+      false,
+      {
+        "allowed-names": [
+          "^self$",
+          "^this$"
+        ],
+        "allow-destructuring": true
+      }
+    ], //禁止将this赋值给其他变量，除非是解构赋值
+    "no-empty": [
+      true,
+      "allow-empty-catch"
+    ], //禁止出现除catch之外的空代码块
+
+    // 功能性检查
+    "ban-comma-operator": true,
+    "curly": [
+      true,
+      "ignore-same-line"
+    ], //if 后面必须有
+    "no-construct": true, //禁止使用new来生成String，Number或Boolean
+    "no-duplicate-super": true, //禁止在一个构造函数出现两次super
+    "no-duplicate-switch-case": true, //禁止switch语句中出现重复表达式case
+    "no-duplicate-variable": [
+      true,
+      "check-parameters"
+    ], //禁止出现重复的变量定义或函数参数名
+    "no-eval": true, //禁止使用eval
+    "no-invalid-template-strings": true, //禁止在非模板字符串中出现${}
+    "no-sparse-arrays": true, //禁止在数组中出现连续的逗号
+    "no-string-throw": true, //禁止throw字符串，必须throw一个Error对象
+
+    //格式检查
+    "indent": [true, "spaces", 4], //2个空格的缩进
+    "max-line-length": {
+      "options": [120] //单行最大120字符长度
+    },
+    "no-console": { //禁止console
+      "severity": "warning",
+      "options": [
+        "debug",
+        "info",
+        "log",
+        "time",
+        "timeEnd",
+        "trace"
+      ]
+    },
+    "semicolon": [true, "always"], //结尾需要分号
+    "quotemark": [true, "single"] //单引号引用
+  },
+  "rulesDirectory": []
+}

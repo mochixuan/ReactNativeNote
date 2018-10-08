@@ -1,0 +1,11 @@
+{
+    //"editor.formatOnSave": true,
+    //"javascript.format.enable": false,
+    "typescript.updateImportsOnFileMove.enabled": "never",
+    "tslint.autoFixOnSave": true,
+    "tslint.jsEnable": true,
+    "tslint.run": "onType",
+    "editor.tabSize": 2,
+    "editor.detectIndentation": false
+
+}
