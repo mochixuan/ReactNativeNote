@@ -1,11 +1,13 @@
 {
     //"editor.formatOnSave": true,
     //"javascript.format.enable": false,
-    "typescript.updateImportsOnFileMove.enabled": "never",
+    //https://code.visualstudio.com/updates/v1_24
+    "typescript.updateImportsOnFileMove.enabled": "always",
     "tslint.autoFixOnSave": true,
     "tslint.jsEnable": true,
     "tslint.run": "onType",
     "editor.tabSize": 2,
+    //按 "Tab" 时插入空格。该设置在 `editor.detectIndentation` 启用时根据文件内容进行重写。
     "editor.detectIndentation": false
 
 }

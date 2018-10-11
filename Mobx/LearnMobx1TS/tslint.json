@@ -1,5 +1,4 @@
 {
-  "defaultSeverity": "error",
   "cliOptions": {
     "exclude": [
       "./ios",
@@ -11,10 +10,12 @@
   "include": [
     "./app/**/*"
   ],
-  "extends": ["tslint:recommended", "tslint-config-standard", "tslint-config-prettier", "tslint-react"],
-  "jsRules": {
-
-  },
+  "extends": [
+    "tslint:recommended",
+    "tslint-config-prettier",
+    "tslint-config-standard",
+    "tslint-react"
+  ],
   "rules": {
     "no-default-export": true, //禁止es默认导出
     "import-name": [false], //
@@ -94,6 +95,5 @@
     },
     "semicolon": [true, "always"], //结尾需要分号
     "quotemark": [true, "single"] //单引号引用
-  },
-  "rulesDirectory": []
+  }
 }

@@ -14,7 +14,8 @@
     "native-base": "^2.8.0",
     "react": "16.5.0",
     "react-native": "^0.57.0",
-    "react-navigation": "^2.14.2"
+    "react-navigation": "^2.14.2",
+    "redux-persist": "^5.10.0"
   },
   "devDependencies": {
     "@babel/plugin-proposal-decorators": "^7.0.0",

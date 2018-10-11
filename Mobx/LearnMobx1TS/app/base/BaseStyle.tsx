@@ -6,7 +6,7 @@ const { width } = Dimensions.get('window');
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
+    alignItems: 'center'
   },
   button: {
     width: width * 0.6,
@@ -15,12 +15,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#7da6ff',
     borderRadius: 2,
-    marginTop: 20,
+    marginTop: 20
   },
   button_text: {
     fontSize: 18,
-    color: '#fff',
-  },
+    color: '#fff'
+  }
 });
 
 export const getButtonStyle = (text: string, click: object) => {
@@ -28,7 +28,7 @@ export const getButtonStyle = (text: string, click: object) => {
     <TouchableOpacity
       style={styles.button}
       onPress={() => {
-        if (click != null) {
+        if (click !== undefined) {
           click();
         }
       }}
