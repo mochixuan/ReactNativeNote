@@ -1,22 +1,28 @@
-import React, { Component } from 'react'
-import { Dimensions, StyleSheet, Text, View } from 'react-native'
-import { getButtonStyle } from "../base/BaseStyle";
-import { inject, observer } from 'mobx-react'
+import { inject, observer } from 'mobx-react';
+import React, { Component } from 'react';
+import { Dimensions, StyleSheet, Text, View } from 'react-native';
 import { NavigationScreenProp } from 'react-navigation';
-import { LoginStore } from '../store/LoginStore'
+import { getButtonStyle } from '../base/BaseStyle';
+import { LoginStore } from '../store/LoginStore';
 
-const { width, height } = Dimensions.get('window')
+const { width, height } = Dimensions.get('window');
+
+const ethers = require('ethers');
 
 interface IProps {
-    loginStore: LoginStore,
+    loginStore: LoginStore;
     navigation: NavigationScreenProp<any>;
 }
 
 @inject('loginStore')
 @observer
-class MainPage extends Component<IProps, any>{
+class MainPage extends Component<IProps, any> {
 
-    render() {
+    public componentWillMount() {
+      // const mWeb3 = new Web3();
+    }
+
+    public render() {
         return (
             <View style={styles.container}>
                 {
@@ -26,8 +32,8 @@ class MainPage extends Component<IProps, any>{
                             <View style={{ alignItems: 'center' }}>
                                 <Text style={styles.tip}>{this.getLoginState()}</Text>
                                 {
-                                    getButtonStyle('Login', () => {
-                                        this.props.loginStore.login()
+                                    getButtonStyle('LogingetButtonStyle', () => {
+                                        this.props.loginStore.login();
                                     })
                                 }
                             </View>
@@ -35,20 +41,25 @@ class MainPage extends Component<IProps, any>{
                 }
                 {
                     getButtonStyle('TodoPage', () => {
-                        this.props.navigation.navigate('TodoPage')
-                    })
-                }
+                      // ——忽略该行以下所有代码出现的错误提示
+                      // tslint:disable 
+                      //tslint:disable-line
+                // tslint: disable - line
+
+              this.props.navigation.navigate('TodoPage');
+                  })
+      }
             </View>
-        )
+        );
     }
 
-    getLoginState() {
-        if (this.props.loginStore.isLoginState == "done") {
-            return "未登录"
-        } else if (this.props.loginStore.isLoginState == "doing") {
-            return "登录中 ... "
+    public getLoginState() {
+        if (this.props.loginStore.isLoginState === 'done') {
+            return '未登录';
+        } else if (this.props.loginStore.isLoginState === 'doing') {
+            return '登录中 ... ';
         } else {
-            return "登录失败"
+            return '登录失败';
         }
     }
 
@@ -68,6 +79,6 @@ const styles = StyleSheet.create({
         color: '#2d75ff',
         fontSize: 18
     }
-})
+});
 
-export default MainPage
+export default MainPage;

@@ -1,19 +1,22 @@
-import React,{Component} from 'react'
+import {observable} from 'mobx';
+import {observer} from 'mobx-react';
+import React,{Component} from 'react';
 import {
-    View,
     StyleSheet,
     Text,
-    TextInput
-} from 'react-native'
-import {observable} from 'mobx'
-import {observer} from 'mobx-react'
+    TextInput,
+    View
+} from 'react-native';
 
-export default class TodoPage extends Component{
+export default class TodoPage extends Component {
 
-    render() {
+    public render() {
         return (
-            <View></View>
-        )
+          <View>
+            <Text>sds</Text>
+            <View>TextInputgetButtonStyle</View>
+          </View>
+        );
     }
 
 }

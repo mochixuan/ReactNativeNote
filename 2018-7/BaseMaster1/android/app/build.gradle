@@ -95,7 +95,6 @@ def enableProguardInReleaseBuilds = false
 
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
-    buildToolsVersion rootProject.ext.buildToolsVersion
 
     defaultConfig {
         applicationId "com.basemaster1"
@@ -134,13 +133,17 @@ android {
             }
         }
     }
+    buildToolsVersion '27.0.3'
 }
 
 dependencies {
-    compile project(':react-native-fast-image')
-    compile fileTree(include: ['*.jar'], dir: 'libs')
-    compile "com.android.support:appcompat-v7:${rootProject.ext.supportLibVersion}"
-    compile 'com.facebook.react:react-native:+'
+    compile project(':react-native-wxwebview')
+    compile project(':react-native-scrypt')
+    compile project(':react-native-fs')
+    implementation project(':react-native-fast-image')
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation "com.android.support:appcompat-v7:${rootProject.ext.supportLibVersion}"
+    implementation 'com.facebook.react:react-native:+'
     // From node_modules
     compile project(':wlibrary')
 }

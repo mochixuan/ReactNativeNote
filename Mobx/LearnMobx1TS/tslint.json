@@ -11,7 +11,12 @@
   "include": [
     "./app/**/*"
   ],
-  "extends": ["tslint:recommended", "tslint-config-standard", "tslint-config-prettier", "tslint-react"],
+  "extends": [
+    "tslint:recommended",
+     "tslint-config-standard", 
+     "tslint-config-prettier", 
+     "tslint-react"
+  ],
   "jsRules": {
 
   },
@@ -43,6 +48,13 @@
     "no-use-before-declare": true, //变量必须先定义后使用
     "no-var-keyword": true, //禁止使用var声明变量
     "no-namespace": true, // 使用 es6 引入外部模块
+    "one-line": [
+      true,
+      "check-open-brace",
+      "check-catch",
+      "check-else",
+      "check-whitespace"
+    ],
     "no-this-assignment": [
       false,
       {
@@ -93,7 +105,9 @@
       ]
     },
     "semicolon": [true, "always"], //结尾需要分号
-    "quotemark": [true, "single"] //单引号引用
+    "quotemark": [true, "single"], //单引号引用
+
+    "jsx-wrap-multiline": true
   },
   "rulesDirectory": []
 }

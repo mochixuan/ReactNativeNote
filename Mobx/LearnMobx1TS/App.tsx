@@ -1,14 +1,15 @@
+import { Provider } from 'mobx-react';
 import React, { Component } from 'react';
-import { createStackNavigator } from 'react-navigation'
-import MainPage from './app/containers/MainPage'
+import { createStackNavigator } from 'react-navigation';
+import MainPage from './app/containers/MainPage';
+import store from './app/store';
 import TodoPage from './app/todo/pages/TodoPage';
-import { Provider } from 'mobx-react'
-import store from './app/store'
+
 
 import {
-    View,
-    Text
-} from 'react-native'
+    Text,
+    View
+} from 'react-native';
 
 const AppComponent = createStackNavigator({
     MainPage: { screen: MainPage },
@@ -18,14 +19,15 @@ const AppComponent = createStackNavigator({
             gesturesEnabled: true
         },
         headerMode: 'none',
-    })
+    });
 
 const App = () => {
+    // web3.eth.getBlock('latest').then(console.log);
     return (
         <Provider {...store}>
             <AppComponent />
         </Provider>
-    )
-}
+    );
+};
 
-export default App
+export default App;

@@ -7,6 +7,8 @@ import AnimatablePage from "./app/containers/AnimatablePage";
 import SortPage from "./app/containers/SortPage";
 import PopupPage from "./app/containers/PopupPage";
 import LayoutAnimatePage from "./app/containers/LayoutAnimatePage";
+import WebViewPage from "./app/containers/WebViewPage";
+import QRCodePage from "./app/containers/QRCodePage";
 
 const App  = createStackNavigator({
     MainPage: {screen: MainPage},
@@ -15,7 +17,9 @@ const App  = createStackNavigator({
     AnimatablePage: {screen: AnimatablePage},
     SortPage: {screen: SortPage},
     PopupPage: {screen: PopupPage},
-    LayoutAnimatePage: {screen: LayoutAnimatePage}
+    LayoutAnimatePage: {screen: LayoutAnimatePage},
+    WebViewPage: {screen: WebViewPage},
+    QRCodePage: {screen: QRCodePage}
 },{
     navigationOptions: {
         gesturesEnabled: true

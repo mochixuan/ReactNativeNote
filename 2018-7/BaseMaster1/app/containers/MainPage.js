@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import {Dimensions, StyleSheet, View} from 'react-native'
 import {getButtonStyle} from "../base/BaseStyle";
 import LayoutAnimatePage from "./LayoutAnimatePage";
+import WebViewPage from "./WebViewPage";
 
 const {width,height} = Dimensions.get('window')
 
@@ -38,6 +39,16 @@ export default class MainPage extends Component{
                 {
                     getButtonStyle('LayoutAnimatePage',()=>{
                         this.props.navigation.navigate('LayoutAnimatePage')
+                    })
+                }
+                {
+                    getButtonStyle('WebViewPage',()=>{
+                        this.props.navigation.navigate('WebViewPage')
+                    })
+                }
+                {
+                    getButtonStyle('QRCodePage',()=>{
+                        this.props.navigation.navigate('QRCodePage')
                     })
                 }
             </View>

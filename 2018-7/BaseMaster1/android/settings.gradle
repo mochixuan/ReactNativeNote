@@ -1,4 +1,10 @@
 rootProject.name = 'BaseMaster1'
+include ':react-native-wxwebview'
+project(':react-native-wxwebview').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-wxwebview/android')
+include ':react-native-scrypt'
+project(':react-native-scrypt').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-scrypt/android')
+include ':react-native-fs'
+project(':react-native-fs').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-fs/android')
 include ':react-native-fast-image', ':wlibrary'
 project(':react-native-fast-image').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-fast-image/android')
 

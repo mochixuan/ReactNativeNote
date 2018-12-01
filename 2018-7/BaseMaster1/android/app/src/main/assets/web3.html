@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>大家好</title>
+  <script>
+      function wang() {
+          window.postMessage(JSON.stringify({method: 'Test1',data: (typeof web3)}))
+      }
+      let person = {
+          name: 'wang xuan'
+      }
+      window.onload = function () {
+          window.postMessage(JSON.stringify({method: 'onload',data: 'onload'}))
+      }
+      function initWeb3() {
+          alert('initWeb3 Success'+(web3.version))
+      }
+  </script>
+</head>
+<body>
+<span>我是个测试</span>
+<button onclick="wang()">单机显示</button>
+<button onclick="initWeb3()">initWeb3</button>
+</body>
+</html>

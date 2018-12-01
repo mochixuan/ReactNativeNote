@@ -4,6 +4,26 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /><!-- 允许应用检测网络连接状态，在网络异常状态下避免数据发送，节省流量和电量。-->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"  /><!-- 允许应用以只读的方式访问手机设备的信息，通过获取的信息来唯一标识用户。-->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"  /><!-- 获取设备的MAC地址，同样用来标识唯一用户。-->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"  /><!-- 用于保存设备信息，以及记录日志。-->
+    <uses-permission android:name="android.permission.GET_TASKS"  /><!-- (建议配置) 获取当前应用是否在显示应用，可以更精准的统计用户活跃-->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"  /><!-- (可选权限) 可通过GPS获取设备的位置信息，用来修正用户的地域分布数据，使报表数据更准确。-->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"  /><!-- (可选权限) 用来获取该应用被使用的粗略位置信息。-->
+
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"></uses-permission>
+    <!--发送持久广播 -->
+    <uses-permission android:name="android.permission.BROADCAST_STICKY"></uses-permission>
+    <!-- 修改全局系统设置-->
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"></uses-permission>
+    <!-- 允许振动，在接收推送时提示客户 -->
+    <uses-permission android:name="android.permission.VIBRATE"></uses-permission>
+    <!-- 侦测Wifi 变化，以针对不同 Wifi 控制最佳心跳频率，确保push的通道稳定 -->
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"></uses-permission>
+    <!-- 此权限用于在接到推送时，可唤醒屏幕，可选择性添加权限 -->
+    <uses-permission android:name="android.permission.WAKE_LOCK"></uses-permission>
+
     <application
       android:name=".MainApplication"
       android:label="@string/app_name"
@@ -21,6 +41,8 @@
         </intent-filter>
       </activity>
       <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />
+
+
     </application>
 
 </manifest>
