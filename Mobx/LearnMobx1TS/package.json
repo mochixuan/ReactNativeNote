@@ -30,6 +30,7 @@
     "querystring-es3": "^0.2.1",
     "react": "16.5.0",
     "react-native": "^0.57.0",
+<<<<<<< HEAD
     "react-native-crypto": "^2.1.2",
     "react-native-level-fs": "^3.0.1",
     "react-native-os": "^1.2.1",
@@ -46,6 +47,10 @@
     "util": "^0.10.4",
     "vm-browserify": "0.0.4",
     "web3": "^0.20.2"
+=======
+    "react-navigation": "^2.14.2",
+    "redux-persist": "^5.10.0"
+>>>>>>> 4d4b5dc951c9a1f49b8d3c77dae0277e1dddf12e
   },
   "devDependencies": {
     "@babel/plugin-proposal-decorators": "^7.0.0",

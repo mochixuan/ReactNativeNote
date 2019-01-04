@@ -1,5 +1,4 @@
 {
-  "defaultSeverity": "error",
   "cliOptions": {
     "exclude": [
       "./ios",
@@ -13,6 +12,7 @@
   ],
   "extends": [
     "tslint:recommended",
+<<<<<<< HEAD
      "tslint-config-standard", 
      "tslint-config-prettier", 
      "tslint-react"
@@ -20,6 +20,12 @@
   "jsRules": {
 
   },
+=======
+    "tslint-config-prettier",
+    "tslint-config-standard",
+    "tslint-react"
+  ],
+>>>>>>> 4d4b5dc951c9a1f49b8d3c77dae0277e1dddf12e
   "rules": {
     "no-default-export": true, //禁止es默认导出
     "import-name": [false], //
@@ -105,9 +111,15 @@
       ]
     },
     "semicolon": [true, "always"], //结尾需要分号
+<<<<<<< HEAD
     "quotemark": [true, "single"], //单引号引用
 
     "jsx-wrap-multiline": true
   },
   "rulesDirectory": []
 }
+=======
+    "quotemark": [true, "single"] //单引号引用
+  }
+}
+>>>>>>> 4d4b5dc951c9a1f49b8d3c77dae0277e1dddf12e

@@ -3,6 +3,7 @@ import {Dimensions, StyleSheet, View} from 'react-native'
 import {getButtonStyle} from "../base/BaseStyle";
 import LayoutAnimatePage from "./LayoutAnimatePage";
 import WebViewPage from "./WebViewPage";
+import TouchIdPage from "./TouchIdPage";
 
 const {width,height} = Dimensions.get('window')
 
@@ -49,6 +50,11 @@ export default class MainPage extends Component{
                 {
                     getButtonStyle('QRCodePage',()=>{
                         this.props.navigation.navigate('QRCodePage')
+                    })
+                }
+                {
+                    getButtonStyle('TouchIdPage',()=>{
+                        this.props.navigation.navigate('TouchIdPage')
                     })
                 }
             </View>

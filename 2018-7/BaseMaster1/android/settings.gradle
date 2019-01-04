@@ -1,6 +1,12 @@
 rootProject.name = 'BaseMaster1'
+include ':react-native-svg'
+project(':react-native-svg').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-svg/android')
+include ':react-native-fingerprint-scanner'
+project(':react-native-fingerprint-scanner').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-fingerprint-scanner/android')
 include ':react-native-wxwebview'
 project(':react-native-wxwebview').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-wxwebview/android')
+include ':react-native-touch-id'
+project(':react-native-touch-id').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-touch-id/android')
 include ':react-native-scrypt'
 project(':react-native-scrypt').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-scrypt/android')
 include ':react-native-fs'

@@ -24,6 +24,9 @@
     <!-- 此权限用于在接到推送时，可唤醒屏幕，可选择性添加权限 -->
     <uses-permission android:name="android.permission.WAKE_LOCK"></uses-permission>
 
+    <!--指纹识别-->
+    <uses-permission android:name="android.permission.USE_FINGERPRINT" />
+
     <application
       android:name=".MainApplication"
       android:label="@string/app_name"

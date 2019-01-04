@@ -4,7 +4,10 @@ import { createStackNavigator } from 'react-navigation';
 import MainPage from './app/containers/MainPage';
 import store from './app/store';
 import TodoPage from './app/todo/pages/TodoPage';
+<<<<<<< HEAD
 
+=======
+>>>>>>> 4d4b5dc951c9a1f49b8d3c77dae0277e1dddf12e
 
 import {
     Text,
@@ -12,9 +15,10 @@ import {
 } from 'react-native';
 
 const AppComponent = createStackNavigator({
-    MainPage: { screen: MainPage },
-    TodoPage: { screen: TodoPage },
+  MainPage: { screen: MainPage },
+  TodoPage: { screen: TodoPage }
 }, {
+<<<<<<< HEAD
         navigationOptions: {
             gesturesEnabled: true
         },
@@ -28,6 +32,20 @@ const App = () => {
             <AppComponent />
         </Provider>
     );
+=======
+  navigationOptions: {
+    gesturesEnabled: true
+  },
+  headerMode: 'none'
+});
+
+const App = () => {
+  return (
+        <Provider {...store}>
+            <AppComponent />
+        </Provider>
+  );
+>>>>>>> 4d4b5dc951c9a1f49b8d3c77dae0277e1dddf12e
 };
 
 export default App;

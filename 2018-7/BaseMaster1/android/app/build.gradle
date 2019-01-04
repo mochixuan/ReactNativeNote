@@ -137,7 +137,10 @@ android {
 }
 
 dependencies {
+    compile project(':react-native-svg')
+    compile project(':react-native-fingerprint-scanner')
     compile project(':react-native-wxwebview')
+    compile project(':react-native-touch-id')
     compile project(':react-native-scrypt')
     compile project(':react-native-fs')
     implementation project(':react-native-fast-image')
