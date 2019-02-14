@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {Dimensions, StyleSheet, View} from 'react-native'
+import {Dimensions, StyleSheet, View ,ScrollView} from 'react-native'
 import {getButtonStyle} from "../base/BaseStyle";
 import LayoutAnimatePage from "./LayoutAnimatePage";
 import WebViewPage from "./WebViewPage";
@@ -11,7 +11,7 @@ export default class MainPage extends Component{
 
     render() {
         return (
-            <View style={styles.container}>
+            <ScrollView style={styles.container}>
                 {
                     getButtonStyle('WidgetPage',()=>{
                         this.props.navigation.navigate('WidgetPage')
@@ -57,7 +57,13 @@ export default class MainPage extends Component{
                         this.props.navigation.navigate('TouchIdPage')
                     })
                 }
-            </View>
+                {
+                    getButtonStyle('CodePushPage',()=>{
+                        this.props.navigation.navigate('CodePushPage')
+                    })
+                }
+                <View style={{height: 20}}/>
+            </ScrollView>
         )
     }
 
@@ -65,7 +71,6 @@ export default class MainPage extends Component{
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
-        alignItems: 'center'
+        paddingLeft: width*0.2
     },
 })

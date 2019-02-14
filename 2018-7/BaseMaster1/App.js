@@ -11,6 +11,7 @@ import LayoutAnimatePage from "./app/containers/LayoutAnimatePage";
 import WebViewPage from "./app/containers/WebViewPage";
 import QRCodePage from "./app/containers/QRCodePage";
 import TouchIdPage from "./app/containers/TouchIdPage";
+import CodePushPage from "./app/containers/CodePushPage";
 
 const App  = createStackNavigator({
     MainPage: {screen: MainPage},
@@ -22,7 +23,8 @@ const App  = createStackNavigator({
     LayoutAnimatePage: {screen: LayoutAnimatePage},
     WebViewPage: {screen: WebViewPage},
     QRCodePage: {screen: QRCodePage},
-    TouchIdPage: {screen: TouchIdPage}
+    TouchIdPage: {screen: TouchIdPage},
+    CodePushPage: {screen: CodePushPage}
 },{
     navigationOptions: {
         gesturesEnabled: true

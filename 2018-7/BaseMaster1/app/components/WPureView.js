@@ -3,7 +3,6 @@ import {
     View,
     Text,
 } from 'react-native'
-import SnackBar from "../widget/snackbar/SnackBar";
 import {getButtonStyle} from "../base/BaseStyle";
 
 export default class WPureView extends PureComponent{

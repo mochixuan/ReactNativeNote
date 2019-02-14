@@ -6,7 +6,6 @@ import {
     Dimensions
 } from 'react-native'
 import {getButtonStyle} from "../base/BaseStyle";
-import RootSiblings from 'react-native-root-siblings';
 import SnackBar from '../widget/snackbar/SnackBar'
 const {width,height} = Dimensions.get('window')
 import WPureView from '../components/WPureView'

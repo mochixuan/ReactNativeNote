@@ -1,6 +1,6 @@
 # HotUpgrade
 
-## 1. CodePush (2017.8.17)
+## 1. CodePush (2019.1)
 
 - 0.网上资料和官网最新的不一样
 
@@ -21,7 +21,7 @@
 
 - 相关命令3 
   - 1. code-push login 登陆
-  - 2. code-push loout 注销
+  - 2. code-push logout 注销
   - 3. code-push access-key ls 列出登陆的token
   - 4. code-push access-key rm <accessKye> 删除某个 access-key
 
@@ -41,6 +41,7 @@
       - 6. 通过code-push release发布更新（收藏）
       - 7. 应用创建时有两个环境，一个是Staging，一个是Production,开发阶段用Staging，开发完成可以用code-push promote 将应用迁移到Production中
       - 8. code-push patch 应用名 Production -r 100%
+      - 9. code-push promote RNCodePush-iOS Staging Production -r 20 将Staging 推到 Production 推20%的用户。
 
 - 相关命定5
 	- 1. code-push deployment add 部署
@@ -78,6 +79,111 @@ CodePush.sync(
 			一个是程序在前台，并没有从后台切换到前台的情况下用的InstallMode.ON_NEXT_RESUME
 2.状态
 3.进度
+```
+
+#### 演示
+```
+如果有发布热更新时 mandatory 则 Code Push 会根据 mandatory 是 true 或false 来控制应用是否强制更新。默认情况下 mandatory 为 false 即不强制更新。mandatory 为 false时以下三种设置方法才有效
+
+// 第一种:
+codePush.sync();
+
+// 第二种:
+codePush.sync({
+    updateDialog: false,
+    installMode: codePush.InstallMode.IMMEDIATE
+});
+
+// 第三种:
+CodePush.sync({
+    deploymentKey: 'deployment-key-here',
+    updateDialog: {
+        optionalIgnoreButtonLabel: '稍后',
+        optionalInstallButtonLabel: '后台更新',
+        optionalUpdateMessage: '有新版本了，是否更新？',
+        title: '更新提示'
+    },
+    installMode: CodePush.InstallMode.IMMEDIATE
+});
+
+三种更新的策略: 配置到installMode: 之后即可生效
+* IMMEDIATE 立即更新APP
+* ON_NEXT_RESTART 到下一次启动应用时
+* ON_NEXT_RESUME 当应用从后台返回时
+```
+
+### 更新规则
+
+```
+
+来自网络
+
+你APP内plist文件写的版本号可能是1.0.0，所以你的reactjs打包上传的版本也要是1.0.0（而不是1.0.1这样递增），你需要和APP保持一致，然后服务器会根据你最新上传的且和APP一样的版本作为最新版。
+
+范围表达式
+
+* 1.2.3 仅仅只有1.2.3的版本
+
+* *所有版本
+
+* 1.2.x 主要版本1，次要版本2的任何修补程序版本
+
+* 1.2.3 - 1.2.7 1.2.3版本到1.2.7版本
+
+* >=1.2.3 <1.2.7 大于等于1.2.3版本小于1.2.7的版本
+
+* ~1.2.3 大于等于1.2.3版本小于1.3.0的版本
+
+* ^1.2.3 大于等于1.2.3版本小于2.0.0的版本
+ 
+```
+
+### 相关代码5.4
+``` text
+	
+CodePush.sync(
+	options: Object, 
+	syncStatusChangeCallback: function(syncStatus: Number), 
+	downloadProgressCallback: function(progress: DownloadProgress)
+): Promise<Number>;
+传入三个参数
+1. options = { installMode: CodePush.InstallMode.IMMEDIATE, updateDialog: true }
+	installMode (codePush.InstallMode)： 安装模式，用在向CodePush推送更新时没有设置强制更新(mandatory为true)的情况下，默认codePush.InstallMode.ON_NEXT_RESTART即下一次启动的时候安装。
+	mandatoryInstallMode (codePush.InstallMode):强制更新,默认codePush.InstallMode.IMMEDIATE
+	updateDialog (UpdateDialogOptions) :可选的，更新的对话框，默认是null,包含以下属性
+		appendReleaseDescription (Boolean) - 是否显示更新description，默认false
+		descriptionPrefix (String) - 更新说明的前缀。 默认是” Description: “
+		 mandatoryContinueButtonLabel (String) - 强制更新的按钮文字. 默认 to “Continue”.
+		mandatoryUpdateMessage (String) - 强制更新时，更新通知. Defaults to “An update is available that must be installed.”.
+		optionalIgnoreButtonLabel (String) - 非强制更新时，取消按钮文字. Defaults to “Ignore”.
+		optionalInstallButtonLabel (String) - 非强制更新时，确认文字. Defaults to “Install”.
+		optionalUpdateMessage (String) - 非强制更新时，更新通知. Defaults to “An update is available. Would you like to install it?”.
+		title (String) - 要显示的更新通知的标题. Defaults to “Update available”.
+		具体可以查看我上面的代码：
+		还有一个是：codePush.InstallMode，有三种模式，
+			一个是立即启动，nstallMode.IMMEDIATE 
+			一个是下次启动安装：InstallMode.ON_NEXT_RESTART
+			一个是程序在前台，并没有从后台切换到前台的情况下用的InstallMode.ON_NEXT_RESUME
+2.状态
+3.进度
+```
+
+### iOS配置时问题
+```
+1.  TARGETS->Build Settings->Header Search Paths-> 添加
+$(SRCROOT)/../node_modules/react
+$(SRCROOT)/../node_modules/react-native-code-push （可不加）
+
+2. 'React/RCTEventEmitter.h' file not found
+  1. Disable the parallel builds:
+        - xCode menu -> Product -> Scheme -> Manage Shemes...
+        - Double click on your application
+        - Build tab -> clear the tick on Pallelize Build
+        - Add react as a project dependecy
+
+  2. xCode Project Navigator -> drag React.xcodeproj from Libraries to root tree
+      - Build Phases Tab -> Target Dependencies -> + -> add React
+
 ```
 
 ### 安装签名
