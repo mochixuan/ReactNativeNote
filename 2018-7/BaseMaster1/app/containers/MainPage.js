@@ -62,6 +62,11 @@ export default class MainPage extends Component{
                         this.props.navigation.navigate('CodePushPage')
                     })
                 }
+                {
+                    getButtonStyle('TouchPage',()=>{
+                        this.props.navigation.navigate('TouchPage')
+                    })
+                }
                 <View style={{height: 20}}/>
             </ScrollView>
         )

@@ -12,6 +12,7 @@ import WebViewPage from "./app/containers/WebViewPage";
 import QRCodePage from "./app/containers/QRCodePage";
 import TouchIdPage from "./app/containers/TouchIdPage";
 import CodePushPage from "./app/containers/CodePushPage";
+import TouchPage from "./app/containers/TouchPage";
 
 const App  = createStackNavigator({
     MainPage: {screen: MainPage},
@@ -24,7 +25,8 @@ const App  = createStackNavigator({
     WebViewPage: {screen: WebViewPage},
     QRCodePage: {screen: QRCodePage},
     TouchIdPage: {screen: TouchIdPage},
-    CodePushPage: {screen: CodePushPage}
+    CodePushPage: {screen: CodePushPage},
+    TouchPage: {screen: TouchPage}
 },{
     navigationOptions: {
         gesturesEnabled: true

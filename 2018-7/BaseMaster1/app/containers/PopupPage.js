@@ -6,9 +6,15 @@ import {
     Dimensions
 } from 'react-native'
 import {getButtonStyle} from "../base/BaseStyle";
-import SnackBar from '../widget/snackbar/SnackBar'
 const {width,height} = Dimensions.get('window')
 import WPureView from '../components/WPureView'
+import {WToast,WSnackBar,WModal} from 'react-native-smart-tip'
+
+const toast1 = {
+    data: 'Sow nothing, reap nothing',
+    backgroundColor: '#666666',
+    position: WToast.position.TOP
+}
 
 export default class PopupPage extends Component{
 
@@ -26,7 +32,7 @@ export default class PopupPage extends Component{
             <View style={styles.container}>
                 {
                     getButtonStyle('Toast',()=>{
-                        SnackBar.show("床前明月光，疑是地上霜！",SnackBar.LENGTH_LONG,1)
+                        WToast.show(toast1)
                     })
                 }
                 <Text style={{fontSize: 18,color: '#f00',alignSelf: 'center'}}>state: {[...this.state.data]}</Text>
