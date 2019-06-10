@@ -1,0 +1,42 @@
+{
+  "name": "RNReview1",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "test": "jest",
+    "lint": "tslint 'app/**/*.{ts,tsx}'"
+  },
+  "dependencies": {
+    "@react-native-community/async-storage": "^1.4.2",
+    "react": "16.8.3",
+    "react-native": "0.59.9",
+    "react-native-gesture-handler": "^1.3.0",
+    "react-native-smart-tip": "^1.0.1",
+    "react-navigation": "^3.11.0",
+    "react-redux": "^7.0.3",
+    "redux": "^4.0.1",
+    "redux-persist": "^5.10.0",
+    "redux-saga": "^1.0.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/runtime": "^7.4.5",
+    "@types/react": "^16.8.19",
+    "@types/react-native": "^0.57.60",
+    "@types/react-redux": "^7.0.9",
+    "babel-jest": "^24.8.0",
+    "jest": "^24.8.0",
+    "metro-react-native-babel-preset": "^0.54.1",
+    "react-native-typescript-transformer": "^1.2.12",
+    "react-test-renderer": "16.8.3",
+    "tslint": "^5.17.0",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-config-standard": "^8.0.1",
+    "tslint-react": "^4.0.0",
+    "typescript": "^3.5.1"
+  },
+  "jest": {
+    "preset": "react-native"
+  }
+}

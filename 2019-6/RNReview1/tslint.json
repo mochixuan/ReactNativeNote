@@ -1,0 +1,133 @@
+{
+    "cliOptions": {
+        "exclude": [
+            "./ios",
+            "./android",
+            "node_modules"
+        ]
+    },
+    //"defaultSeverity": "error",
+    "extends": [
+        "tslint:recommended",
+        "tslint-config-prettier",
+        "tslint-config-standard",
+        "tslint-react"
+    ],
+    //"jsRules": {},
+    "rules": {
+        //"no-console": true, // 不允许使用console对象
+        "no-debugger": true, // 不允许使用debugger
+        "no-trailing-whitespace": false, //禁止行尾空格
+        "no-var-keyword": true, //禁止使用var声明变量
+        "quotemark": [
+            true,
+            "single"
+        ], //单引号引用
+        "prefer-const": false, //
+        "no-implicit-dependencies": [
+            false
+        ], //允许导入package中不存在的依赖
+        "prefer-for-of": true, // 如果for循环中没有使用索引，建议是使用for-of
+        "no-duplicate-super": true, // 不允许super() 两次使用在构造函数中
+        "no-empty": true, // 函数体不允许空
+        "no-null-keyword": true, // 不允许使用null,使用undefined代替null，指代空指针对象
+        "no-switch-case-fall-through": true, // 不允许case段落中在没有使用breack的情况下，在新启一段case逻辑
+        "no-unused-expression": true, // 不允许使用未使用的表达式
+        "no-use-before-declare": true, // 在使用前必须声明
+        "indent": [
+            true,
+            "spaces",
+            4
+        ], //4个空格的缩进
+        "max-classes-per-file": [
+            true,
+            1
+        ], // 每个文件中可定义类的个数
+        "max-file-line-count": [
+            true,
+            900
+        ], // 定义每个文件代码行数
+        //"max-line-length":[true,120],// 定义每行代码数
+        "no-default-export": true, // 禁止使用export default关键字，因为当export对象名称发生变化时，需要修改import中的对象名
+        "class-name": true, // 类名以大驼峰格式命名
+        "encoding": true, // 定义编码格式默认utf-8
+        "import-spacing": false, // import关键字后加空格
+        "interface-name": [
+            true,
+            "always-prefix"
+        ], // interface必须以I开头
+        "jsdoc-format": true, // 注释基于jsdoc风格
+        "no-unnecessary-initializer": true, // 不允许没有必要的初始化
+        "member-access": true, // 设置成员对象的访问权限（public,private,protect)
+        "no-namespace": true, // 使用 es6 引入外部模块
+        "no-invalid-template-strings": true, //禁止在非模板字符串中出现${}
+        "no-string-throw": true, //禁止throw字符串，必须throw一个Error对象
+        "object-literal-sort-keys": [
+            false
+        ],
+        //"semicolon": [true, "always"], //结尾需要分号
+        //"no-submodule-imports": [true],
+        "no-unused-variable": true, //定义的变量必须使用
+        "jsx-wrap-multiline": true,
+        //"triple-equals": false,
+        //这个里面可以自行配置自身需要的，比如check-whitespace这项就会要求函数名，参数表和函数段开头的大括号之间要有空格。当然也可以设置为false，将这个功能完全禁用
+        "one-line": [
+            true,
+            "check-open-brace",
+            "check-catch",
+            "check-else",
+            "check-whitespace"
+        ],
+        //whitespace这一项决定了在哪些情况下必须先插入空格，然后写入自己的代码。比如check-separator这一项就会要求在初始化数组的时候，相邻元素间不仅要用“,”分隔，还需要在其之后加入空格
+        "whitespace": [
+            true,
+            "check-branch",
+            "check-decl",
+            "check-operator",
+            "check-separator",
+            "check-type"
+        ],
+        // 定义变量命名规则
+        "variable-name": [
+            true,
+            "allow-pascal-case",
+            "ban-keywords"
+        ],
+        "no-console": [
+            true,
+            "debug",
+            "info",
+            "log",
+            "time",
+            "timeEnd",
+            "trace"
+        ]
+        //react 相关配置项
+        // "react/forbid-prop-types": [0],
+        // "react/jsx-filename-extension": [1, { "extensions": [".js"] }],
+        // "react/jsx-no-bind": [0],
+        // "react/jsx-indent": [2, 4],
+        // "react/jsx-indent-props": [2, 4],
+        // "react/jsx-uses-react": "error",
+        // "react/jsx-uses-vars": "error",
+        // "react/prop-types": [0],
+        // "react/prefer-stateless-function": [0],
+        // "react/jsx-wrap-multilines": [
+        //     "error",
+        //     {
+        //         "declaration": "parens-new-line",
+        //         "assignment": "parens-new-line",
+        //         "return": "parens-new-line",
+        //         "arrow": "parens-new-line",
+        //         "condition": "parens-new-line",
+        //         "logical": "parens-new-line",
+        //         "prop": "ignore"
+        //     }
+        // ],
+        // "jsx-a11y/no-static-element-interactions": [0],
+        // "jsx-a11y/no-noninteractive-element-interactions": [0],
+        // "jsx-a11y/click-events-have-key-events": [0],
+        // "jsx-a11y/anchor-is-valid": [0]
+    },
+    "rulesDirectory": []
+}
