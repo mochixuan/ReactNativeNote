@@ -3,6 +3,7 @@ import {
   StyleSheet, Text, View
 } from 'react-native'
 import { createAppContainer, createMaterialTopTabNavigator, createNavigationContainer, NavigationScreenProp } from 'react-navigation'
+import { CleaningBallView } from '../../widget/CleaningBallView'
 
 interface IProps {
   title: string
@@ -22,7 +23,7 @@ class ItemView extends React.Component<IProps, any> {
 
 const ItemTopTar = createAppContainer(
   createMaterialTopTabNavigator({
-    Tab1: { screen: ItemView },
+    Tab1: { screen: CleaningBallView },
     Tab2: { screen:  ItemView },
     Tab3: { screen:  ItemView },
     Tab4: { screen:  ItemView },

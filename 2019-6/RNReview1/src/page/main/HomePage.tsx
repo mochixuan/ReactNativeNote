@@ -1,16 +1,25 @@
 import React, { Component } from 'react'
 import {
-  FlatList, Image, SafeAreaView, StatusBar, StyleSheet, Text, View
+  FlatList, Image, SafeAreaView, StatusBar, StyleSheet, Text, TouchableOpacity, View
 } from 'react-native'
 import { NavigationScreenProp } from 'react-navigation'
+import { connect } from 'react-redux'
+import { Dispatch } from 'redux'
 import { ELoadingState } from '../../impl/ICommon'
 import { INewsModel } from '../../impl/IHomeCommon'
+import { IStateTree } from '../../impl/IStateTree'
+import { changeUserInfoAction } from '../../redux/action/userAction'
 import { iPhoneXBaseHeaderView, renderSeparatorView, separatorHeight } from '../../styles/baseView'
 import { ufontSize, uwidth } from '../../utils/UiUtils'
 import { showToast } from '../../utils/Util'
+import { Test1 } from '../../widget/Test1'
+import { Test2 } from '../../widget/Test2'
 
 interface IProps {
-  navigation: NavigationScreenProp<any, any>
+  navigation: NavigationScreenProp<any, any>,
+  changeUserInfo: (name: string, password: string) => void,
+  name?: string,
+  password?: string
 }
 
 interface IState {
@@ -28,11 +37,11 @@ const imgItems = [
   'http://n.sinaimg.cn/photo/700/w1000h500/20190606/a150-hxyuaph9286356.jpg'
 ]
 
-class HomePage extends Component<IProps, IState> {
+let name = 'mochixuan'
+class Page extends Component<IProps, IState> {
 
   constructor (props: any) {
     super(props)
-
     this.state = {
       newsItems: [],
       loadingState: ELoadingState.Loading
@@ -47,6 +56,11 @@ class HomePage extends Component<IProps, IState> {
     return (
       <SafeAreaView style={{ flex: 1 }}>
         {iPhoneXBaseHeaderView}
+        <TouchableOpacity style={styles.btn} onPress={this.changeUserInfo}>
+          <Text style={{ color: '#f00' }}>{this.props.name + ' ' + this.props.password}</Text>
+        </TouchableOpacity>
+        <Test1 data={'mochixuan'}/>
+        <Test2 data={name}/>
         <FlatList
           data={this.state.newsItems}
           keyExtractor={this.keyExtractor}
@@ -57,6 +71,10 @@ class HomePage extends Component<IProps, IState> {
         />
       </SafeAreaView>
     )
+  }
+
+  private changeUserInfo = () => {
+    this.props.changeUserInfo('mochixuan', '123456')
   }
 
   private keyExtractor = (item: INewsModel, index: number) => item.title + index
@@ -76,6 +94,7 @@ class HomePage extends Component<IProps, IState> {
   }
 
   private requestData = () => {
+
     this.setState({ loadingState: ELoadingState.Loading })
     setTimeout(() => {
       let newData: INewsModel[] = []
@@ -102,6 +121,14 @@ class HomePage extends Component<IProps, IState> {
 const styles = StyleSheet.create({
   container: {
     flex: 1
+  },
+  btn: { 
+    width: uwidth(200), 
+    height: uwidth(60), 
+    justifyContent: 'center', 
+    alignItems: 'center',
+    alignSelf: 'center',
+    backgroundColor: '#f0ffff'
   },
   item: {
     height: itemHeight,
@@ -134,5 +161,18 @@ const styles = StyleSheet.create({
     marginRight: uwidth(15)
   }
 })
+
+const mapStateTopProps = (state: IStateTree) => ({
+  name: state.user.name,
+  password: state.user.password
+})
+
+const mapDispatchToProps = (dispatch: Dispatch) => ({
+  changeUserInfo: (name: string, password: string) => {
+    dispatch(changeUserInfoAction(name, password))
+  }
+})
+
+const HomePage = connect(mapStateTopProps, mapDispatchToProps)(Page)
 
 export { HomePage }

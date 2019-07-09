@@ -1,0 +1,32 @@
+{
+  "name": "MetroMaster",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "react-native start",
+    "test": "jest",
+    "lint": "eslint .",
+    "basic": "react-native bundle --platform android --dev false --entry-file src/common/index.js --bundle-output ./android/app/src/main/assets/common.android.bundle --assets-dest android/app/src/main/res/ --config common.config.js",
+    "HomePage": "react-native bundle --platform android --dev false --entry-file src/enterfile/home.js --bundle-output ./android/app/src/main/assets/home.android.bundle --assets-dest android/app/src/main/res/ --config business.config.js",
+    "SettingPage": "react-native bundle --platform android --dev false --entry-file src/enterfile/setting.js --bundle-output ./android/app/src/main/assets/setting.android.bundle --assets-dest android/app/src/main/res/ --config business.config.js",
+    "IndexPage": "react-native bundle --platform native --dev false --entry-file ./index.js --bundle-output ./android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res/"
+  },
+  "dependencies": {
+    "react": "16.8.6",
+    "react-native": "0.60.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.5.0",
+    "@babel/runtime": "^7.5.1",
+    "@react-native-community/eslint-config": "^0.0.5",
+    "babel-jest": "^24.8.0",
+    "eslint": "^6.0.1",
+    "jest": "^24.8.0",
+    "js-md5": "^0.7.3",
+    "metro-react-native-babel-preset": "^0.55.0",
+    "react-test-renderer": "16.8.6"
+  },
+  "jest": {
+    "preset": "react-native"
+  }
+}
