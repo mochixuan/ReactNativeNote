@@ -1669,8 +1669,8 @@ home-or-tmp@^1.0.0:
     user-home "^1.1.1"
 
 hosted-git-info@^2.1.4:
-  version "2.7.1"
-  resolved "http://registry.npm.taobao.org/hosted-git-info/download/hosted-git-info-2.7.1.tgz#97f236977bd6e125408930ff6de3eec6281ec047"
+  version "2.8.9"
+  resolved "https://registry.yarnpkg.com/hosted-git-info/-/hosted-git-info-2.8.9.tgz#dffc0bf9a21c02209090f2aa69429e1414daf3f9"
 
 html-wiring@^1.0.0:
   version "1.2.0"
@@ -2843,8 +2843,9 @@ react-timer-mixin@^0.13.2:
   version "0.13.4"
   resolved "http://registry.npm.taobao.org/react-timer-mixin/download/react-timer-mixin-0.13.4.tgz#75a00c3c94c13abe29b43d63b4c65a88fc8264d3"
 
-"react-tools@github:facebook/react#b4e74e3":
+react-tools@facebook/react#b4e74e3:
   version "0.14.0-beta1"
+  uid b4e74e38e43ac53af8acd62c78c9213be0194245
   resolved "https://codeload.github.com/facebook/react/tar.gz/b4e74e38e43ac53af8acd62c78c9213be0194245"
   dependencies:
     commoner "^0.10.0"
