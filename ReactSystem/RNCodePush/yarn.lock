@@ -1755,8 +1755,8 @@ decamelize@^1.0.0, decamelize@^1.1.1:
   resolved "http://registry.npm.taobao.org/decamelize/download/decamelize-1.2.0.tgz#f6534d15148269b20352e7bee26f501f9a191290"
 
 decode-uri-component@^0.2.0:
-  version "0.2.0"
-  resolved "http://registry.npm.taobao.org/decode-uri-component/download/decode-uri-component-0.2.0.tgz#eb3913333458775cb84cd1a1fae062106bb87545"
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/decode-uri-component/-/decode-uri-component-0.2.2.tgz#e69dbe25d37941171dd540e024c444cd5188e1e9"
 
 deep-extend@^0.6.0:
   version "0.6.0"
@@ -4412,9 +4412,9 @@ react-is@^16.3.1:
   version "16.4.1"
   resolved "http://registry.npm.taobao.org/react-is/download/react-is-16.4.1.tgz#d624c4650d2c65dbd52c72622bbf389435d9776e"
 
-react-native-code-push@^5.3.4:
+react-native-code-push@5.3.4:
   version "5.3.4"
-  resolved "http://registry.npm.taobao.org/react-native-code-push/download/react-native-code-push-5.3.4.tgz#db5da06550435a1fcb64d94a79436d90d8ab8c58"
+  resolved "https://registry.yarnpkg.com/react-native-code-push/-/react-native-code-push-5.3.4.tgz#db5da06550435a1fcb64d94a79436d90d8ab8c58"
   dependencies:
     code-push "2.0.5"
     glob "^5.0.15"
