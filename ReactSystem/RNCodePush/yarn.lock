@@ -4360,8 +4360,8 @@ q@^1.4.1:
   resolved "http://registry.npm.taobao.org/q/download/q-1.5.1.tgz#7e32f75b41381291d04611f1bf14109ac00651d7"
 
 qs@^6.5.1, qs@~6.5.1:
-  version "6.5.2"
-  resolved "http://registry.npm.taobao.org/qs/download/qs-6.5.2.tgz#cb3ae806e8740444584ef154ce8ee98d403f3e36"
+  version "6.5.3"
+  resolved "https://registry.yarnpkg.com/qs/-/qs-6.5.3.tgz#3aeeffc91967ef6e35c0e488ef46fb296ab76aad"
 
 randomatic@^3.0.0:
   version "3.0.0"
@@ -4412,9 +4412,9 @@ react-is@^16.3.1:
   version "16.4.1"
   resolved "http://registry.npm.taobao.org/react-is/download/react-is-16.4.1.tgz#d624c4650d2c65dbd52c72622bbf389435d9776e"
 
-react-native-code-push@^5.3.4:
+react-native-code-push@5.3.4:
   version "5.3.4"
-  resolved "http://registry.npm.taobao.org/react-native-code-push/download/react-native-code-push-5.3.4.tgz#db5da06550435a1fcb64d94a79436d90d8ab8c58"
+  resolved "https://registry.yarnpkg.com/react-native-code-push/-/react-native-code-push-5.3.4.tgz#db5da06550435a1fcb64d94a79436d90d8ab8c58"
   dependencies:
     code-push "2.0.5"
     glob "^5.0.15"
